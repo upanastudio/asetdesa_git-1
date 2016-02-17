@@ -1,5 +1,5 @@
 <?php
-	class input_pm_model {
+	class data_perlengkapan_model {
 		private $db;
 
 		public function __construct($database) {

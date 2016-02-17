@@ -1,5 +1,5 @@
 <?php
-	class input_gb_model {
+	class data_konstruksi_model {
 		private $db;
 
 		public function __construct($database) {
@@ -7,7 +7,7 @@
 		}
 
 		public function countData() {
-			$query = $this->db->prepare("SELECT * FROM `db_tablename`");
+			$query = $this->db->prepare("SELECT * FROM `data_konstruksi`");
 
 			try {
 				$query->execute();
@@ -18,7 +18,7 @@
 		}
 
 		public function getDataLengkap() {
-			$query = $this->db->prepare("SELECT * FROM `db_tablename`");
+			$query = $this->db->prepare("SELECT * FROM `data_konstruksi`");
 
 			try {
 				$query->execute();
@@ -30,7 +30,7 @@
 		}
 
 		public function getDataById($id) {
-			$query = $this->db->prepare("SELECT * FROM `db_tablename` WHERE `id` = :id");
+			$query = $this->db->prepare("SELECT * FROM `data_konstruksi` WHERE `id` = :id");
 			$query->bindParam(':id', $id, PDO::PARAM_INT);
 
 			try {
@@ -56,7 +56,7 @@
 		}
 
 		public function insertData($apa, $file_upload) {
-			$query = $this->db->prepare("INSERT INTO `db_tablename` 	SET 	`apa` 			= :apa,
+			$query = $this->db->prepare("INSERT INTO `data_konstruksi` 	SET 	`apa` 			= :apa,
 																				`file_upload` 	= :file_upload
 			");
 
@@ -72,7 +72,7 @@
 		}
 
 		public function updateData($apa, $file_upload, $id) {
-			$query = $this->db->prepare("UPDATE `db_tablename` 	SET 		`apa` 			= :apa,
+			$query = $this->db->prepare("UPDATE `data_konstruksi` 	SET 		`apa` 			= :apa,
 																			`file_upload` 	= :file_upload
 																WHERE 		`id` = :id
 			");
@@ -90,7 +90,7 @@
 		}
 
 		public function deleteData($id) {
-			$sql = "DELETE FROM `db_tablename` WHERE `id` = ?";
+			$sql = "DELETE FROM `data_konstruksi` WHERE `id` = ?";
 			$query = $this->db->prepare($sql);
 			$query->bindValue(1, $id);
 

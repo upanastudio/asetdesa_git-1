@@ -1,5 +1,5 @@
 <?php
-	class input_kdp_model {
+	class data_asetlain_model {
 		private $db;
 
 		public function __construct($database) {
@@ -7,7 +7,7 @@
 		}
 
 		public function countData() {
-			$query = $this->db->prepare("SELECT * FROM `db_tablename`");
+			$query = $this->db->prepare("SELECT * FROM `data_asetlain`");
 
 			try {
 				$query->execute();
@@ -18,7 +18,7 @@
 		}
 
 		public function getDataLengkap() {
-			$query = $this->db->prepare("SELECT * FROM `db_tablename`");
+			$query = $this->db->prepare("SELECT * FROM `data_asetlain`");
 
 			try {
 				$query->execute();
@@ -30,7 +30,7 @@
 		}
 
 		public function getDataById($id) {
-			$query = $this->db->prepare("SELECT * FROM `db_tablename` WHERE `id` = :id");
+			$query = $this->db->prepare("SELECT * FROM `data_asetlain` WHERE `id` = :id");
 			$query->bindParam(':id', $id, PDO::PARAM_INT);
 
 			try {
