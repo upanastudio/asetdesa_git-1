@@ -368,7 +368,7 @@
 			function hapusData(id) {
 				var conBox = confirm("Anda yakin ingin menghapus data ini?");
 				if(conBox){
-					// location.href="<?php echo $aksi."hapus" ;?>&id="+ iddokumen;
+					document.getElementById("hapus_id").value = id;
 					document.getElementById("hapusSubmit").submit();
 				}else{
 					return false;

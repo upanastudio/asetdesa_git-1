@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: Feb 15, 2016 at 03:04 PM
+-- Generation Time: Feb 17, 2016 at 12:34 PM
 -- Server version: 5.6.21
 -- PHP Version: 5.6.3
 
@@ -19,6 +19,160 @@ SET time_zone = "+00:00";
 --
 -- Database: `asetdesa`
 --
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `data_asetlain`
+--
+
+CREATE TABLE IF NOT EXISTS `data_asetlain` (
+`id` int(11) NOT NULL,
+  `kode_barang` varchar(20) NOT NULL,
+  `jenis_barang` varchar(50) NOT NULL,
+  `register` varchar(5) NOT NULL,
+  `jalur` int(11) NOT NULL,
+  `judul_buku` varchar(100) NOT NULL,
+  `spesifikasi_buku` varchar(50) NOT NULL,
+  `asal_daerah` varchar(100) NOT NULL,
+  `pencipta_kesenian` varchar(100) NOT NULL,
+  `bahan_kesenian` varchar(100) NOT NULL,
+  `jenis` varchar(50) NOT NULL,
+  `ukuran` varchar(20) NOT NULL,
+  `jumlah` int(11) NOT NULL,
+  `tanggal_cetak` varchar(10) NOT NULL,
+  `asal_usul` varchar(100) NOT NULL,
+  `harga` varchar(20) NOT NULL,
+  `keterangan` text NOT NULL,
+  `foto` varchar(20) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `data_gedung`
+--
+
+CREATE TABLE IF NOT EXISTS `data_gedung` (
+`id` int(11) NOT NULL,
+  `kode_barang` varchar(20) NOT NULL,
+  `jenis_barang` varchar(50) NOT NULL,
+  `register` varchar(5) NOT NULL,
+  `kondisi` varchar(20) NOT NULL,
+  `konstruksi` varchar(20) NOT NULL,
+  `luas_lantai` varchar(10) NOT NULL,
+  `alamat` text NOT NULL,
+  `tanggal_beli` varchar(10) NOT NULL,
+  `no_dokumen` varchar(50) NOT NULL,
+  `luas_lahan` varchar(20) NOT NULL,
+  `status_tanah` varchar(100) NOT NULL,
+  `no_sertifikat` varchar(50) NOT NULL,
+  `asal_usul` varchar(100) NOT NULL,
+  `harga` varchar(20) NOT NULL,
+  `keterangan` text NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `data_jalan`
+--
+
+CREATE TABLE IF NOT EXISTS `data_jalan` (
+`id` int(11) NOT NULL,
+  `kode_barang` varchar(20) NOT NULL,
+  `jenis_barang` varchar(50) NOT NULL,
+  `register` varchar(5) NOT NULL,
+  `konstruksi` varchar(20) NOT NULL,
+  `panjang` varchar(10) NOT NULL,
+  `lebar` varchar(10) NOT NULL,
+  `luas_tanah` varchar(20) NOT NULL,
+  `tanggal_dokumen` varchar(10) NOT NULL,
+  `no_dokumen` varchar(50) NOT NULL,
+  `status_tanah` varchar(100) NOT NULL,
+  `no_tanah` varchar(50) NOT NULL,
+  `asal_usul` varchar(100) NOT NULL,
+  `kondisi` varchar(20) NOT NULL,
+  `harga` varchar(20) NOT NULL,
+  `keterangan` text NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `data_konstruksi`
+--
+
+CREATE TABLE IF NOT EXISTS `data_konstruksi` (
+`id` int(11) NOT NULL,
+  `kode_barang` varchar(20) NOT NULL,
+  `jenis_barang` varchar(50) NOT NULL,
+  `bangunan` varchar(20) NOT NULL,
+  `konstruksi` varchar(20) NOT NULL,
+  `luas_konstruksi` varchar(10) NOT NULL,
+  `alamat` text NOT NULL,
+  `tanggal_dokumen` varchar(10) NOT NULL,
+  `no_dokumen` varchar(50) NOT NULL,
+  `status_tanah` varchar(100) NOT NULL,
+  `asal_usul` varchar(100) NOT NULL,
+  `harga` varchar(20) NOT NULL,
+  `keterangan` text NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `data_peralatan`
+--
+
+CREATE TABLE IF NOT EXISTS `data_peralatan` (
+`id` int(11) NOT NULL,
+  `jenis_barang` varchar(50) NOT NULL,
+  `kode_barang` varchar(20) NOT NULL,
+  `register` varchar(10) NOT NULL,
+  `merek` varchar(100) NOT NULL,
+  `ukuran` varchar(20) NOT NULL,
+  `bahan` varchar(50) NOT NULL,
+  `tanggal_beli` varchar(10) NOT NULL,
+  `no_pabrik` varchar(50) NOT NULL,
+  `no_rangka` varchar(50) NOT NULL,
+  `no_mesin` varchar(50) NOT NULL,
+  `no_polisi` varchar(50) NOT NULL,
+  `asal_usul` varchar(100) NOT NULL,
+  `harga` varchar(20) NOT NULL,
+  `keterangan` text NOT NULL,
+  `foto` varchar(50) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `data_tanah`
+--
+
+CREATE TABLE IF NOT EXISTS `data_tanah` (
+`id` int(11) NOT NULL,
+  `kode_barang` varchar(20) NOT NULL,
+  `jenis_barang` varchar(50) NOT NULL,
+  `register` varchar(5) NOT NULL,
+  `luas_tanah` varchar(10) NOT NULL,
+  `tanggal_beli` varchar(10) NOT NULL,
+  `alamat` text NOT NULL,
+  `hak` varchar(50) NOT NULL,
+  `no_sertifikat` varchar(50) NOT NULL,
+  `tanggal_sertifikat` varchar(10) NOT NULL,
+  `penggunaan` varchar(100) NOT NULL,
+  `asal_usul` varchar(100) NOT NULL,
+  `harga` varchar(20) NOT NULL,
+  `keterangan` text NOT NULL
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8;
+
+--
+-- Dumping data for table `data_tanah`
+--
+
+INSERT INTO `data_tanah` (`id`, `kode_barang`, `jenis_barang`, `register`, `luas_tanah`, `tanggal_beli`, `alamat`, `hak`, `no_sertifikat`, `tanggal_sertifikat`, `penggunaan`, `asal_usul`, `harga`, `keterangan`) VALUES
+(1, '01011309007', 'Tanah Untuk Bangunan Pengolahan Limbah', '002', '500', '17-02-2016', 'STPP Gowa', 'Abdul', '859623867', '02-03-2010', 'Gardu listrik', 'Pas', '120000000', 'Hmmmmm');
 
 -- --------------------------------------------------------
 
@@ -8725,6 +8879,42 @@ INSERT INTO `user` (`id`, `username`, `password`, `fullname`, `email`, `id_sessi
 --
 
 --
+-- Indexes for table `data_asetlain`
+--
+ALTER TABLE `data_asetlain`
+ ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `data_gedung`
+--
+ALTER TABLE `data_gedung`
+ ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `data_jalan`
+--
+ALTER TABLE `data_jalan`
+ ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `data_konstruksi`
+--
+ALTER TABLE `data_konstruksi`
+ ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `data_peralatan`
+--
+ALTER TABLE `data_peralatan`
+ ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `data_tanah`
+--
+ALTER TABLE `data_tanah`
+ ADD PRIMARY KEY (`id`);
+
+--
 -- Indexes for table `tb_kode_barang`
 --
 ALTER TABLE `tb_kode_barang`
@@ -8736,6 +8926,40 @@ ALTER TABLE `tb_kode_barang`
 ALTER TABLE `user`
  ADD PRIMARY KEY (`id`);
 
+--
+-- AUTO_INCREMENT for dumped tables
+--
+
+--
+-- AUTO_INCREMENT for table `data_asetlain`
+--
+ALTER TABLE `data_asetlain`
+MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+--
+-- AUTO_INCREMENT for table `data_gedung`
+--
+ALTER TABLE `data_gedung`
+MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+--
+-- AUTO_INCREMENT for table `data_jalan`
+--
+ALTER TABLE `data_jalan`
+MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+--
+-- AUTO_INCREMENT for table `data_konstruksi`
+--
+ALTER TABLE `data_konstruksi`
+MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+--
+-- AUTO_INCREMENT for table `data_peralatan`
+--
+ALTER TABLE `data_peralatan`
+MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+--
+-- AUTO_INCREMENT for table `data_tanah`
+--
+ALTER TABLE `data_tanah`
+MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=2;
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;

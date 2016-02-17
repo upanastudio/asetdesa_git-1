@@ -1,6 +1,6 @@
 <?php
 	if(isset($method)):
-		date_default_timezone_set('Asia/Jakarta');
+		date_default_timezone_set('Asia/Makassar');
 		$aksi_tanah = ROOT."controllers/input_tanah_control.php?model=tanah&method=";
 		$aksi_peralatan = ROOT."controllers/input_peralatan_control.php?model=peralatan&method=";
 		$aksi_gedung = ROOT."controllers/input_gedung_control.php?model=gedung&method=";
@@ -295,7 +295,7 @@
 										</div> <!-- /.form-group -->
 										<div class="form-group">
 											<label class="col-md-3">Nomor </label>
-											<div style="col-md-7">
+											<div style="col-md-7 col-sm-11">
 												<div style="width:14.45%; float:left; padding-left:15px; padding-right:10px;">
 													<input type="text" name="no_pabrik" placeholder="Pabrik" class="form-control" />
 												</div> <!-- /.col -->
@@ -469,7 +469,7 @@
 										<div class="form-group">
 											<label class="col-md-3">&nbsp;&nbsp;2. Nomor</label>
 											<div class="col-md-7">
-												<input type="number" name="register" value="0001" class="form-control" />
+												<input type="number" name="no_dokumen" value="0001" class="form-control" />
 											</div> <!-- /.col -->
 										</div> <!-- /.form-group -->
 										<br/>
@@ -743,10 +743,11 @@
 											</div> <!-- /.col -->
 										</div> <!-- /.form-group -->
 										<ul id="myTab2" class="nav nav-pills">
-											<li><a href="#Perpustakaan" data-toggle="tab">Buku Perpustakaan</a></li>
-											<li><a href="#kesenian" data-toggle="tab">Barang Bercorak Kesenian/Kebudayaan</a></li>
-											<li><a href="#ternak" data-toggle="tab">Hewan/Ternak dan Tumbuhan</a></li>
+											<li><a href="#Perpustakaan" data-toggle="tab" onclick="setJalur(\'1\')">Buku Perpustakaan</a></li>
+											<li><a href="#kesenian" data-toggle="tab" onclick="setJalur(\'2\')">Barang Bercorak Kesenian/Kebudayaan</a></li>
+											<li><a href="#ternak" data-toggle="tab" onclick="setJalur(\'3\')">Hewan/Ternak dan Tumbuhan</a></li>
 										</ul>
+										<input type="hidden" id="jalur" name="jalur" value="">
 										<div id="myTab2Content" class="tab-content">
 											<div class="tab-pane fade" id="Perpustakaan">
 												<div class="form-group">
@@ -811,7 +812,7 @@
 											<label class="col-md-3">Tahun Cetak/Pembelian </label>
 											<div class="col-md-7">
 												<div id="dp-ex-6" class="input-group date" data-auto-close="true" data-date-format="dd-mm-yyyy" data-date-autoclose="true">
-													<input class="form-control" type="text" name="taggal_cetak" />
+													<input class="form-control" type="text" name="tanggal_cetak" />
 													<span class="input-group-addon"><i class="fa fa-calendar"></i></span>
 												</div>
 												<span class="help-block">dd-mm-yyyy</span>
@@ -876,7 +877,7 @@
 											<label class="col-md-3">Jenis/Nama Barang</label>
 											<div class="col-sm-7">
 												<select id="s7_basic" class="form-control" name="jenis_barang" onclick="getKodeBarang(\'konstruksi\', this.value)">
-													<option>Pilih Jenis Barang:</option>
+													<option value="06000000000" selected>Konstruksi dalam Pengerjaan</option>
 				';
 
 				$first6 = true;
@@ -996,7 +997,7 @@
 										<br/><br/>
 										<div class="form-group">
 											<div class="col-md-7 col-md-push-3">
-												<button type="submit" mae="tambah" class="btn btn-primary">Masukkan Data</button>&nbsp;
+												<button type="submit" name="tambah" class="btn btn-primary">Masukkan Data</button>&nbsp;
 												<button type="reset" class="btn btn-default">Batalkan</button>
 											</div> <!-- /.col -->
 										</div> <!-- /.form-group -->
@@ -1034,6 +1035,12 @@
 				document.getElementById("kodekonstruksi").value = kode_barang;
 				break;
 		}
+	}
+</script>
+
+<script type="text/javascript">
+	function setJalur(nomor) {
+		document.getElementById("jalur").value = nomor;
 	}
 </script>
 

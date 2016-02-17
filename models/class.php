@@ -11,10 +11,8 @@
 	try {
 		$pagemodel		= new pagemodel_model($db);
 		$input			= new input_model($db);
-		$input_tanah	= new input_tanah_model ($db);
 		$libs			= new libs_model($db);
 		$user			= new user_model($db);
-
 	} catch(Exception $e) {
 		echo "Menemukan kesalahan: ".$e->getMessage()."\n";
 	}

@@ -66,6 +66,46 @@
 			}
 		}
 
+		public function notifikasi($notif) {
+			switch ($notif) {
+				case 'add':
+					echo '
+						<div class="alert alert-block alert-success fade in">
+							<button data-dismiss="alert" class="close" type="button">×</button>
+							<p>Data Berhasil Ditambahkan</p>
+						</div>
+					';
+					break;
+
+				case 'upd':
+					echo '
+						<div class="alert alert-block alert-success fade in">
+							<button data-dismiss="alert" class="close" type="button">×</button>
+							<p>Data Berhasil Diubah</p>
+						</div>
+					';
+					break;
+
+				case 'del':
+					echo '
+						<div class="alert alert-block alert-warning fade in">
+							<button data-dismiss="alert" class="close" type="button">×</button>
+							<p>Data Berhasil Dihapus</p>
+						</div>
+					';
+					break;
+
+				case 'err':
+					echo '
+						<div class="alert alert-block alert-danger fade in">
+							<button data-dismiss="alert" class="close" type="button">×</button>
+							<p>Data Gagal Dieksekusi</p>
+						</div>
+					';
+					break;
+			}
+		}
+
 		public function makeLogoPath($logo) {
 			$logo = strtolower($logo);
 			$logo = trim($logo, " ");
