@@ -1,7 +1,12 @@
 <?php
 	if(isset($method)):
-		date_default_timezone_set('Asia/Jakarta');
-		$aksi = ROOT."controllers/laporan_control.php?model=laporan&method="; // halaman untuk eksekusi
+		date_default_timezone_set('Asia/Makassar');
+		$aksi_tanah = ROOT."controllers/input_tanah_control.php?model=tanah&method=";
+		$aksi_peralatan = ROOT."controllers/input_peralatan_control.php?model=peralatan&method=";
+		$aksi_gedung = ROOT."controllers/input_gedung_control.php?model=gedung&method=";
+		$aksi_jalan = ROOT."controllers/input_jalan_control.php?model=jalan&method=";
+		$aksi_asetlain = ROOT."controllers/input_asetlain_control.php?model=asetlain&method=";
+		$aksi_konstruksi = ROOT."controllers/input_konstruksi_control.php?model=konstruksi&method=";
 
 		switch($method) {
 			default:
@@ -11,59 +16,44 @@
 			case '':
 				echo '
 
-		
+					<div class="content-header">
+						<h2 class="content-header-title">Laporan Inventaris</h2>
+						<ol class="breadcrumb">
+							<li><a href="'.ROOT.'">Beranda</a></li>
+							<li><a href="javascript:;">Laporan</a></li>
+							<li class="active">Laporan Inventaris Aset</li>
+						</ol>
+					</div> <!-- /.content-header -->
+				';
 
-	  <div class="content-header">
-		<h2 class="content-header-title">Laporan Inventaris</h2>
-		<ol class="breadcrumb">
-		  <li><a href="./index.html">Beranda</a></li>
-		  <li><a href="javascript:;">Laporan</a></li>
-		  <li class="active">Laporan Inventaris Aset </li>
-		</ol>
-	  </div> <!-- /.content-header -->
+				if (isset($_GET['act'])) {
+					$libs->notifikasi($_GET['act']);
+				}
 
-	  <div class="row">
+				echo '
+					<div class="row">
+						<div class="col-md-12">
+							<div class="panel panel-default">
+								<div class="panel-heading">
+									<h3 class="panel-title">Aset Tetap</h3>
+									<span class="pull-right clickable"><i class="glyphicon glyphicon-chevron-up"></i></span>
+								</div>
+								<div class="panel-body">
+									<div class="tabellaporan"> <!--Tabel Laporan (tanah)-->
+										<h4 class="heading">Tanah</h4>
 
-		<div class="col-md-8">
-	  
-		</div>
+										<form id="hapusSubmit" action="'.$aksi_tanah.'hapus" method="POST">
+											<input type="hidden" id="hapus_id" name="id" value="">
+										</form>
 
-		<div class="col-md-4 col-sidebar-right">
-
-		  <p><a href="javascript:;" class="btn btn-jumbo btn-primary btn-block">Tambah / Edit Data <br /></a></p>
-
-		</div>
-
-	  </div>
-
-	  <!--Edit / Tambah data-->
-
-
-	  <div class="row">
-		<div class="col-md-12">
-
-		   <div class="panel panel-default">
-			  <div class="panel-heading">
-				<h3 class="panel-title">Aset Tetap</h3>
-				<span class="pull-right clickable"><i class="glyphicon glyphicon-chevron-up"></i></span>
-			  </div>
-			  <div class="panel-body">
-
-				<div class="tabellaporan"> <!--Tabel Laporan (tanah)-->
-				
-
-				  <h4 class="heading">
-					Tanah
-				  </h4>
-
-				  <table class="table table-bordered table-highlight">
-					<thead>
-					  <tr >
-						<th rowspan="3">No</th>
-						<th rowspan="3">Jenis/Nama Barang</th>
-						<th colspan="2" style="text-align: center;">Nomor</th>
-						<th rowspan="3">Luas (m2)</th>
-						<th rowspan="3">Tahun Pengadaan</th
+									  <table class="table table-bordered table-highlight">
+										<thead>
+											<tr>
+												<th rowspan="3">No</th>
+												<th rowspan="3">Jenis/Nama Barang</th>
+												<th colspan="2" style="text-align: center;">Nomor</th>
+												<th rowspan="3">Luas (m<sup>2</sup>)</th>
+												<th rowspan="3">Tahun Pengadaan</th
 						>
 						<th rowspan="3">Letak/ Alamat</th>
 						<th colspan="3" style="text-align: center;">Status Tanah</th>
@@ -71,7 +61,7 @@
 						<th rowspan="3">Asal-Usul</th>
 						<th rowspan="3">Harga</th>
 						<th rowspan="3"> Keterangan</th>
-						<th rowspan="3">aksi</th>
+						<th rowspan="3">Aksi</th>
 					  </tr>
 
 					   <tr class="headingtable2">
@@ -113,28 +103,41 @@
 
 					</thead>
 					<tbody>
-					  <tr>
-					   <td>1</td>
-					   <td>Tanah Bangunan Kantor </td>
-					   <td>0101110401</td>                     
-					   <td>0001</td>
-					   <td> 250 </td>
-					   <td>2006</td>
-					   <td>Pincara</td>
-					   <td>Milik</td>
-					   <td>&nbsp;</td>
-					   <td>&nbsp;</td>
-					   <td>Kantor</td>
-					   <td>APBD</td>
-					   <td> 7.800.000 </td>
-					   <td>Dikuasai Pemda</td>
-					   <td><a href="">Edit</a></td>
-					 </tr>
+		';
+
+		$i = 1;
+		$total = 0;
+		$data = $input->getDataLengkap();
+		foreach ($data as $data) {
+			echo '
+					<tr>
+						<td>'.$i.'</td>
+						<td>'.$data['jenis_barang'].'</td>
+						<td>'.$data['kode_barang'].'</td>
+						<td>'.$data['register'].'</td>
+						<td>'.$data['luas_tanah'].'</td>
+						<td>'.$data['tanggal_beli'].'</td>
+						<td>'.$data['alamat'].'</td>
+						<td>'.$data['hak'].'</td>
+						<td>'.$data['no_sertifikat'].'</td>
+						<td>'.$data['tanggal_sertifikat'].'</td>
+						<td>'.$data['penggunaan'].'</td>
+						<td>'.$data['asal_usul'].'</td>
+						<td>'.$data['harga'].'</td>
+						<td>'.$data['keterangan'].'</td>
+						<td><a href="'.ROOT.'edit?tab=tanah">Edit</a> | <a href="#" onclick="hapusData(\''.$data['id'].'\')">Hapus</a></td>
+					</tr>
+			';
+			$i++;
+			$total += $data['harga'];
+		}
+
+		echo '
 
 					  <tr class="jumlahtabel">
 					   <td>&nbsp;</td>
 					   <td colspan="11" style="text-align: center;">JUMLAH ASET TETAP (TANAH)</td>
-					   <td> 7.800.000 </td>
+					   <td>'.$total.'</td>
 					   <td></td>
 					   <td></td>
 						
