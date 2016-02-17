@@ -13,7 +13,7 @@
 		if($model == 'tanah' AND $method == 'tambah') {
 			if(isset($_POST['tambah'])) {
 				$kode_barang			= $_POST['kode_barang'];
-				$jb						= $input->getNamaBarangByKB($kode_barang);
+				$jb						= $data_barang->getNamaBarangByKB($kode_barang);
 				$jenis_barang			= $jb['nama_barang'];
 				$register				= $_POST['register'];
 				$luas_tanah				= $_POST['luas_tanah'];
@@ -38,7 +38,7 @@
 		if($model == 'tanah' AND $method == 'edit') {
 			if(isset($_POST['edit'])) {
 				$kode_barang			= $_POST['kode_barang'];
-				$jb						= $input->getNamaBarangByKB($kode_barang);
+				$jb						= $data_barang->getNamaBarangByKB($kode_barang);
 				$jenis_barang			= $jb['nama_barang'];
 				$register				= $_POST['register'];
 				$luas_tanah				= $_POST['luas_tanah'];
