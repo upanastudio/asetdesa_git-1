@@ -53,42 +53,27 @@
 												<th rowspan="3">Jenis/Nama Barang</th>
 												<th colspan="2" style="text-align: center;">Nomor</th>
 												<th rowspan="3">Luas (m<sup>2</sup>)</th>
-												<th rowspan="3">Tahun Pengadaan</th
-						>
-						<th rowspan="3">Letak/ Alamat</th>
-						<th colspan="3" style="text-align: center;">Status Tanah</th>
-						<th rowspan="3">Penggunaan</th>
-						<th rowspan="3">Asal-Usul</th>
-						<th rowspan="3">Harga</th>
-						<th rowspan="3"> Keterangan</th>
-						<th rowspan="3">Aksi</th>
-					  </tr>
-
-					   <tr class="headingtable2">
-						 
-						 <td rowspan="2">Kode Barang</td>                       
-						 <td rowspan="2">Register</td>
-						 
-						 <td rowspan="2">Hak</td>
-						 <td colspan="2" style="text-align: center;">Sertifikat</td>
-						 
-					   </tr>
-
-
-					   <tr class="headingtable2">
-						 
-						 <td>Tanggal</td>                       
-						 <td>Nomor</td>
-						
-						 
-					   </tr>
-					   
-					   <tr class="headingtable3" >
-						<td>1</td>
-						<td>2</td>
-						<td>3</td>
-						<td>4</td>
-						<td>5</td>
+												<th rowspan="3">Tahun Pengadaan</th>
+												<th rowspan="3">Letak/ Alamat</th>
+												<th colspan="3" style="text-align: center;">Status Tanah</th>
+												<th rowspan="3">Penggunaan</th>
+												<th rowspan="3">Asal-Usul</th>
+												<th rowspan="3">Harga</th>
+												<th rowspan="3">Keterangan</th>
+												<th rowspan="3">Aksi</th>
+											</tr>
+											<tr class="headingtable2">
+												<td rowspan="2">Kode Barang</td>
+												<td rowspan="2">Register</td>
+												<td rowspan="2">Hak</td>
+												<td colspan="2" style="text-align: center;">Sertifikat</td>
+											</tr>
+											<tr class="headingtable2">
+												<td>Tanggal</td>
+												<td>Nomor</td>
+											</tr>
+											<tr class="headingtable3">
+												<td>1</td><td>2</td><td>3</td><td>4</td><td>5</td>
 						<td>6</td>
 						<td>7</td>
 						<td>8</td>
