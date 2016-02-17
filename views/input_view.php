@@ -1,12 +1,12 @@
 <?php
 	if(isset($method)):
 		date_default_timezone_set('Asia/Makassar');
-		$aksi_tanah = ROOT."controllers/input_tanah_control.php?model=tanah&method=";
-		$aksi_peralatan = ROOT."controllers/input_peralatan_control.php?model=peralatan&method=";
-		$aksi_gedung = ROOT."controllers/input_gedung_control.php?model=gedung&method=";
-		$aksi_jalan = ROOT."controllers/input_jalan_control.php?model=jalan&method=";
-		$aksi_asetlain = ROOT."controllers/input_asetlain_control.php?model=asetlain&method=";
-		$aksi_konstruksi = ROOT."controllers/input_konstruksi_control.php?model=konstruksi&method=";
+		$aksi_tanah = ROOT."controllers/data_tanah_control.php?model=tanah&method=";
+		$aksi_peralatan = ROOT."controllers/data_peralatan_control.php?model=peralatan&method=";
+		$aksi_gedung = ROOT."controllers/data_gedung_control.php?model=gedung&method=";
+		$aksi_jalan = ROOT."controllers/data_jalan_control.php?model=jalan&method=";
+		$aksi_asetlain = ROOT."controllers/data_asetlain_control.php?model=asetlain&method=";
+		$aksi_konstruksi = ROOT."controllers/data_konstruksi_control.php?model=konstruksi&method=";
 
 		$tanah_tab = (isset($_GET['tab']) AND $_GET['tab'] == "tanah")? 'active':'';
 		$peralatan_tab = (isset($_GET['tab']) AND $_GET['tab'] == "peralatan")? 'active':'';
