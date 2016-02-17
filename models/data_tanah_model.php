@@ -1,5 +1,5 @@
 <?php
-	class input_tanah_model {
+	class data_tanah_model {
 		private $db;
 
 		public function __construct($database) {
@@ -40,19 +40,6 @@
 			}
 
 			return $query->fetch(PDO::FETCH_ASSOC);
-		}
-
-		public function getKodeBarangByKB($kb) {
-			$query = $this->db->prepare("SELECT * FROM `tb_kode_barang` WHERE `kb_1` = :kb");
-			$query->bindParam(':kb', $kb, PDO::PARAM_STR);
-
-			try {
-				$query->execute();
-			} catch(PDOException $e) {
-				die($e->getMessage());
-			}
-
-			return $query->fetchAll(PDO::FETCH_ASSOC);
 		}
 
 		public function insertData($kode_barang, $jenis_barang, $register, $luas_tanah, $tanggal_beli, $alamat, $hak, $no_sertifikat, $tanggal_sertifikat, $penggunaan, $asal_usul, $harga, $keterangan) {

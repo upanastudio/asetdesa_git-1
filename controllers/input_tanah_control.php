@@ -30,7 +30,7 @@
 				//sanitasi
 				// $apa						= filter_var($apa, FILTER_SANITIZE_STRING);
 
-				$input->insertData($kode_barang, $jenis_barang, $register, $luas_tanah, $tanggal_beli, $alamat, $hak, $no_sertifikat, $tanggal_sertifikat, $penggunaan, $asal_usul, $harga, $keterangan);
+				$tanah->insertData($kode_barang, $jenis_barang, $register, $luas_tanah, $tanggal_beli, $alamat, $hak, $no_sertifikat, $tanggal_sertifikat, $penggunaan, $asal_usul, $harga, $keterangan);
 				header("location:".ROOT."laporan?act=add");
 			}
 		}
@@ -56,7 +56,7 @@
 				//sanitasi
 				// $apa			= filter_var($apa,FILTER_SANITIZE_STRING);
 
-				$input_tanah->updateData($kode_barang, $jenis_barang, $register, $luas_tanah, $tanggal_beli, $alamat, $hak, $no_sertifikat, $tanggal_sertifikat, $penggunaan, $asal_usul, $harga, $keterangan, $id);
+				$tanah->updateData($kode_barang, $jenis_barang, $register, $luas_tanah, $tanggal_beli, $alamat, $hak, $no_sertifikat, $tanggal_sertifikat, $penggunaan, $asal_usul, $harga, $keterangan, $id);
 				header("location:".ROOT."laporan?act=upd");
 			}
 		}
@@ -64,7 +64,7 @@
 		if($model == 'tanah' AND $method == 'hapus') {
 			$id = filter_var($_POST['id'],FILTER_VALIDATE_INT);
 
-			$input->deleteData($id);
+			$tanah->deleteData($id);
 			header("location:".ROOT."laporan?act=del");
 		}
 

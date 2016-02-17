@@ -87,7 +87,7 @@
 				';
 
 				$first1 = true;
-				$data_tanah = $input->getKodeBarangByKB("01");
+				$data_tanah = $data_barang->getKodeBarangByKB("01");
 				foreach ($data_tanah as $data_tanah) {
 					if ($data_tanah['kb_2'] != '00' AND $data_tanah['kb_3'] != '00' AND $data_tanah['kb_4'] != '00') {
 						if ($data_tanah['kb_5'] == '000') {
@@ -225,7 +225,7 @@
 				';
 
 				$first2 = true;
-				$data_peralatan = $input->getKodeBarangByKB("02");
+				$data_peralatan = $data_barang->getKodeBarangByKB("02");
 				foreach ($data_peralatan as $data_peralatan) {
 					if ($data_peralatan['kb_2'] != '00' AND $data_peralatan['kb_3'] != '00' AND $data_peralatan['kb_4'] != '00') {
 						if ($data_peralatan['kb_5'] == '000') {
@@ -374,7 +374,7 @@
 				';
 
 				$first3 = true;
-				$data_gedung = $input->getKodeBarangByKB("03");
+				$data_gedung = $data_barang->getKodeBarangByKB("03");
 				foreach ($data_gedung as $data_gedung) {
 					if ($data_gedung['kb_2'] != '00' AND $data_gedung['kb_3'] != '00' AND $data_gedung['kb_4'] != '00') {
 						if ($data_gedung['kb_5'] == '000') {
@@ -540,7 +540,7 @@
 				';
 
 				$first4 = true;
-				$data_jalan = $input->getKodeBarangByKB("04");
+				$data_jalan = $data_barang->getKodeBarangByKB("04");
 				foreach ($data_jalan as $data_jalan) {
 					if ($data_jalan['kb_2'] != '00' AND $data_jalan['kb_3'] != '00' AND $data_jalan['kb_4'] != '00') {
 						if ($data_jalan['kb_5'] == '000') {
@@ -702,7 +702,7 @@
 				';
 
 				$first5 = true;
-				$data_asetlain = $input->getKodeBarangByKB("05");
+				$data_asetlain = $data_barang->getKodeBarangByKB("05");
 				foreach ($data_asetlain as $data_asetlain) {
 					if ($data_asetlain['kb_2'] != '00' AND $data_asetlain['kb_3'] != '00' AND $data_asetlain['kb_4'] != '00') {
 						if ($data_asetlain['kb_5'] == '000') {
@@ -881,7 +881,7 @@
 				';
 
 				$first6 = true;
-				$data_konstruksi = $input->getKodeBarangByKB("06");
+				$data_konstruksi = $data_barang->getKodeBarangByKB("06");
 				foreach ($data_konstruksi as $data_konstruksi) {
 					if ($data_konstruksi['kb_2'] != '00' AND $data_konstruksi['kb_3'] != '00' AND $data_konstruksi['kb_4'] != '00') {
 						if ($data_konstruksi['kb_5'] == '000') {
