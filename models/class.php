@@ -9,13 +9,13 @@
 	spl_autoload_register('autoload');
 
 	try {
-		$input			= new input_model($db);
-		$tanah			= new input_tanah_model($db);
-		$perlengkapan	= new input_perlengkapan_model($db);
-		$gedung			= new input_gedung_model($db);
-		$jalan			= new input_jalan_model($db);
-		$asetlain		= new input_asetlain_model($db);
-		$konstruksi		= new input_konstruksi_model($db);
+		$data_barang	= new data_barang_model($db);
+		$tanah			= new data_tanah_model($db);
+		$perlengkapan	= new data_perlengkapan_model($db);
+		$gedung			= new data_gedung_model($db);
+		$jalan			= new data_jalan_model($db);
+		$asetlain		= new data_asetlain_model($db);
+		$konstruksi		= new data_konstruksi_model($db);
 		$libs				= new libs_model($db);
 		$user				= new user_model($db);
 	} catch(Exception $e) {
