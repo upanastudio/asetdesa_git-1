@@ -46,160 +46,121 @@
 											<input type="hidden" id="hapus_id" name="id" value="">
 										</form>
 
-									  <table class="table table-bordered table-highlight">
-										<thead>
-											<tr>
-												<th rowspan="3">No</th>
-												<th rowspan="3">Jenis/Nama Barang</th>
-												<th colspan="2" style="text-align: center;">Nomor</th>
-												<th rowspan="3">Luas (m<sup>2</sup>)</th>
-												<th rowspan="3">Tahun Pengadaan</th>
-												<th rowspan="3">Letak/ Alamat</th>
-												<th colspan="3" style="text-align: center;">Status Tanah</th>
-												<th rowspan="3">Penggunaan</th>
-												<th rowspan="3">Asal-Usul</th>
-												<th rowspan="3">Harga</th>
-												<th rowspan="3">Keterangan</th>
-												<th rowspan="3">Aksi</th>
-											</tr>
-											<tr class="headingtable2">
-												<td rowspan="2">Kode Barang</td>
-												<td rowspan="2">Register</td>
-												<td rowspan="2">Hak</td>
-												<td colspan="2" style="text-align: center;">Sertifikat</td>
-											</tr>
-											<tr class="headingtable2">
-												<td>Tanggal</td>
-												<td>Nomor</td>
-											</tr>
-											<tr class="headingtable3">
-												<td>1</td><td>2</td><td>3</td><td>4</td><td>5</td>
-						<td>6</td>
-						<td>7</td>
-						<td>8</td>
-						<td>9</td>
-						<td>10</td>
-						<td>11</td>
-						<td>12</td>
-						<td>13</td>
-						<td>14</td>
-						<td>&nbsp;</td>
-					   </tr>
+										<table class="table table-bordered table-highlight">
+											<thead>
+												<tr>
+													<th rowspan="3">No</th>
+													<th rowspan="3">Jenis/Nama Barang</th>
+													<th colspan="2" style="text-align: center;">Nomor</th>
+													<th rowspan="3">Luas (m<sup>2</sup>)</th>
+													<th rowspan="3">Tahun Pengadaan</th>
+													<th rowspan="3">Letak/ Alamat</th>
+													<th colspan="3" style="text-align: center;">Status Tanah</th>
+													<th rowspan="3">Penggunaan</th>
+													<th rowspan="3">Asal-Usul</th>
+													<th rowspan="3">Harga</th>
+													<th rowspan="3">Keterangan</th>
+													<th rowspan="3">Aksi</th>
+												</tr>
+												<tr class="headingtable2">
+													<td rowspan="2">Kode Barang</td>
+													<td rowspan="2">Register</td>
+													<td rowspan="2">Hak</td>
+													<td colspan="2" style="text-align: center;">Sertifikat</td>
+												</tr>
+												<tr class="headingtable2">
+													<td>Tanggal</td>
+													<td>Nomor</td>
+												</tr>
+												<tr class="headingtable3">
+													<td>1</td><td>2</td><td>3</td><td>4</td><td>5</td><td>6</td><td>7</td>
+													<td>8</td><td>9</td><td>10</td><td>11</td><td>12</td><td>13</td><td>14</td>
+													<td>&nbsp;</td>
+												</tr>
+											</thead>
+											<tbody>
+				';
 
-					</thead>
-					<tbody>
-		';
+				$i = 1;
+				$total = 0;
+				$data = $input->getDataLengkap();
+				foreach ($data as $data) {
+					echo '
+												<tr>
+													<td>'.$i.'</td>
+													<td>'.$data['jenis_barang'].'</td>
+													<td>'.$data['kode_barang'].'</td>
+													<td>'.$data['register'].'</td>
+													<td>'.$data['luas_tanah'].'</td>
+													<td>'.$data['tanggal_beli'].'</td>
+													<td>'.$data['alamat'].'</td>
+													<td>'.$data['hak'].'</td>
+													<td>'.$data['no_sertifikat'].'</td>
+													<td>'.$data['tanggal_sertifikat'].'</td>
+													<td>'.$data['penggunaan'].'</td>
+													<td>'.$data['asal_usul'].'</td>
+													<td>'.$data['harga'].'</td>
+													<td>'.$data['keterangan'].'</td>
+													<td><a href="'.ROOT.'edit?tab=tanah">Edit</a> | <a href="#" onclick="hapusData(\''.$data['id'].'\')">Hapus</a></td>
+												</tr>
+					';
+					$i++;
+					$total += $data['harga'];
+				}
 
-		$i = 1;
-		$total = 0;
-		$data = $input->getDataLengkap();
-		foreach ($data as $data) {
-			echo '
-					<tr>
-						<td>'.$i.'</td>
-						<td>'.$data['jenis_barang'].'</td>
-						<td>'.$data['kode_barang'].'</td>
-						<td>'.$data['register'].'</td>
-						<td>'.$data['luas_tanah'].'</td>
-						<td>'.$data['tanggal_beli'].'</td>
-						<td>'.$data['alamat'].'</td>
-						<td>'.$data['hak'].'</td>
-						<td>'.$data['no_sertifikat'].'</td>
-						<td>'.$data['tanggal_sertifikat'].'</td>
-						<td>'.$data['penggunaan'].'</td>
-						<td>'.$data['asal_usul'].'</td>
-						<td>'.$data['harga'].'</td>
-						<td>'.$data['keterangan'].'</td>
-						<td><a href="'.ROOT.'edit?tab=tanah">Edit</a> | <a href="#" onclick="hapusData(\''.$data['id'].'\')">Hapus</a></td>
-					</tr>
-			';
-			$i++;
-			$total += $data['harga'];
-		}
+				echo '
+												<tr class="jumlahtabel">
+													<td>&nbsp;</td>
+													<td colspan="11" style="text-align: center;">JUMLAH ASET TETAP (TANAH)</td>
+													<td>'.$total.'</td>
+													<td></td><td></td>
+												</tr>
+											</tbody>
+										</table>
+									</div > <!--Tabel Laporan (Tanah)-->
+									<br/><br/>
 
-		echo '
+									<div class="tabellaporan "> <!--Tabel Laporan (Peralatan dan Mesin)-->
+										<h4 class="heading">Peralatan dan Mesin</h4>
 
-					  <tr class="jumlahtabel">
-					   <td>&nbsp;</td>
-					   <td colspan="11" style="text-align: center;">JUMLAH ASET TETAP (TANAH)</td>
-					   <td>'.$total.'</td>
-					   <td></td>
-					   <td></td>
-						
-					  </tr>
-					  <tr>
-					   
-					  </tr>
-					  <tr>
-						
-					  </tr>
-					</tbody>
-				  </table>
+										<form id="hapusSubmit" action="'.$aksi_peralatan.'hapus" method="POST">
+											<input type="hidden" id="hapus_id" name="id" value="">
+										</form>
 
-				  
-				</div > <!--Tabel Laporan (Tanah)-->
-
-				<br><br>
-
-				<div class="tabellaporan "> <!--Tabel Laporan (Peralatan dan Mesin)-->
-				
-
-				  <h4 class="heading">
-					Peralatan dan Mesin
-				  </h4>
-
-				  <table class="table table-bordered table-highlight ">
-					<thead >
-					  <tr >
-						<th rowspan="2">No</th>
-						<th rowspan="2">Kode Barang</th>
-						<th rowspan="2">Jenis/Nama Barang</th>
-						<th rowspan="2">No. Register</th>
-						<th rowspan="2">Merek/Tipe</th
-						><th rowspan="2">Ukuran/CC</th>
-						<th rowspan="2">Bahan</th>
-						<th rowspan="2">Tahun Pembelian</th>
-						<th colspan="5" style="text-align: center;">Nomor</th>
-						<th rowspan="2">Asal-Usul</th>
-						<th rowspan="2">Harga</th>
-						<th rowspan="2">Keterangan</th>
-						<th rowspan="2">Jumlah Barang</th>
-						<th rowspan="2">Aksi</t
-						  h>
-					  </tr>
-
-					   <tr class="headingtable2">
-						 <td>Pabrik</td>
-						 <td>Rangka</td>
-						 <td>Mesin</td>
-						 <td>Polisi</td>
-						 <td>BPKB</td>
-					   </tr>
-					   <tr class="headingtable3" >
-						<td>1</td>
-						<td>2</td>
-						<td>3</td>
-						<td>4</td>
-						<td>5</td>
-						<td>6</td>
-						<td>7</td>
-						<td>8</td>
-						<td>9</td>
-						<td>10</td>
-						<td>11</td>
-						<td>12</td>
-						<td>13</td>
-						<td>14</td>
-						<td>15</td>
-						<td>16</td>
-						<td>&nbsp;</td>
-						<td>&nbsp;</td>
-					   </tr>
-
-					</thead>
-					<tbody>
-					  <tr>
-					   <td>1</td>
+										<table class="table table-bordered table-highlight">
+											<thead>
+												<tr>
+													<th rowspan="2">No</th>
+													<th rowspan="2">Kode Barang</th>
+													<th rowspan="2">Jenis/Nama Barang</th>
+													<th rowspan="2">No. Register</th>
+													<th rowspan="2">Merek/Tipe</th>
+													<th rowspan="2">Ukuran/CC</th>
+													<th rowspan="2">Bahan</th>
+													<th rowspan="2">Tahun Pembelian</th>
+													<th colspan="5" style="text-align: center;">Nomor</th>
+													<th rowspan="2">Asal-Usul</th>
+													<th rowspan="2">Harga</th>
+													<th rowspan="2">Keterangan</th>
+													<th rowspan="2">Jumlah Barang</th>
+													<th rowspan="2">Aksi</th>
+												</tr>
+												<tr class="headingtable2">
+													<td>Pabrik</td>
+													<td>Rangka</td>
+													<td>Mesin</td>
+													<td>Polisi</td>
+													<td>BPKB</td>
+												</tr>
+												<tr class="headingtable3">
+													<td>1</td><td>2</td><td>3</td><td>4</td><td>5</td><td>6</td><td>7</td><td>8</td>
+													<td>9</td><td>10</td><td>11</td><td>12</td><td>13</td><td>14</td><td>15</td>
+													<td>16</td><td>&nbsp;</td><td>&nbsp;</td>
+												</tr>
+											</thead>
+											<tbody>
+												<tr>
+													<td>1</td>
 					   <td>0206020128</td>                     
 					   <td>Kursi Tamu</td>
 					   <td>0001</td>
