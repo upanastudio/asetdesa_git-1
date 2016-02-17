@@ -83,7 +83,7 @@
 
 				$i = 1;
 				$total = 0;
-				$data = $input->getDataLengkap();
+				$data = $tanah->getDataLengkap();
 				foreach ($data as $data) {
 					echo '
 												<tr>
