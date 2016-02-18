@@ -40,6 +40,7 @@
 		<link rel="stylesheet" href="<?php echo ROOT; ?>assets/js/plugins/select2/select2.css">
 		<link rel="stylesheet" href="<?php echo ROOT; ?>assets/js/plugins/datepicker/datepicker.css">
 		<link rel="stylesheet" href="<?php echo ROOT; ?>assets/js/plugins/fileupload/bootstrap-fileupload.css">
+		<link rel="stylesheet" href="<?php echo ROOT; ?>assets/css/demos/ui-notifications.css">
 
 		<!-- App CSS -->
 		<link rel="stylesheet" href="<?php echo ROOT; ?>assets/css/target-admin.css">
@@ -50,6 +51,10 @@
 			<script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
 			<script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
 		<![endif]-->
+
+		<!-- jQuery -->
+		<script src="<?php echo ROOT; ?>assets/js/libs/jquery-1.10.1.min.js"></script>
+
 	</head>
 	<body>
 		<div class="navbar">
@@ -251,14 +256,11 @@
 							</ul>
 						</li>
 						<li class="dropdown <?php echo $model=='kirim'? 'active':''; ?>">
-							<a href="javascript:;" class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown">
+							<a href="<?php echo ROOT; ?>kirim">
 								<i class="fa fa-files-o"></i>
 								Kirim Data
 								<span class="caret"></span>
 							</a>
-							<ul class="dropdown-menu">
-								<li><a href="<?php echo ROOT; ?>kirim"><i class="fa fa-user nav-icon"></i> Pengiriman Laporan</a></li>
-							</ul>
 						</li>
 					</ul>
 				</div> <!-- /.navbar-collapse -->
@@ -335,7 +337,6 @@
 			</div> <!-- /.container -->
 		</footer>
 
-		<script src="<?php echo ROOT; ?>assets/js/libs/jquery-1.10.1.min.js"></script>
 		<script src="<?php echo ROOT; ?>assets/js/libs/jquery-ui-1.9.2.custom.min.js"></script>
 		<script src="<?php echo ROOT; ?>assets/js/libs/bootstrap.min.js"></script>
 
@@ -362,6 +363,7 @@
 
 		<!-- Plugin JS -->
 		<script src="<?php echo ROOT; ?>assets/js/demos/dashboard.js"></script>
+		<script src="<?php echo ROOT; ?>assets/js/demos/ui-notifications.js"></script>
 		<script src="<?php echo ROOT; ?>assets/js/demos/form-extended.js"></script>
 
 		<script type='text/javascript'> 

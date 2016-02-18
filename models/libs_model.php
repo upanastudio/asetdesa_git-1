@@ -95,6 +95,15 @@
 					';
 					break;
 
+				case 'snd':
+					echo '
+						<div class="alert alert-block alert-success fade in">
+							<button data-dismiss="alert" class="close" type="button">×</button>
+							<p id="notif_kirim">File Berhasil Dikirimkan</p>
+						</div>
+					';
+					break;
+
 				case 'err':
 					echo '
 						<div class="alert alert-block alert-danger fade in">

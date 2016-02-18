@@ -17,10 +17,10 @@
   <link rel="stylesheet" href="./css/bootstrap.min.css">
 
   <!-- Plugin CSS -->
-  <link rel="stylesheet" href="./js/plugins/morris/morris.css">
+
   <link rel="stylesheet" href="./js/plugins/icheck/skins/minimal/blue.css">
-  <link rel="stylesheet" href="./js/plugins/select2/select2.css">
-  <link rel="stylesheet" href="./js/plugins/fullcalendar/fullcalendar.css">
+  <link rel="stylesheet" href="./js/plugins/datepicker/datepicker.css">
+
 
   <!-- App CSS -->
   <link rel="stylesheet" href="./css/target-admin.css">
@@ -242,7 +242,7 @@
 
       <ul class="nav navbar-nav mainbar-nav">
 
-        <li class="active">
+        <li >
           <a href="./index.html">
             <i class="fa fa-dashboard"></i>
             Rekap
@@ -268,7 +268,7 @@
           </ul>
         </li>
 
-        <li class="dropdown ">
+        <li class="dropdown active">
           <a href="javascript:;" class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown">
           <i class="fa fa-align-left"></i> 
           Laporan 
@@ -279,7 +279,7 @@
             <li class="dropdown-header">Laporan </li>
 
             <li>
-              <a href="./laporan.html">
+              <a href="./laporan_penyusutan.html">
               <i class="fa fa-location-arrow nav-icon"></i> 
               Laporan Penyusutan Nilai
               </a>
@@ -345,13 +345,179 @@
 
 
       <div class="content-header">
-        <h2 class="content-header-title">Laporan Inventaris</h2>
+        <h2 class="content-header-title">Laporan Penyusutan Aset</h2>
         <ol class="breadcrumb">
           <li><a href="./index.html">Beranda</a></li>
-          <li><a href="javascript:;">Laporan</a></li>
-          <li class="active">Laporan Inventaris Aset </li>
+          <li><a href="">Laporan</a></li>
+          <li class="active">Laporan Penyusutan Aset </li>
         </ol>
       </div> <!-- /.content-header -->
+
+      <div class="row">
+
+            <div class="col-sm-12">
+                <div class="col-sm-3">
+                <strong>Tahun Laporan Penyusutan</strong>
+                </div>
+                <div class="col-sm-2" style="padding-right: 0px;">
+                    <div class="form-group"> 
+                      <select id="select-tahun" class="form-control">
+                        <option>2016</option>
+                        <option>2017</option>
+                        <option>2018</option>
+                        <option>2019</option>
+                        <option>2020</option>
+                        <option>2020</option>
+                      </select>
+                    </div>
+                </div>
+
+                <div class="col-sm-2 muatdata  " style="padding-left: 5px;">
+                  <button type="button" class="btn btn-tertiary clickable  id="button" onclick="myFunction()">
+                  <i class="fa fa-search"></i> &nbsp; Tampilkan</button>
+                    
+                </div>
+
+
+                
+
+            </div> <!-- /.col -->
+
+      </div> <!-- /.row -->
+
+
+      <div class="row ">
+        <div class="col-md-12 ">
+
+          
+
+         
+           <div class="panel panel-default " id="paneltabel" >
+              <div class="panel-heading">
+                <h3 class="panel-title">Laporan Penyusutan</h3>
+                <span class="pull-right clickable "><i class="glyphicon glyphicon-chevron-up"></i></span>
+              </div>
+             
+
+                <div class="panel-body " >
+                
+                  <div class="tabellaporan"> <!--Tabel Laporan (tanah)-->
+                  
+
+                    <h4 class="heading">
+                      Tanah
+                    </h4>
+
+                    <table class="table table-bordered table-highlight">
+                      <thead>
+                        <tr >
+                          <th>No</th>
+                          <th>Kode Barang</th>
+                          <th>Register</th>
+                          <th>Nama Barang</th>
+                          <th>Tahun Perolehan</th>
+                          <th>Masa Manfaat</th>
+                          <th>Harga Perolehan &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</th>
+                          <th>Penyusutan Per Semester</th>
+                          <th>Penyusutan Sems 1</th>
+                          <th>Penyusutan Sems 2</th>
+                          <th>Akumulasi Penyusutan per Tahun</th>
+                          <th>Nilai Buku 2015 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</th>
+                        </th>
+                      </thead>
+                      <tbody>
+                        <tr class="kategori">
+                         <td>&nbsp;</td>
+                         <td colspan="11">06. Alat Kantor dan Rumah Tangga</td>
+                         
+                         
+                          
+                        </tr>
+
+                        <tr>
+                         <td>1</td>
+                         <td>Laptop Jinjing</td>
+                         <td>0101110401</td>                     
+                         <td>0002</td>
+                         <td>2016 </td>
+                         <td>4 Tahun</td>
+                         <td>Rp 5.500.000</td>
+                         <td>Rp 687.500</td>
+                         <td>Rp 687.500</td>
+                         <td>Rp 687.500</td>
+                         <td>Rp 1.375.000</td>
+                         <td>Rp 4.125.000</td>
+                         
+                       </tr>
+
+                        <tr class="jumlahtabel">
+                         <td>&nbsp;</td>
+                         <td colspan="5" style="text-align: center;">JUMLAH </td>
+                         <td>Rp 5.500.000</td>
+                         <td>Rp 687.500</td>
+                         <td>Rp 687.500</td>
+                         <td>Rp 687.500</td>
+                         <td>Rp 1.375.000</td>
+                         <td>Rp 4.125.000</td>
+                         
+                          
+                        </tr>
+                        <tr>
+                         
+                        </tr>
+                        <tr>
+                          
+                        </tr>
+                      </tbody>
+                    </table>
+
+                    
+                  </div > <!--Tabel Laporan (Tanah)-->
+
+        
+                </div><!-- Panel Body -->
+
+              
+           </div> <!-- Aset Tanah -->
+
+            
+
+
+
+
+      </div>
+
+
+
+
+
+            <h4>Laporan Rekap Desa </h4>
+            <hr />
+            <div class="list-group">
+
+              <a href="javascript:;" class="list-group-item">
+                <i class="fa fa-envelope"></i> 
+                &nbsp;&nbsp;<strong>Kirim</strong> Rekapitulasi
+              </a>
+
+              
+
+              <a href="javascript:;" class="list-group-item">
+                <i class="fa fa-print"></i>
+                &nbsp;&nbsp;<strong>Print</strong> Rekapitulasi
+              </a>
+
+              <a href="javascript:;" class="list-group-item">
+                <i class="fa fa-copy"></i>
+                &nbsp;&nbsp;<strong>Simpan</strong> Rekapitulasi
+              </a>
+
+              <a href="javascript:;" class="list-group-item">
+                <i class="fa fa-times"></i>
+                &nbsp;&nbsp;<strong>Hapus</strong> Rekapitulasi
+              </a>
+
+            </div>
       
 
 
@@ -419,31 +585,88 @@
   
 </footer>
 
+  <style>
+  .panel-heading span {
+      margin-top: -20px;
+      font-size: 15px;
+  }
+
+ 
+  .row {
+      margin-top: 40px;
+      padding: 0 10px;
+  }
+  .clickable {
+      cursor: pointer;
+  }
+
+  #paneltabel{
+    display:none;
+
+}
+
+  .headingtable2{
+    font-weight: bold;
+    font-size: 11px;
+    border-color: #eee;    
+    background-color: rgba(224, 209, 209, 0.48) !important;
+  }
+
+  .kategori{
+    text-align: left ;
+    font-weight: bold;
+    background-color: rgba(224, 209, 209, 0.48) !important;
+
+  }
+
+  .headingtable3{
+    text-align: center;
+    font-size: 9px;
+  }
+
+  .jumlahtabel{
+    text-align: center;
+    font-size: 16px;
+    font-style: bold;
+  }
+
+  .tabellaporan{
+    overflow: auto;
+    zoom:80%;
+  }
+
+
+
+  </style>
+
   <script src="./js/libs/jquery-1.10.1.min.js"></script>
   <script src="./js/libs/jquery-ui-1.9.2.custom.min.js"></script>
   <script src="./js/libs/bootstrap.min.js"></script>
 
-  <!--[if lt IE 9]>
-  <script src="./js/libs/excanvas.compiled.js"></script>
-  <![endif]-->
-  
-  <!-- Plugin JS -->
-  <script src="./js/plugins/icheck/jquery.icheck.js"></script>
-  <script src="./js/plugins/select2/select2.js"></script>
-  <script src="./js/libs/raphael-2.1.2.min.js"></script>
-  <script src="./js/plugins/morris/morris.min.js"></script>
-  <script src="./js/plugins/sparkline/jquery.sparkline.min.js"></script>
-  <script src="./js/plugins/nicescroll/jquery.nicescroll.min.js"></script>
-  <script src="./js/plugins/fullcalendar/fullcalendar.min.js"></script>
 
   <!-- App JS -->
   <script src="./js/target-admin.js"></script>
+
   
-  <!-- Plugin JS -->
-  <script src="./js/demos/dashboard.js"></script>
-  <script src="./js/demos/calendar.js"></script>
-  <script src="./js/demos/charts/morris/area.js"></script>
-  <script src="./js/demos/charts/morris/donut.js"></script>
+  <!-- Page  JS -->
+  <script src="./js/plugins/datatables/jquery.dataTables.min.js"></script>
+  <script src="./js/plugins/datepicker/bootstrap-datepicker.js"></script>
+  <script src="./js/demos/form-extended.js"></script>
+
+
+
+
+
+
+
+<script>
+function myFunction() {
+    document.getElementById("paneltabel").style.display = "block";
+}
+</script>
+
+
+
 
   
 
