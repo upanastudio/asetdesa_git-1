@@ -40,6 +40,7 @@
 		<link rel="stylesheet" href="<?php echo ROOT; ?>assets/js/plugins/select2/select2.css">
 		<link rel="stylesheet" href="<?php echo ROOT; ?>assets/js/plugins/datepicker/datepicker.css">
 		<link rel="stylesheet" href="<?php echo ROOT; ?>assets/js/plugins/fileupload/bootstrap-fileupload.css">
+		<link rel="stylesheet" href="<?php echo ROOT; ?>assets/css/demos/ui-notifications.css">
 
 		<!-- App CSS -->
 		<link rel="stylesheet" href="<?php echo ROOT; ?>assets/css/target-admin.css">
@@ -362,6 +363,7 @@
 
 		<!-- Plugin JS -->
 		<script src="<?php echo ROOT; ?>assets/js/demos/dashboard.js"></script>
+		<script src="<?php echo ROOT; ?>assets/js/demos/ui-notifications.js"></script>
 		<script src="<?php echo ROOT; ?>assets/js/demos/form-extended.js"></script>
 
 		<script type='text/javascript'> 
