@@ -31,6 +31,13 @@
 							<!-- <li class="active">Tanah</li> -->
 						</ol>
 					</div> <!-- /.content-header -->
+				';
+
+				if (isset($_GET['act'])) {
+					$libs->notifikasi($_GET['act']);
+				}
+
+				echo '
 					<div class="row">
 						<div class="col-md-3 col-sm-4">
 							<ul id="myTab" class="nav nav-pills nav-stacked">

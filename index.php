@@ -157,7 +157,7 @@
 					</ul>
 					<ul class="nav navbar-nav navbar-right">
 						<li>
-							<a href="#">Buku Panduan</a>
+							<a href="#">Panduan Aplikasi</a>
 						</li>
 						<li class="dropdown navbar-profile">
 							<a class="dropdown-toggle" data-toggle="dropdown" href="javascript:;">
@@ -259,7 +259,6 @@
 							<a href="<?php echo ROOT; ?>kirim">
 								<i class="fa fa-files-o"></i>
 								Kirim Data
-								<span class="caret"></span>
 							</a>
 						</li>
 					</ul>
