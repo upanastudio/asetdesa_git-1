@@ -750,13 +750,13 @@
 											</div> <!-- /.col -->
 										</div> <!-- /.form-group -->
 										<ul id="myTab2" class="nav nav-pills">
-											<li><a href="#Perpustakaan" data-toggle="tab" onclick="setJalur(\'1\')">Buku Perpustakaan</a></li>
+											<li class="active"><a href="#Perpustakaan" data-toggle="tab" onclick="setJalur(\'1\')">Buku Perpustakaan</a></li>
 											<li><a href="#kesenian" data-toggle="tab" onclick="setJalur(\'2\')">Barang Bercorak Kesenian/Kebudayaan</a></li>
 											<li><a href="#ternak" data-toggle="tab" onclick="setJalur(\'3\')">Hewan/Ternak dan Tumbuhan</a></li>
 										</ul>
-										<input type="hidden" id="jalur" name="jalur" value="">
+										<input type="hidden" id="jalur" name="jalur" value="1">
 										<div id="myTab2Content" class="tab-content">
-											<div class="tab-pane fade" id="Perpustakaan">
+											<div class="tab-pane fade in active" id="Perpustakaan">
 												<div class="form-group">
 													<label class="col-md-12">Buku Perpustakaan</label>
 													<label class="col-md-3"> &nbsp;1. Judul/Pencipta</label>
