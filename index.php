@@ -252,14 +252,11 @@
 							</ul>
 						</li>
 						<li class="dropdown <?php echo $model=='kirim'? 'active':''; ?>">
-							<a href="javascript:;" class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown">
+							<a href="<?php echo ROOT; ?>kirim">
 								<i class="fa fa-files-o"></i>
 								Kirim Data
 								<span class="caret"></span>
 							</a>
-							<ul class="dropdown-menu">
-								<li><a href="<?php echo ROOT; ?>kirim"><i class="fa fa-user nav-icon"></i> Pengiriman Laporan</a></li>
-							</ul>
 						</li>
 					</ul>
 				</div> <!-- /.navbar-collapse -->
