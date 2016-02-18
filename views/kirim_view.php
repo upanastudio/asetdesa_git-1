@@ -65,7 +65,7 @@
 										</div>
 									</div> <!-- /.col -->
 								</div> <!-- /.form-group -->
-								<br/><br>
+								<br/>
 								<div class="form-group">
 									<div class="col-md-6 col-md-push-2">
 										<button type="submit" name="kirim" class="btn btn-primary howler" data-type="success">Kirim Data</button>&nbsp;
