@@ -55,14 +55,44 @@
 			return $query->fetchAll(PDO::FETCH_ASSOC);
 		}
 
-		public function insertData($apa, $file_upload) {
-			$query = $this->db->prepare("INSERT INTO `db_tablename` 	SET 	`apa` 			= :apa,
-																				`file_upload` 	= :file_upload
+		public function insertData($kode_barang, $jenis_barang, $register, $jalur, $judul_buku, $spesifikasi_buku, $asal_daerah, $pencipta_kesenian, $bahan_kesenian, $jenis, $ukuran, $jumlah, $tanggal_cetak, $asal_usul, $harga, $keterangan, $foto) {
+			$query = $this->db->prepare("INSERT INTO `data_asetlain` SET	`kode_barang`			= :kode_barang,
+																							`jenis_barang`			= :jenis_barang,
+																							`register`				= :register,
+																							`jalur`					= :jalur,
+																							`judul_buku`			= :judul_buku,
+																							`spesifikasi_buku`		= :spesifikasi_buku,
+																							`asal_daerah`			= :asal_daerah,
+																							`pencipta_kesenian`			= :pencipta_kesenian,
+																							`bahan_kesenian`	= :bahan_kesenian,
+																							`jenis`			= :jenis,
+																							`ukuran`			= :ukuran,
+																							`jumlah`			= :jumlah,
+																							`tanggal_cetak`			= :tanggal_cetak,
+																							`asal_usul`				= :asal_usul,
+																							`harga`					= :harga,
+																							`keterangan`			= :keterangan,
+																							`foto`			= :foto
 			");
 
-			$query->bindParam(':apa', $apa, PDO::PARAM_STR);
-			$query->bindParam(':file_upload', $file_upload, PDO::PARAM_STR);
-			
+			$query->bindParam(':kode_barang', $kode_barang, PDO::PARAM_STR);
+			$query->bindParam(':jenis_barang', $jenis_barang, PDO::PARAM_STR);
+			$query->bindParam(':register', $register, PDO::PARAM_STR);
+			$query->bindParam(':jalur', $jalur, PDO::PARAM_STR);
+			$query->bindParam(':judul_buku', $judul_buku, PDO::PARAM_STR);
+			$query->bindParam(':spesifikasi_buku', $spesifikasi_buku, PDO::PARAM_STR);
+			$query->bindParam(':asal_daerah', $asal_daerah, PDO::PARAM_STR);
+			$query->bindParam(':pencipta_kesenian', $pencipta_kesenian, PDO::PARAM_STR);
+			$query->bindParam(':bahan_kesenian', $bahan_kesenian, PDO::PARAM_STR);
+			$query->bindParam(':jenis', $jenis, PDO::PARAM_STR);
+			$query->bindParam(':ukuran', $ukuran, PDO::PARAM_STR);
+			$query->bindParam(':jumlah', $jumlah, PDO::PARAM_STR);
+			$query->bindParam(':tanggal_cetak', $tanggal_cetak, PDO::PARAM_STR);
+			$query->bindParam(':asal_usul', $asal_usul, PDO::PARAM_STR);
+			$query->bindParam(':harga', $harga, PDO::PARAM_STR);
+			$query->bindParam(':keterangan', $keterangan, PDO::PARAM_STR);
+			$query->bindParam(':foto', $foto, PDO::PARAM_STR);
+
 			try {
 				$query->execute();
 				return true;
@@ -71,15 +101,37 @@
 			}
 		}
 
-		public function updateData($apa, $file_upload, $id) {
-			$query = $this->db->prepare("UPDATE `db_tablename` 	SET 		`apa` 			= :apa,
-																			`file_upload` 	= :file_upload
-																WHERE 		`id` = :id
+		public function updateData($kode_barang, $jenis_barang, $register, $luas_tanah, $tanggal_beli, $alamat, $hak, $no_sertifikat, $tanggal_sertifikat, $penggunaan, $asal_usul, $harga, $keterangan, $id) {
+			$query = $this->db->prepare("UPDATE `data_asetlain` SET			`kode_barang`			= :kode_barang,
+																							`jenis_barang`			= :jenis_barang,
+																							`register`				= :register,
+																							`luas_tanah`			= :luas_tanah,
+																							`tanggal_beli`			= :tanggal_beli,
+																							`alamat`					= :alamat,
+																							`hak`						= :hak,
+																							`no_sertifikat`		= :no_sertifikat,
+																							`tanggal_sertifikat`	= :tanggal_sertifikat,
+																							`penggunaan`			= :penggunaan,
+																							`asal_usul`				= :asal_usul,
+																							`harga`					= :harga,
+																							`keterangan`			= :keterangan
+																				WHERE		`id`						= :id
 			");
 
 			$query->bindParam(':id', $id, PDO::PARAM_INT);
-			$query->bindParam(':apa', $apa, PDO::PARAM_STR);
-			$query->bindParam(':file_upload', $file_upload, PDO::PARAM_STR);
+			$query->bindParam(':kode_barang', $kode_barang, PDO::PARAM_STR);
+			$query->bindParam(':jenis_barang', $jenis_barang, PDO::PARAM_STR);
+			$query->bindParam(':register', $register, PDO::PARAM_STR);
+			$query->bindParam(':luas_tanah', $luas_tanah, PDO::PARAM_STR);
+			$query->bindParam(':tanggal_beli', $tanggal_beli, PDO::PARAM_STR);
+			$query->bindParam(':alamat', $alamat, PDO::PARAM_STR);
+			$query->bindParam(':hak', $hak, PDO::PARAM_STR);
+			$query->bindParam(':no_sertifikat', $no_sertifikat, PDO::PARAM_STR);
+			$query->bindParam(':tanggal_sertifikat', $tanggal_sertifikat, PDO::PARAM_STR);
+			$query->bindParam(':penggunaan', $penggunaan, PDO::PARAM_STR);
+			$query->bindParam(':asal_usul', $asal_usul, PDO::PARAM_STR);
+			$query->bindParam(':harga', $harga, PDO::PARAM_STR);
+			$query->bindParam(':keterangan', $keterangan, PDO::PARAM_STR);
 
 			try {
 				$query->execute();
