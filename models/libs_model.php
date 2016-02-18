@@ -99,7 +99,7 @@
 					echo '
 						<div class="alert alert-block alert-success fade in">
 							<button data-dismiss="alert" class="close" type="button">×</button>
-							<p>File Berhasil Dikirimkan</p>
+							<p id="notif_kirim">File Berhasil Dikirimkan</p>
 						</div>
 					';
 					break;
