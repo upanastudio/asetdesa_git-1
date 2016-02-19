@@ -303,17 +303,20 @@
 										<div class="form-group">
 											<label class="col-md-3">Nomor </label>
 											<div style="col-md-7 col-sm-11">
-												<div style="width:14.45%; float:left; padding-left:15px; padding-right:10px;">
+												<div style="width:11.56%; float:left; padding-left:15px; padding-right:10px;">
 													<input type="text" name="no_pabrik" placeholder="Pabrik" class="form-control" />
 												</div> <!-- /.col -->
-												<div style="width:14.45%; float:left; padding-right:10px;">
+												<div style="width:11.56%; float:left; padding-right:10px;">
 													<input type="text" name="no_rangka" placeholder="Rangka" class="form-control" />
 												</div> <!-- /.col -->
-												<div style="width:14.45%; float:left; padding-right:10px;">
+												<div style="width:11.56%; float:left; padding-right:10px;">
 													<input type="text" name="no_mesin" placeholder="Mesin" class="form-control" />
 												</div> <!-- /.col -->
-												<div style="width:14.45%; float:left; padding-right:10px;">
+												<div style="width:11.56%; float:left; padding-right:10px;">
 													<input type="text" name="no_polisi" placeholder="Polisi" class="form-control" />
+												</div> <!-- /.col -->
+												<div style="width:11.56%; float:left; padding-right:10px;">
+													<input type="text" name="no_bpkb" placeholder="BPKB" class="form-control" />
 												</div> <!-- /.col -->
 											</div>
 										</div> <!-- /.form-group -->
