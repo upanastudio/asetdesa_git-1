@@ -52,7 +52,7 @@
 
 					$jalan->insertData($kode_barang, $jenis_barang, $register, $kondisi, $konstruksi, $panjang, $lebar, $luas_tanah, $tanggal_dokumen, $no_dokumen, $status_tanah, $asal_usul, $harga, $keterangan);
 
-					header("location:".ROOT."laporan?tab=jalan&act=add");
+					header("location:".ROOT."inventaris?tab=jalan&act=add");
 				}
 			}
 		}
@@ -65,7 +65,7 @@
 
 				$jalan->updateData($kode_barang, $jenis_barang, $register, $kondisi, $konstruksi, $panjang, $lebar, $luas_tanah, $tanggal_dokumen, $no_dokumen, $status_tanah, $asal_usul, $harga, $keterangan, $id);
 
-				header("location:".ROOT."laporan?tab=jalan&act=upd");
+				header("location:".ROOT."inventaris?tab=jalan&act=upd");
 			}
 		}
 
@@ -73,7 +73,7 @@
 			$id = filter_var($_GET['id'],FILTER_VALIDATE_INT);
 			$jalan->deleteData($id);
 
-			header("location:".ROOT."laporan?tab=jalan&act=del");
+			header("location:".ROOT."inventaris?tab=jalan&act=del");
 		}
 
 	endif;

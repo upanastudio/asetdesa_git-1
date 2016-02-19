@@ -55,7 +55,7 @@
 					$konstruksi->insertData($kode_barang, $jenis_barang, $register, $konstruksi, $luas_konstruksi, $alamat, 
 						$tanggal_dokumen, $no_dokumen, $status_tanah, $asal_usul, $harga, $keterangan);
 
-					header("location:".ROOT."laporan?tab=konstruksi&act=add");
+					header("location:".ROOT."inventaris?tab=konstruksi&act=add");
 				}
 			}
 		}
@@ -69,7 +69,7 @@
 				$konstruksi->updateData($kode_barang, $jenis_barang, $register, $konstruksi, $luas_konstruksi, $alamat, 
 						$tanggal_dokumen, $no_dokumen, $status_tanah, $asal_usul, $harga, $keterangan, $id);
 
-				header("location:".ROOT."laporan?tab=konstruksi&act=upd");
+				header("location:".ROOT."inventaris?tab=konstruksi&act=upd");
 			}
 		}
 
@@ -77,7 +77,7 @@
 			$id = filter_var($_GET['id'],FILTER_VALIDATE_INT);
 			$konstruksi->deleteData($id);
 
-			header("location:".ROOT."laporan?tab=konstruksi&act=del");
+			header("location:".ROOT."inventaris?tab=konstruksi&act=del");
 		}
 
 	endif;
