@@ -315,6 +315,9 @@
 												<div style="width:14.45%; float:left; padding-right:10px;">
 													<input type="text" name="no_polisi" placeholder="Polisi" class="form-control" />
 												</div> <!-- /.col -->
+												<div style="width:14.45%; float:left; padding-right:10px;">
+													<input type="text" name="no_bpkb" placeholder="BPKB" class="form-control" />
+												</div> <!-- /.col -->
 											</div>
 										</div> <!-- /.form-group -->
 										<div class="form-group">
