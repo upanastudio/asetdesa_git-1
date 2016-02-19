@@ -7,7 +7,7 @@
 		}
 
 		public function countData() {
-			$query = $this->db->prepare("SELECT * FROM `db_tablename`");
+			$query = $this->db->prepare("SELECT * FROM `data_peralatan`");
 
 			try {
 				$query->execute();
@@ -18,7 +18,7 @@
 		}
 
 		public function getDataLengkap() {
-			$query = $this->db->prepare("SELECT * FROM `db_tablename`");
+			$query = $this->db->prepare("SELECT * FROM `data_peralatan`");
 
 			try {
 				$query->execute();
@@ -30,7 +30,7 @@
 		}
 
 		public function getDataById($id) {
-			$query = $this->db->prepare("SELECT * FROM `db_tablename` WHERE `id` = :id");
+			$query = $this->db->prepare("SELECT * FROM `data_peralatan` WHERE `id` = :id");
 			$query->bindParam(':id', $id, PDO::PARAM_INT);
 
 			try {
@@ -138,7 +138,7 @@
 		}
 
 		public function deleteData($id) {
-			$sql = "DELETE FROM `db_tablename` WHERE `id` = ?";
+			$sql = "DELETE FROM `data_peralatan` WHERE `id` = ?";
 			$query = $this->db->prepare($sql);
 			$query->bindValue(1, $id);
 
