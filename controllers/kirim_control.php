@@ -37,26 +37,27 @@
 					//Provide username and password    
 					// Belum set alamat email dan password 
 					$mail->Username = "#";                 
-					$mail->Password = "#'";                           
+					$mail->Password = "#";                           
 					//If SMTP requires TLS encryption then set it
 					$mail->SMTPSecure = "tsl";                           
 					//Set TCP port to connect to 
 					$mail->Port = 587;          
 
-					$mail->SMTPOptions = array(
-					    'ssl' => array(
-					        'verify_peer' => false,
-					        'verify_peer_name' => false,
-					        'allow_self_signed' => true
-					    )
-					);                         
+					// $mail->SMTPOptions = array(
+					//     'ssl' => array(
+					//         'verify_peer' => false,
+					//         'verify_peer_name' => false,
+					//         'allow_self_signed' => true
+					//     )
+					// );                         
 
-					$mail->From 	= "#";
-					$mail->FromName = "#";
+					$mail->From 	= "official.rahmatslamet@gmail.com";
+					$mail->FromName = "Arhen";
 
 					$mail->Subject 	= $judul;
-					$mail->Body    = "Tim Asset Desa. (LOL) ";
+					$mail->Body    = "Tim Asset Desa. (LOL)";
 	       			$mail->AddAddress($alamat_email);
+	       			$mail->AddReplyTo($alamat_email);
 	       	    	$mail->AddAttachment( $_FILES['upload_data']['tmp_name'], $_FILES['upload_data']['name'] );
 
 					if(!$mail->send()) 
@@ -69,7 +70,7 @@
 					}
 					
 						echo "<script> alert('Data Berhasil Dikirim'); </script>";
-						header("location:".ROOT."kirim");
+						// header("location:".ROOT."kirim");
 					
 				}else{
 					header("location:".ROOT."kirim?&act=err");
