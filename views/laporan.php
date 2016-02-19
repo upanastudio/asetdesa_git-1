@@ -460,7 +460,7 @@
                        <td>APBD</td>
                        <td> 7.800.000 </td>
                        <td>Dikuasai Pemda</td>
-                       <td><a href="">Edit</a></td>
+                       <td><a href="#" role="button" data-toggle="modal" data-target="#editdata">Edit</a></td>
                      </tr>
 
                       <tr class="jumlahtabel">
@@ -1109,6 +1109,282 @@
   </div> <!-- /.container -->
   
 </footer>
+
+<div id="editdata" class="modal modal-styled fade">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+        <h3 class="modal-title">Edit Data Tanah xxxxxxx</h3>
+      </div>
+      <div class="modal-body">
+       <h4 class="heading"> Judul / Nama Barang</h4>
+        </br>
+         <form action="./page-settings.html" class="form-horizontal">
+
+                <div class="form-group">
+
+             
+
+                </div> <!-- /.form-group -->
+
+                <div class="form-group">
+
+                  <label class="col-md-3">Jenis/Nama Barang</label>
+
+
+                  <div class="col-sm-7">
+
+                
+                    <select id="s4_basic" class="form-control" >                    
+                      <optgroup label=" Bangunan Gedung">
+                        <option value="01010000000" >BANGUNAN GEDUNG TEMPAT KERJA</option>
+                      </optgroup>
+
+                      <optgroup label=" Bangunan Gedung Kantor">
+                        <option value="01010000000">Bangunan Gedung Kantor Permanen</option>
+                        <option value="01010000000">Bangunan Gedung Kantor Semi Permanen</option>
+                        <option value="01010000000">Bangunan Gedung Kantor Darurat</option>
+                        <option value="01010000000">Lain-lain</option>
+                      </optgroup>
+
+                      <optgroup label="Bangunan Monumen">
+                        <option value="01010100000">Istana Peninggalan</option>
+                        <option value="01010000000">Rumah Adat n</option>
+                        <option value="01010000000">Rumah Peninggalan Sejarah</option>
+                        <option value="01010000000">Makam Bersejarah</option>
+                        <option value="01010000000">Mesjid Bersejarah</option>
+                        <option value="01010000000">Lain-lain</option>
+                      </optgroup>
+                     
+
+                      </optgroup>
+                     
+                    </select>
+
+                  </div> <!-- /.col -->
+
+
+                </div> <!-- /.form-group -->
+
+
+                <div class="form-group">
+
+                  <label class="col-md-3">Kode Barang</label>
+
+                  <div class="col-md-7">
+                    <input type="number" name="kode-barang" value="01010000000" class="form-control" disabled/>
+                  </div> <!-- /.col -->
+
+                </div> <!-- /.form-group -->
+
+                <div class="form-group">
+
+                  <label class="col-md-3">Register</label>
+                  <div class="col-md-7">
+                    <input type="number" name="register" placeholder="Nomor Register" class="form-control" />
+                  </div> <!-- /.col -->
+
+                </div> <!-- /.form-group -->
+
+
+                <div class="form-group">
+
+                  <label class="col-md-3">Kondisi Bangunan</label>
+
+                  <div class="col-md-7">
+
+                    <label class="radio-inline">
+                      <input type="radio" name="kondisiG1" class="" value="Baru" checked> Baru
+                    </label>
+                    <label class="radio-inline">
+                      <input type="radio" name="kondisiG1" class="" value="KB"> KB
+                    </label>
+                    <label class="radio-inline">
+                      <input type="radio" name="kondisiG1" class="" value="Renovasi Baru"> Renovasi Baru
+                    </label>
+
+                  </div> <!-- /.col -->
+                </div> <!-- /.form-group -->
+
+
+
+                <div class="form-group">
+
+                  <label class="col-md-3">Konstruksi Bangunan</label>
+
+                  <div class="col-md-7">
+
+                    <label class="checkbox-inline">
+                       <input type="checkbox" id="inlineCheckbox1" class="" value="Bertingkat"> Bertingkat
+                    </label>
+
+                    <label class="checkbox-inline">
+                        <input type="checkbox" id="inlineCheckbox1" class="" value="Beton"> Beton
+                    </label>
+               
+
+                  </div> <!-- /.col -->
+                </div> <!-- /.form-group -->
+
+
+
+
+                <div class="form-group">
+
+                  <label class="col-md-3">Luas Lantai</label>
+
+                  <div class="col-md-7">
+                    <div class="input-group">
+                  <input type="text" name="luaslantai" placeholder="Luas Lantai" class="form-control" />
+                    <span class="input-group-addon">m<sup>2</sup></span>
+                    </div>
+                  </div> <!-- /.col -->
+
+                </div> <!-- /.form-group -->
+
+
+
+                <div class="form-group">
+
+                  <label class="col-md-3">Letak/Alamat</label>
+
+                  <div class="col-md-7">
+                    <input type="text" name="alamat" placeholder="Jalan/Alamat Lokasi Gedung" class="form-control" />
+                  </div> <!-- /.col -->
+
+                </div> <!-- /.form-group -->
+
+
+                <br>
+                <div class="form-group">
+
+                  <label class="col-md-12">Dokumen Gedung</label>
+
+                  <label class="col-md-3"> &nbsp;&nbsp;1. Tanggal</label>
+
+
+                  <div class="col-md-7">
+                    <div id="dp-ex-4" class="input-group date" data-auto-close="true" data-date-format="dd-mm-yyyy" data-date-autoclose="true">
+                    <input class="form-control" type="text" name="tanggalbeli" placeholder="00-00-0000">
+                    <span class="input-group-addon"><i class="fa fa-calendar"></i></span>
+                    </div>
+                  <span class="help-block">dd-mm-yyyy</span>
+
+                  </div> <!-- /.col -->
+
+                </div> <!-- /.form-group -->
+
+                <div class="form-group">
+
+                  <label class="col-md-3">&nbsp;&nbsp;2. Nomor</label>
+                  <div class="col-md-7">
+                    <input type="number" name="register" value="0001" class="form-control" />
+                  </div> <!-- /.col -->
+
+                </div> <!-- /.form-group -->
+
+                <br>
+
+
+                
+
+                <div class="form-group">
+
+                  <label class="col-md-3">Luas Lahan</label>
+
+                  <div class="col-md-7">
+                    <div class="input-group">
+                    <input type="number" placeholder="Luas Lahan" name="luaslahan"  class="form-control" />
+                    <span class="input-group-addon">m<sup>2</sup></span>
+                    </div>
+                  </div> <!-- /.col -->
+
+                </div> <!-- /.form-group -->
+
+                     <div class="form-group">
+
+                  <label class="col-md-3">Status Tanah </label>
+
+                  <div class="col-md-7">
+                    <input type="text" name="hak" placeholder="Status Kepemilikan Tanah Gedung" class="form-control" />
+                  </div> <!-- /.col -->
+
+                </div> <!-- /.form-group -->
+
+
+                <div class="form-group">
+
+                  <label class="col-md-3">Nomor Kode Tanah </label>
+
+                  <div class="col-md-7">
+                    <input type="text" name="nosertifikat" value="" class="form-control" />
+                  </div> <!-- /.col -->
+
+                </div> <!-- /.form-group -->
+
+
+
+                <div class="form-group">
+
+                  <label class="col-md-3">Asal Usul </label>
+
+                  <div class="col-md-7">
+                    <input type="text" name="asal" placeholder="Asal Usul Dana Gedung"class="form-control" />
+                  </div> <!-- /.col -->
+
+                </div> <!-- /.form-group -->
+
+
+                <div class="form-group">
+
+                  <label class="col-md-3">Harga </label>
+
+                  <div class="col-md-7">
+                    <div class="input-group">
+                      <span class="input-group-addon">Rp</span>
+                      <input class="form-control" id="harga" type="number">
+                    </div>
+                  </div> <!-- /.col -->
+
+                </div> <!-- /.form-group -->
+
+
+                <div class="form-group">
+
+                  <label class="col-md-3">Keterangan </label>
+
+                  <div class="col-md-7">
+                    <input type="text" name="keterangan" value="" class="form-control" />
+                  </div> <!-- /.col -->
+
+                </div> <!-- /.form-group -->
+
+                <br />
+
+                <div class="form-group">
+
+                  <div class="col-md-7 col-md-push-3">
+                    <button type="submit" class="btn btn-primary">Masukkan Data</button>
+                    &nbsp;
+                    <button type="reset" class="btn btn-default">Batalkan</button>
+                  </div> <!-- /.col -->
+
+                </div> <!-- /.form-group -->
+
+              </form>
+
+
+
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-tertiary" data-dismiss="modal">Tutup</button>
+        <button type="button" class="btn btn-primary">Simpan Data</button>
+      </div>
+    </div><!-- /.modal-content -->
+  </div><!-- /.modal-dialog -->
+</div><!-- /.modal -->
+
 
   <style>
   .panel-heading span {
