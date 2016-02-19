@@ -349,13 +349,13 @@
 		<script src="<?php echo ROOT; ?>assets/js/libs/raphael-2.1.2.min.js"></script>
 		<script src="<?php echo ROOT; ?>assets/js/plugins/sparkline/jquery.sparkline.min.js"></script>
 		<script src="<?php echo ROOT; ?>assets/js/plugins/nicescroll/jquery.nicescroll.min.js"></script>
-		<script src="<?php echo ROOT; ?>assets/js/plugins/select2/select2.js"></script>
 		<script src="<?php echo ROOT; ?>assets/js/plugins/datepicker/bootstrap-datepicker.js"></script>
 		<script src="<?php echo ROOT; ?>assets/js/plugins/timepicker/bootstrap-timepicker.js"></script>
 		<script src="<?php echo ROOT; ?>assets/js/plugins/simplecolorpicker/jquery.simplecolorpicker.js"></script>
 		<script src="<?php echo ROOT; ?>assets/js/plugins/autosize/jquery.autosize.min.js"></script>
 		<script src="<?php echo ROOT; ?>assets/js/plugins/textarea-counter/jquery.textarea-counter.js"></script>
 		<script src="<?php echo ROOT; ?>assets/js/plugins/fileupload/bootstrap-fileupload.js"></script>
+		<!-- <script src="assets/js/plugins/howl/howl.js"></script> -->
 
 		<!-- App JS -->
 		<script src="<?php echo ROOT; ?>assets/js/target-admin.js"></script>
