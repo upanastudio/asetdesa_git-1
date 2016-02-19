@@ -52,8 +52,7 @@
 
 					$jalan->insertData($kode_barang, $jenis_barang, $register, $kondisi, $konstruksi, $panjang, $lebar, $luas_tanah, $tanggal_dokumen, $no_dokumen, $status_tanah, $asal_usul, $harga, $keterangan);
 
-					echo "<script> alert('Data Berhasil Ditambahkan'); </script>";
-					header("location:".ROOT."laporan");
+					header("location:".ROOT."laporan?tab=jalan&act=add");
 				}
 			}
 		}
@@ -64,28 +63,17 @@
 				$file_upload	= $_POST['file_upload'];
 				$id				= $_POST['id'];
 
-				//sanitasi
-				$apa			= filter_var($apa,FILTER_SANITIZE_STRING);
+				$jalan->updateData($kode_barang, $jenis_barang, $register, $kondisi, $konstruksi, $panjang, $lebar, $luas_tanah, $tanggal_dokumen, $no_dokumen, $status_tanah, $asal_usul, $harga, $keterangan, $id);
 
-				if($_FILES['file']['tmp_name'] != "") {
-					$libs->deleteFile("../upload/files/",$file_upload);
-					$file_upload = $libs->uploadFile('../upload/files/',$_FILES['file']);
-				}
-
-				$input->updateData($apa, $file_upload, $id);
-				echo "<script> alert('Data Berhasil Diperbarui'); </script>";
-				header("location:".ROOT."jalan/lihat/".$id);
+				header("location:".ROOT."laporan?tab=jalan&act=upd");
 			}
 		}
 
 		if($model == 'jalan' AND $method == 'hapus') {
 			$id = filter_var($_GET['id'],FILTER_VALIDATE_INT);
-			$data = $jalan->getDataById($id);
-			$libs->deleteFile("../upload/files/",$data['file_upload']);
-
 			$jalan->deleteData($id);
-			echo "<script> alert('Data Berhasil Dihapus'); </script>";
-			header("location:".ROOT."jalan");
+
+			header("location:".ROOT."laporan?tab=jalan&act=del");
 		}
 
 	endif;

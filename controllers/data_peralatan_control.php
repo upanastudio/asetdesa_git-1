@@ -53,8 +53,7 @@
 
 					$peralatan->insertData($kode_barang, $jenis_barang, $register, $merek, $ukuran, $tanggal_beli, $no_pabrik, $no_rangka, $no_mesin, $no_polisi, $asal_usul, $harga, $keterangan, $foto);
 
-					echo "<script> alert('Data Berhasil Ditambahkan'); </script>";
-					header("location:".ROOT."laporan");
+					header("location:".ROOT."laporan?tab=peralatan&act=add");
 				}
 			}
 		}
@@ -68,25 +67,25 @@
 				//sanitasi
 				$apa			= filter_var($apa,FILTER_SANITIZE_STRING);
 
-				if($_FILES['file']['tmp_name'] != "") {
-					$libs->deleteFile("../upload/files/",$file_upload);
-					$file_upload = $libs->uploadFile('../upload/files/',$_FILES['file']);
+				if($_FILES['foto']['tmp_name'] != "") {
+					$libs->deleteFile("../upload/images/",$file_upload);
+					$foto = $libs->uploadFile('../upload/images/',$_FILES['foto']);
 				}
 
-				$input->updateData($apa, $file_upload, $id);
-				echo "<script> alert('Data Berhasil Diperbarui'); </script>";
-				header("location:".ROOT."peralatan/lihat/".$id);
+				$peralatan->updateData($kode_barang, $jenis_barang, $register, $merek, $ukuran, $tanggal_beli, $no_pabrik, $no_rangka, $no_mesin, $no_polisi, $asal_usul, $harga, $keterangan, $foto, $id);
+
+				header("location:".ROOT."laporan?tab=peralatan&act=upd");
 			}
 		}
 
 		if($model == 'peralatan' AND $method == 'hapus') {
 			$id = filter_var($_GET['id'],FILTER_VALIDATE_INT);
 			$data = $peralatan->getDataById($id);
-			$libs->deleteFile("../upload/files/",$data['file_upload']);
+			$libs->deleteFile("../upload/images/",$data['foto']);
 
 			$peralatan->deleteData($id);
-			echo "<script> alert('Data Berhasil Dihapus'); </script>";
-			header("location:".ROOT."peralatan");
+
+			header("location:".ROOT."laporan?tab=peralatan&act=del");
 		}
 
 	endif;

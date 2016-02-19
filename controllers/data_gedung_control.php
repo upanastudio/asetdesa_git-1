@@ -60,8 +60,7 @@
 					$gedung->insertData($kode_barang, $jenis_barang, $register, $kondisi, $konstruksi, $luas_lantai, $alamat, 
 						$tanggal_beli, $no_dokumen, $status_tanah, $no_sertifikat, $asal_usul, $harga, $keterangan);
 
-					echo "<script> alert('Data Berhasil Ditambahkan'); </script>";
-					header("location:".ROOT."laporan");
+					header("location:".ROOT."laporan?tab=gedung&act=add");
 				}
 			}
 		}
@@ -75,25 +74,18 @@
 				//sanitasi
 				$apa			= filter_var($apa,FILTER_SANITIZE_STRING);
 
-				if($_FILES['file']['tmp_name'] != "") {
-					$libs->deleteFile("../upload/files/",$file_upload);
-					$file_upload = $libs->uploadFile('../upload/files/',$_FILES['file']);
-				}
+				$gedung->updateData($kode_barang, $jenis_barang, $register, $kondisi, $konstruksi, $luas_lantai, $alamat, 
+						$tanggal_beli, $no_dokumen, $status_tanah, $no_sertifikat, $asal_usul, $harga, $keterangan, $id);
 
-				$input->updateData($apa, $file_upload, $id);
-				echo "<script> alert('Data Berhasil Diperbarui'); </script>";
-				header("location:".ROOT."gedung/lihat/".$id);
+				header("location:".ROOT."laporan?tab=gedung&act=upd");
 			}
 		}
 
 		if($model == 'gedung' AND $method == 'hapus') {
-			$id = filter_var($_GET['id'],FILTER_VALIDATE_INT);
-			$data = $gedung->getDataById($id);
-			$libs->deleteFile("../upload/files/",$data['file_upload']);
-
+			$id = filter_var($_GET['id'],FILTER_VALIDATE_INT);			
 			$gedung->deleteData($id);
-			echo "<script> alert('Data Berhasil Dihapus'); </script>";
-			header("location:".ROOT."gedung");
+
+			header("location:".ROOT."laporan?tab=gedung&act=del");
 		}
 
 	endif;
