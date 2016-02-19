@@ -13,8 +13,6 @@
 		if($model == 'tanah' AND $method == 'tambah') {
 			if(isset($_POST['tambah'])) {
 				$kode_barang			= $_POST['kode_barang'];
-				$jb						= $data_barang->getNamaBarangByKB($kode_barang);
-				$jenis_barang			= $jb['nama_barang'];
 				$register				= $_POST['register'];
 				$luas_tanah				= $_POST['luas_tanah'];
 				$tanggal_beli			= $_POST['tanggal_beli'];
@@ -27,11 +25,15 @@
 				$harga					= $_POST['harga'];
 				$keterangan				= $_POST['keterangan'];
 
-				//sanitasi
-				// $apa						= filter_var($apa, FILTER_SANITIZE_STRING);
+				if (empty($kode_barang)) {
+					header("location:".ROOT."input?tab=tanah&act=err");
+				} else {
+					$jb						= $data_barang->getNamaBarangByKB($kode_barang);
+					$jenis_barang			= $jb['nama_barang'];
 
-				$tanah->insertData($kode_barang, $jenis_barang, $register, $luas_tanah, $tanggal_beli, $alamat, $hak, $no_sertifikat, $tanggal_sertifikat, $penggunaan, $asal_usul, $harga, $keterangan);
-				header("location:".ROOT."laporan?act=add");
+					$tanah->insertData($kode_barang, $jenis_barang, $register, $luas_tanah, $tanggal_beli, $alamat, $hak, $no_sertifikat, $tanggal_sertifikat, $penggunaan, $asal_usul, $harga, $keterangan);
+					header("location:".ROOT."laporan?tab=tanah&act=add");
+				}
 			}
 		}
 
@@ -57,7 +59,7 @@
 				// $apa			= filter_var($apa,FILTER_SANITIZE_STRING);
 
 				$tanah->updateData($kode_barang, $jenis_barang, $register, $luas_tanah, $tanggal_beli, $alamat, $hak, $no_sertifikat, $tanggal_sertifikat, $penggunaan, $asal_usul, $harga, $keterangan, $id);
-				header("location:".ROOT."laporan?act=upd");
+				header("location:".ROOT."laporan?tab=tanh&act=upd");
 			}
 		}
 
@@ -65,7 +67,7 @@
 			$id = filter_var($_POST['id'],FILTER_VALIDATE_INT);
 
 			$tanah->deleteData($id);
-			header("location:".ROOT."laporan?act=del");
+			header("location:".ROOT."laporan?tab=tanah&act=del");
 		}
 
 	endif;

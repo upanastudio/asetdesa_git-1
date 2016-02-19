@@ -24,7 +24,6 @@
 				$ukuran ='';
 				$foto ='';
 
-
 				$kode_barang			= $_POST['kode_barang'];
 				if (empty($kode_barang)) {
 					header("location:".ROOT."input?tab=asetlain&act=err");
@@ -70,8 +69,7 @@
 
 					$asetlain->insertData($kode_barang, $jenis_barang, $register, $jalur, $judul_buku, $spesifikasi_buku, $asal_daerah, $pencipta_kesenian, $bahan_kesenian, $jenis, $ukuran, $jumlah, $tanggal_cetak, $asal_usul, $harga, $keterangan, $foto);
 
-					echo "<script> alert('Data Berhasil Ditambahkan'); </script>";
-					header("location:".ROOT."laporan");
+					header("location:".ROOT."laporan?tab=asetlain&act=add");
 				}
 			}
 		}
@@ -135,10 +133,9 @@
 						$foto = $libs->uploadFile('../upload/images/',$_FILES['foto']);
 					}
 
-					$asetlain->updateData($kode_barang, $jenis_barang, $register, $jalur, $judul_buku, $spesifikasi_buku, $asal_daerah, $pencipta_kesenian, $bahan_kesenian, $jenis, $ukuran, $jumlah, $tanggal_cetak, $asal_usul, $harga, $keterangan, $foto);
+					$asetlain->updateData($kode_barang, $jenis_barang, $register, $jalur, $judul_buku, $spesifikasi_buku, $asal_daerah, $pencipta_kesenian, $bahan_kesenian, $jenis, $ukuran, $jumlah, $tanggal_cetak, $asal_usul, $harga, $keterangan, $foto, $id);
 
-					echo "<script> alert('Data Berhasil Dirubah'); </script>";
-					header("location:".ROOT."laporan");
+					header("location:".ROOT."laporan?tab=asetlain&act=upd");
 				}
 			}
 
@@ -151,7 +148,7 @@
 
 			$asetlain->deleteData($id);
 			echo "<script> alert('Data Berhasil Dihapus'); </script>";
-			header("location:".ROOT."asetlain");
+			header("location:".ROOT."laporan?tab=asetlain&act=del");
 		}
 
 	endif;
