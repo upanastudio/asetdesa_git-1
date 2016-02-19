@@ -69,7 +69,7 @@
 
 					$asetlain->insertData($kode_barang, $jenis_barang, $register, $jalur, $judul_buku, $spesifikasi_buku, $asal_daerah, $pencipta_kesenian, $bahan_kesenian, $jenis, $ukuran, $jumlah, $tanggal_cetak, $asal_usul, $harga, $keterangan, $foto);
 
-					header("location:".ROOT."laporan?tab=asetlain&act=add");
+					header("location:".ROOT."inventaris?tab=asetlain&act=add");
 				}
 			}
 		}
@@ -135,7 +135,7 @@
 
 					$asetlain->updateData($kode_barang, $jenis_barang, $register, $jalur, $judul_buku, $spesifikasi_buku, $asal_daerah, $pencipta_kesenian, $bahan_kesenian, $jenis, $ukuran, $jumlah, $tanggal_cetak, $asal_usul, $harga, $keterangan, $foto, $id);
 
-					header("location:".ROOT."laporan?tab=asetlain&act=upd");
+					header("location:".ROOT."inventaris?tab=asetlain&act=upd");
 				}
 			}
 
@@ -148,7 +148,7 @@
 
 			$asetlain->deleteData($id);
 			echo "<script> alert('Data Berhasil Dihapus'); </script>";
-			header("location:".ROOT."laporan?tab=asetlain&act=del");
+			header("location:".ROOT."inventaris?tab=asetlain&act=del");
 		}
 
 	endif;

@@ -219,7 +219,7 @@
 								<li><a href="<?php echo ROOT; ?>input?tab=konstruksi"><i class="fa fa-list-alt nav-icon"></i> Konstruksi dalam Pengerjaan</a></li>
 							</ul>
 						</li>
-						<li class="dropdown <?php echo $model=='laporan'? 'active':''; ?>">
+						<li class="dropdown <?php echo $model=='inventaris' OR $model=='penyusutan' OR $model=='mutasi' OR $model=='neraca'? 'active':''; ?>">
 							<a href="javascript:;" class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown">
 								<i class="fa fa-align-left"></i> 
 								Laporan
@@ -228,19 +228,19 @@
 							<ul class="dropdown-menu">
 								<li class="dropdown-header">Laporan</li>
 								<li>
-									<a href="<?php echo ROOT; ?>laporan">
-										<i class="fa fa-location-arrow nav-icon"></i> 
-										Laporan Penyusutan Nilai
-									</a>
-								</li>
-								<li>
-									<a href="./laporan.html">
+									<a href="<?php echo ROOT; ?>inventaris">
 										<i class="fa fa-location-arrow nav-icon"></i> 
 										Laporan Inventaris Barang
 									</a>
 								</li>
 								<li>
-									<a href="laporan.html">
+									<a href="<?php echo ROOT; ?>penyusutan">
+										<i class="fa fa-location-arrow nav-icon"></i> 
+										Laporan Penyusutan Nilai
+									</a>
+								</li>
+								<li>
+									<a href="<?php echo ROOT; ?>mutasi">
 										<i class="fa fa-location-arrow nav-icon"></i> 
 										Mutasi Aset Desa
 									</a>
@@ -248,9 +248,9 @@
 								<li class="divider"></li>
 								<li class="dropdown-header">Neraca </li>
 								<li>
-									<a href="./neraca.html">
+									<a href="<?php echo ROOT; ?>neraca">
 										<i class="fa fa-table"></i>
-										&nbsp;&nbsp;Pertanggung Jawaban
+										&nbsp;&nbsp;Pertanggungjawaban
 									</a>
 								</li>
 							</ul>
@@ -283,8 +283,20 @@
 			include "views/input_view.php";
 			break;
 
-		case 'laporan':
-			include "views/laporan_view.php";
+		case 'inventaris':
+			include "views/inventaris_view.php";
+			break;
+
+		case 'penyusutan':
+			include "views/penyusutan_view.php";
+			break;
+
+		case 'mutasi':
+			include "views/mutasi_view.php";
+			break;
+
+		case 'neraca':
+			include "views/neraca_view.php";
 			break;
 
 		case 'kirim':

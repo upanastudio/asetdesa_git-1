@@ -53,7 +53,7 @@
 
 					$peralatan->insertData($kode_barang, $jenis_barang, $register, $merek, $ukuran, $tanggal_beli, $no_pabrik, $no_rangka, $no_mesin, $no_polisi, $asal_usul, $harga, $keterangan, $foto);
 
-					header("location:".ROOT."laporan?tab=peralatan&act=add");
+					header("location:".ROOT."inventaris?tab=peralatan&act=add");
 				}
 			}
 		}
@@ -74,7 +74,7 @@
 
 				$peralatan->updateData($kode_barang, $jenis_barang, $register, $merek, $ukuran, $tanggal_beli, $no_pabrik, $no_rangka, $no_mesin, $no_polisi, $asal_usul, $harga, $keterangan, $foto, $id);
 
-				header("location:".ROOT."laporan?tab=peralatan&act=upd");
+				header("location:".ROOT."inventaris?tab=peralatan&act=upd");
 			}
 		}
 
@@ -85,7 +85,7 @@
 
 			$peralatan->deleteData($id);
 
-			header("location:".ROOT."laporan?tab=peralatan&act=del");
+			header("location:".ROOT."inventaris?tab=peralatan&act=del");
 		}
 
 	endif;

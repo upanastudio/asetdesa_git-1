@@ -32,7 +32,7 @@
 					$jenis_barang			= $jb['nama_barang'];
 
 					$tanah->insertData($kode_barang, $jenis_barang, $register, $luas_tanah, $tanggal_beli, $alamat, $hak, $no_sertifikat, $tanggal_sertifikat, $penggunaan, $asal_usul, $harga, $keterangan);
-					header("location:".ROOT."laporan?tab=tanah&act=add");
+					header("location:".ROOT."inventaris?tab=tanah&act=add");
 				}
 			}
 		}
@@ -59,7 +59,7 @@
 				// $apa			= filter_var($apa,FILTER_SANITIZE_STRING);
 
 				$tanah->updateData($kode_barang, $jenis_barang, $register, $luas_tanah, $tanggal_beli, $alamat, $hak, $no_sertifikat, $tanggal_sertifikat, $penggunaan, $asal_usul, $harga, $keterangan, $id);
-				header("location:".ROOT."laporan?tab=tanh&act=upd");
+				header("location:".ROOT."inventaris?tab=tanh&act=upd");
 			}
 		}
 
@@ -67,7 +67,7 @@
 			$id = filter_var($_POST['id'],FILTER_VALIDATE_INT);
 
 			$tanah->deleteData($id);
-			header("location:".ROOT."laporan?tab=tanah&act=del");
+			header("location:".ROOT."inventaris?tab=tanah&act=del");
 		}
 
 	endif;

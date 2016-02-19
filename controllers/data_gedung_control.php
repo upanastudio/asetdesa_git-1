@@ -60,7 +60,7 @@
 					$gedung->insertData($kode_barang, $jenis_barang, $register, $kondisi, $konstruksi, $luas_lantai, $alamat, 
 						$tanggal_beli, $no_dokumen, $status_tanah, $no_sertifikat, $asal_usul, $harga, $keterangan);
 
-					header("location:".ROOT."laporan?tab=gedung&act=add");
+					header("location:".ROOT."inventaris?tab=gedung&act=add");
 				}
 			}
 		}
@@ -77,7 +77,7 @@
 				$gedung->updateData($kode_barang, $jenis_barang, $register, $kondisi, $konstruksi, $luas_lantai, $alamat, 
 						$tanggal_beli, $no_dokumen, $status_tanah, $no_sertifikat, $asal_usul, $harga, $keterangan, $id);
 
-				header("location:".ROOT."laporan?tab=gedung&act=upd");
+				header("location:".ROOT."inventaris?tab=gedung&act=upd");
 			}
 		}
 
@@ -85,7 +85,7 @@
 			$id = filter_var($_GET['id'],FILTER_VALIDATE_INT);			
 			$gedung->deleteData($id);
 
-			header("location:".ROOT."laporan?tab=gedung&act=del");
+			header("location:".ROOT."inventaris?tab=gedung&act=del");
 		}
 
 	endif;
