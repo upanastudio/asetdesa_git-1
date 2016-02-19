@@ -142,7 +142,7 @@
 		}
 
 		public function deleteData($id) {
-			$sql = "DELETE FROM `db_tablename` WHERE `id` = ?";
+			$sql = "DELETE FROM `data_asetlain` WHERE `id` = ?";
 			$query = $this->db->prepare($sql);
 			$query->bindValue(1, $id);
 
