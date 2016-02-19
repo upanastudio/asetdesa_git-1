@@ -23,6 +23,7 @@
 				$no_rangka			='';
 				$no_mesin			='';
 				$no_polisi			='';
+				$no_bpkb			='';
 				$asal_usul			='';
 				$harga				='';
 				$keterangan			='';
@@ -43,6 +44,7 @@
 					$no_rangka 				= $_POST['no_rangka'];
 					$no_mesin 				= $_POST['no_mesin'];
 					$no_polisi 				= $_POST['no_polisi'];
+					$no_bpkb 				= $_POST['no_bpkb'];
 					$asal_usul 				= $_POST['asal_usul'];
 					$harga 					= $_POST['harga'];
 					$keterangan 			= $_POST['keterangan'];
@@ -51,7 +53,7 @@
 						$foto = $libs->uploadFile('../upload/images/',$_FILES['foto']);
 					}
 
-					$peralatan->insertData($kode_barang, $jenis_barang, $register, $merek, $ukuran, $tanggal_beli, $no_pabrik, $no_rangka, $no_mesin, $no_polisi, $asal_usul, $harga, $keterangan, $foto);
+					$peralatan->insertData($kode_barang, $jenis_barang, $register, $merek, $ukuran, $tanggal_beli, $no_pabrik, $no_rangka, $no_mesin, $no_polisi, $no_bpkb, $asal_usul, $harga, $keterangan, $foto);
 
 					header("location:".ROOT."inventaris?tab=peralatan&act=add");
 				}

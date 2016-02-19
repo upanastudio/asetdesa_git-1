@@ -70,6 +70,19 @@ body {
     background: #e6e6e6;
   }
 }
+
+@font-face {
+    font-family: Oswald;
+    src: url('../fonts/Oswald-Regular.ttf');
+   
+}
+@font-face {
+    font-family: Open Sans;
+    src: url('../fonts/OpenSans-Regular.ttf');
+   
+}
+ 
+
 h1,
 h2,
 h3,
@@ -488,6 +501,7 @@ fieldset[disabled] .btn-twitter.active {
 }
 .table-bordered.table-highlight thead tr:first-child {
   background-color: #363636;
+  /*background-color: rgb(22, 160, 133);*/
 }
 .table-bordered.table-highlight thead tr:first-child th {
   color: #fff;
@@ -3178,3 +3192,4 @@ ul.support-list li {
   overflow-y: hidden;
   outline: none;
 }
+

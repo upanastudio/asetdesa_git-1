@@ -7,7 +7,7 @@
 		}
 
 		public function countData() {
-			$query = $this->db->prepare("SELECT * FROM `db_tablename`");
+			$query = $this->db->prepare("SELECT * FROM `data_peralatan`");
 
 			try {
 				$query->execute();
@@ -18,7 +18,7 @@
 		}
 
 		public function getDataLengkap() {
-			$query = $this->db->prepare("SELECT * FROM `db_tablename`");
+			$query = $this->db->prepare("SELECT * FROM `data_peralatan`");
 
 			try {
 				$query->execute();
@@ -30,7 +30,7 @@
 		}
 
 		public function getDataById($id) {
-			$query = $this->db->prepare("SELECT * FROM `db_tablename` WHERE `id` = :id");
+			$query = $this->db->prepare("SELECT * FROM `data_peralatan` WHERE `id` = :id");
 			$query->bindParam(':id', $id, PDO::PARAM_INT);
 
 			try {
@@ -67,6 +67,7 @@
 																							`no_rangka`			= :no_rangka,
 																							`no_mesin`	= :no_mesin,
 																							`no_polisi`			= :no_polisi,
+																							`no_bpkb`			= :no_bpkb,
 																							`asal_usul`				= :asal_usul,
 																							`harga`					= :harga,
 																							`keterangan`			= :keterangan,
@@ -84,6 +85,7 @@
 			$query->bindParam(':no_rangka', $no_rangka, PDO::PARAM_STR);
 			$query->bindParam(':no_mesin', $no_mesin, PDO::PARAM_STR);
 			$query->bindParam(':no_polisi', $no_polisi, PDO::PARAM_STR);
+			$query->bindParam(':no_bpkb', $no_bpkb, PDO::PARAM_STR);no_bpkb
 			$query->bindParam(':asal_usul', $asal_usul, PDO::PARAM_STR);
 			$query->bindParam(':harga', $harga, PDO::PARAM_STR);
 			$query->bindParam(':keterangan', $keterangan, PDO::PARAM_STR);
@@ -138,7 +140,7 @@
 		}
 
 		public function deleteData($id) {
-			$sql = "DELETE FROM `db_tablename` WHERE `id` = ?";
+			$sql = "DELETE FROM `data_peralatan` WHERE `id` = ?";
 			$query = $this->db->prepare($sql);
 			$query->bindValue(1, $id);
 
