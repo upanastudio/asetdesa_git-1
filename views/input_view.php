@@ -7,7 +7,6 @@
 		$aksi_jalan = ROOT."controllers/data_jalan_control.php?model=jalan&method=";
 		$aksi_asetlain = ROOT."controllers/data_asetlain_control.php?model=asetlain&method=";
 		$aksi_konstruksi = ROOT."controllers/data_konstruksi_control.php?model=konstruksi&method=";
-
 		$tanah_tab = (isset($_GET['tab']) AND $_GET['tab'] == "tanah")? 'active':'';
 		$peralatan_tab = (isset($_GET['tab']) AND $_GET['tab'] == "peralatan")? 'active':'';
 		$gedung_tab = (isset($_GET['tab']) AND $_GET['tab'] == "gedung")? 'active':'';

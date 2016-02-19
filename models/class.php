@@ -11,7 +11,7 @@
 	try {
 		$data_barang	= new data_barang_model($db);
 		$tanah			= new data_tanah_model($db);
-		$perlengkapan	= new data_perlengkapan_model($db);
+		$peralatan   	= new data_peralatan_model($db);
 		$gedung			= new data_gedung_model($db);
 		$jalan			= new data_jalan_model($db);
 		$asetlain		= new data_asetlain_model($db);
