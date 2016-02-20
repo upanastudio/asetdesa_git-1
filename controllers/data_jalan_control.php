@@ -17,13 +17,14 @@
 				$jenis_barang 		='';
 				$register			='';
 				$konstruksi 		= '';
-				$panjang			='';
+				$panjang				='';
 				$lebar				= '';
 				$luas_tanah			='';
+				$alamat				='';
 				$tanggal_dokumen	='';
 				$no_dokumen			='';
 				$status_tanah		='';
-				$kondisi			='';
+				$kondisi				='';
 				$no_tanah			='';
 				$asal_usul			='';
 				$harga				='';
@@ -38,19 +39,21 @@
 					$jb						= $data_barang->getNamaBarangByKB($kode_barang);
 					$jenis_barang			= $jb['nama_barang'];
 					$register				= $_POST['register'];
-					$kondisi				= $_POST['kondisi'];
+					$kondisi					= $_POST['kondisi'];
 					$konstruksi				= $_POST['konstruksi'];
 					$panjang 				= $_POST['panjang'];
 					$lebar 					= $_POST['lebar'];
 					$luas_tanah 				= $_POST['luas_tanah'];
+					$alamat 						= $_POST['alamat'];
 					$tanggal_dokumen 			= $_POST['tanggal_dokumen'];
 					$no_dokumen 				= $_POST['no_dokumen'];
 					$status_tanah 				= $_POST['status_tanah'];
+					$no_tanah 					= $_POST['no_tanah'];
 					$asal_usul 					= $_POST['asal_usul'];
 					$harga 						= $_POST['harga'];
 					$keterangan 				= $_POST['keterangan'];
 
-					$jalan->insertData($kode_barang, $jenis_barang, $register, $kondisi, $konstruksi, $panjang, $lebar, $luas_tanah, $tanggal_dokumen, $no_dokumen, $status_tanah, $asal_usul, $harga, $keterangan);
+					$jalan->insertData($kode_barang, $jenis_barang, $register, $kondisi, $konstruksi, $panjang, $lebar, $luas_tanah, $alamat, $tanggal_dokumen, $no_dokumen, $status_tanah, $no_tanah, $asal_usul, $harga, $keterangan);
 
 					header("location:".ROOT."inventaris?tab=jalan&act=add");
 				}

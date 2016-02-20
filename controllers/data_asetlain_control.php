@@ -125,11 +125,12 @@
 					$asal_usul 				= $_POST['asal_usul'];
 					$harga 					= $_POST['harga'];
 					$keterangan 			= $_POST['keterangan'];
+					$efoto 					= $_POST['efoto'];
 
 
 					// Update Foto
 					if($_FILES['foto']['tmp_name'] != "") {
-						$libs->deleteFile("../upload/files/",$data['file_upload']);
+						$libs->deleteFile("../upload/images/",$efoto);
 						$foto = $libs->uploadFile('../upload/images/',$_FILES['foto']);
 					}
 
@@ -144,7 +145,7 @@
 		if($model == 'asetlain' AND $method == 'hapus') {
 			$id = filter_var($_GET['id'],FILTER_VALIDATE_INT);
 			$data = $asetlain->getDataById($id);
-			$libs->deleteFile("../upload/files/",$data['file_upload']);
+			$libs->deleteFile("../upload/images/",$data['foto']);
 
 			$asetlain->deleteData($id);
 			echo "<script> alert('Data Berhasil Dihapus'); </script>";

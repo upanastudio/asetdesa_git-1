@@ -56,17 +56,19 @@
 		}
 
 		public function insertData($kode_barang, $jenis_barang, $register, $kondisi, $konstruksi, $luas_lantai, $alamat, $tanggal_beli, 
-			$no_dokumen, $status_tanah, $no_sertifikat, $asal_usul, $harga, $keterangan) {
+			$no_dokumen, $luas_lahan, $status_tanah, $no_sertifikat, $asal_usul, $harga, $keterangan) {
 			$query = $this->db->prepare("INSERT INTO `data_gedung` SET	`kode_barang`			= :kode_barang,
 																							`jenis_barang`			= :jenis_barang,
 																							`register`				= :register,
-																							`kondisi`					= :kondisi,
+																							`kondisi`				= :kondisi,
 																							`konstruksi`			= :konstruksi,
-																							`luas_lantai`		= :luas_lantai,
-																							`alamat`			= :alamat,
+																							`luas_lantai`			= :luas_lantai,
+																							`alamat`					= :alamat,
 																							`tanggal_beli`			= :tanggal_beli,
-																							`status_tanah`	= :status_tanah,
-																							`no_sertifikat`			= :no_sertifikat,
+																							`no_dokumen`			= :no_dokumen,
+																							`luas_lahan`			= :luas_lahan,
+																							`status_tanah`			= :status_tanah,
+																							`no_sertifikat`		= :no_sertifikat,
 																							`asal_usul`				= :asal_usul,
 																							`harga`					= :harga,
 																							`keterangan`			= :keterangan
@@ -80,6 +82,8 @@
 			$query->bindParam(':luas_lantai', $luas_lantai, PDO::PARAM_STR);
 			$query->bindParam(':alamat', $alamat, PDO::PARAM_STR);
 			$query->bindParam(':tanggal_beli', $tanggal_beli, PDO::PARAM_STR);
+			$query->bindParam(':no_dokumen', $no_dokumen, PDO::PARAM_STR);
+			$query->bindParam(':luas_lahan', $luas_lahan, PDO::PARAM_STR);
 			$query->bindParam(':status_tanah', $status_tanah, PDO::PARAM_STR);
 			$query->bindParam(':no_sertifikat', $no_sertifikat, PDO::PARAM_STR);
 			$query->bindParam(':asal_usul', $asal_usul, PDO::PARAM_STR);

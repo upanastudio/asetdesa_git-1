@@ -16,14 +16,14 @@
 				// Inisiasi Value pada tiap input di Tab Jalur
 				$jenis_barang 		='';
 				$register			='';
-				$merek		 		= '';
+				$merek		 		='';
 				$ukuran				='';
-				$tanggal_beli		= '';
+				$tanggal_beli		='';
 				$no_pabrik			='';
 				$no_rangka			='';
 				$no_mesin			='';
 				$no_polisi			='';
-				$no_bpkb			='';
+				$no_bpkb				='';
 				$asal_usul			='';
 				$harga				='';
 				$keterangan			='';
@@ -39,6 +39,7 @@
 					$register				= $_POST['register'];
 					$merek					= $_POST['merek'];
 					$ukuran					= $_POST['ukuran'];
+					$bahan					= $_POST['bahan'];
 					$tanggal_beli 			= $_POST['tanggal_beli'];
 					$no_pabrik 				= $_POST['no_pabrik'];
 					$no_rangka 				= $_POST['no_rangka'];
@@ -53,7 +54,7 @@
 						$foto = $libs->uploadFile('../upload/images/',$_FILES['foto']);
 					}
 
-					$peralatan->insertData($kode_barang, $jenis_barang, $register, $merek, $ukuran, $tanggal_beli, $no_pabrik, $no_rangka, $no_mesin, $no_polisi, $no_bpkb, $asal_usul, $harga, $keterangan, $foto);
+					$peralatan->insertData($kode_barang, $jenis_barang, $register, $merek, $ukuran, $bahan, $tanggal_beli, $no_pabrik, $no_rangka, $no_mesin, $no_polisi, $no_bpkb, $asal_usul, $harga, $keterangan, $foto);
 
 					header("location:".ROOT."inventaris?tab=peralatan&act=add");
 				}

@@ -55,13 +55,14 @@
 			return $query->fetchAll(PDO::FETCH_ASSOC);
 		}
 
-		public function insertData($kode_barang, $jenis_barang, $register, $merek, $ukuran, $tanggal_beli, $no_pabrik, $no_rangka, 
-			$no_mesin, $no_polisi, $asal_usul, $harga, $keterangan, $foto) {
+		public function insertData($kode_barang, $jenis_barang, $register, $merek, $ukuran, $bahan, $tanggal_beli, $no_pabrik, $no_rangka, 
+			$no_mesin, $no_polisi, $no_bpkb, $asal_usul, $harga, $keterangan, $foto) {
 			$query = $this->db->prepare("INSERT INTO `data_peralatan` SET	`kode_barang`			= :kode_barang,
 																							`jenis_barang`			= :jenis_barang,
 																							`register`				= :register,
 																							`merek`				= :merek,
 																							`ukuran`			= :ukuran,
+																							`bahan`			= :bahan,
 																							`tanggal_beli`		= :tanggal_beli,
 																							`no_pabrik`			= :no_pabrik,
 																							`no_rangka`			= :no_rangka,
@@ -80,6 +81,7 @@
 			$query->bindParam(':register', $register, PDO::PARAM_STR);
 			$query->bindParam(':merek', $merek, PDO::PARAM_STR);
 			$query->bindParam(':ukuran', $ukuran, PDO::PARAM_STR);
+			$query->bindParam(':bahan', $bahan, PDO::PARAM_STR);
 			$query->bindParam(':tanggal_beli', $tanggal_beli, PDO::PARAM_STR);
 			$query->bindParam(':no_pabrik', $no_pabrik, PDO::PARAM_STR);
 			$query->bindParam(':no_rangka', $no_rangka, PDO::PARAM_STR);

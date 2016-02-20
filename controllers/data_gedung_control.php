@@ -47,18 +47,18 @@
 					}
 
 					$luas_lantai 				= $_POST['luas_lantai'];
-					$alamat 					= $_POST['alamat'];
+					$alamat 						= $_POST['alamat'];
 					$tanggal_beli 				= $_POST['tanggal_beli'];
 					$no_dokumen 				= $_POST['no_dokumen'];
 					$luas_lahan 				= $_POST['luas_lahan'];
 					$status_tanah 				= $_POST['status_tanah'];
-					$no_sertifikat 				= $_POST['no_sertifikat'];
+					$no_sertifikat 			= $_POST['no_sertifikat'];
 					$asal_usul 					= $_POST['asal_usul'];
 					$harga 						= $_POST['harga'];
 					$keterangan 				= $_POST['keterangan'];
 
 					$gedung->insertData($kode_barang, $jenis_barang, $register, $kondisi, $konstruksi, $luas_lantai, $alamat, 
-						$tanggal_beli, $no_dokumen, $status_tanah, $no_sertifikat, $asal_usul, $harga, $keterangan);
+						$tanggal_beli, $no_dokumen, $luas_lahan, $status_tanah, $no_sertifikat, $asal_usul, $harga, $keterangan);
 
 					header("location:".ROOT."inventaris?tab=gedung&act=add");
 				}

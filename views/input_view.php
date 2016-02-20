@@ -624,6 +624,12 @@
 											</div> <!-- /.col -->
 										</div> <!-- /.form-group -->
 										<div class="form-group">
+											<label class="col-md-3">Lokasi</label>
+											<div class="col-md-7">
+												<input type="text" name="alamat" placeholder="Letak/Lokasi" class="form-control" />
+											</div> <!-- /.col -->
+										</div> <!-- /.form-group -->
+										<div class="form-group">
 											<label class="col-md-12">Dokumen </label>
 											<label class="col-md-3"> &nbsp;Tanggal </label>
 											<div class="col-md-7">
