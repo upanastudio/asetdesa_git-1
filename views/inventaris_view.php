@@ -518,7 +518,7 @@
 													<th rowspan="2">Luas</th>
 													<th rowspan="2">Lokasi</th>
 													<th colspan="2">Dokumen</th>
-													<th rowspan="2">Tanggal Mulai</th>
+													<th rowspan="2" style="width: 90px;">Tanggal Mulai</th>
 													<th rowspan="2">Status Tanah</th>
 													<th rowspan="2">No. Kode Tanah</th>
 													<th rowspan="2">Asal-Usul</th>
@@ -568,7 +568,9 @@
 													<td>'.$data_konstruksi['alamat'].'</td>
 													<td>'.$data_konstruksi['tanggal_dokumen'].'</td>
 													<td>'.$data_konstruksi['no_dokumen'].'</td>
+													<td>'.$data_konstruksi['tanggal_mulai'].'</td>
 													<td>'.$data_konstruksi['status_tanah'].'</td>
+													<td>'.$data_konstruksi['no_tanah'].'</td>
 													<td>'.$data_konstruksi['asal_usul'].'</td>
 													<td>'.number_format($data_konstruksi['harga'], 0, ',', '.').'</td>
 													<td>'.$data_konstruksi['keterangan'].'</td>

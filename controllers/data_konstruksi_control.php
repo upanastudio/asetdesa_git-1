@@ -17,7 +17,7 @@
 				$jenis_barang 		='';
 				$bangunan	 		= '';
 				$alamat				= '';
-				$konstruksi			='';
+				$konstruk			='';
 				$luas_konstruksi	='';
 				$tanggal_dokumen	='';
 				$no_dokumen			='';
@@ -40,7 +40,7 @@
 					if (!empty($kon)) {
 						$N = count($kon);
 						for ($i=0; $i < $N ; $i++) { 
-							$konstruksi .= $kon[$i].", ";
+							$konstruk .= $kon[$i].", ";
 						}
 					}
 
@@ -49,12 +49,14 @@
 					$bangunan					= $_POST['bangunan'];
 					$tanggal_dokumen 			= $_POST['tanggal_dokumen'];
 					$no_dokumen 				= $_POST['no_dokumen'];
+					$tanggal_mulai				= $_POST['tanggal_mulai'];
 					$status_tanah 				= $_POST['status_tanah'];
+					$no_tanah 				= $_POST['no_tanah'];
 					$asal_usul 					= $_POST['asal_usul'];
 					$harga 						= $_POST['harga'];
 					$keterangan 				= $_POST['keterangan'];
 
-					$konstruksi->insertData($kode_barang, $jenis_barang, $bangunan, $konstruksi, $luas_konstruksi, $alamat, $tanggal_dokumen, $no_dokumen, $status_tanah, $asal_usul, $harga, $keterangan);
+					$konstruksi->insertData($kode_barang, $jenis_barang, $bangunan, $konstruk, $luas_konstruksi, $alamat, $tanggal_dokumen, $no_dokumen, $tanggal_mulai, $status_tanah, $no_tanah, $asal_usul, $harga, $keterangan);
 
 					header("location:".ROOT."inventaris?tab=konstruksi&act=add");
 				}

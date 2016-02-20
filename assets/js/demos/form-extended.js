@@ -7,6 +7,7 @@ $(function () {
   $('#dp-ex-5').datepicker ()
   $('#dp-ex-6').datepicker ()
   $('#dp-ex-7').datepicker ()
+  $('#dp-ex-8').datepicker ()
 
   $('#dpStart').datepicker ().on ('changeDate', function (e) {
     $('#dpEnd').datepicker ('setStartDate', e.date);
