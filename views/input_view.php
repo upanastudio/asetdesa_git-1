@@ -197,7 +197,7 @@
 											<div class="col-md-7">
 												<div class="input-group">
 													<span class="input-group-addon">Rp</span>
-													<input class="form-control" id="harga" name="harga" type="number" placeholder="Harga Aset Tanah">
+													<input class="form-control" id="harga" name="harga" type="number" value="0">
 												</div>
 											</div> <!-- /.col -->
 										</div> <!-- /.form-group -->
@@ -331,7 +331,7 @@
 											<div class="col-md-7">
 												<div class="input-group">
 													<span class="input-group-addon">Rp</span>
-													<input class="form-control" id="harga" name="harga" type="number">
+													<input type="number" class="form-control" id="harga" name="harga" value="0">
 												</div>
 											</div> <!-- /.col -->
 										</div> <!-- /.form-group -->
@@ -515,7 +515,7 @@
 											<div class="col-md-7">
 												<div class="input-group">
 													<span class="input-group-addon">Rp</span>
-													<input class="form-control" id="harga" name="harga" type="number">
+													<input type="number" class="form-control" id="harga" name="harga" value="0">
 												</div>
 											</div> <!-- /.col -->
 										</div> <!-- /.form-group -->
@@ -684,7 +684,7 @@
 											<div class="col-md-7">
 												<div class="input-group">
 													<span class="input-group-addon">Rp</span>
-													<input class="form-control" id="harga" name="harga" type="number">
+													<input class="form-control" id="harga" name="harga" value="0" type="number">
 												</div>
 											</div> <!-- /.col -->
 										</div> <!-- /.form-group -->
@@ -845,7 +845,7 @@
 											<div class="col-md-7">
 												<div class="input-group">
 													<span class="input-group-addon">Rp</span>
-													<input class="form-control" id="harga" name="harga" type="number">
+													<input class="form-control" id="harga" name="harga" value="0" type="number">
 												</div>
 											</div> <!-- /.col -->
 										</div> <!-- /.form-group -->
@@ -984,9 +984,25 @@
 										</div> <!-- /.form-group -->
 										<br/>
 										<div class="form-group">
+											<label class="col-md-3">Tanggal Mulai</label>
+											<div class="col-md-7">
+												<div id="dp-ex-8" class="input-group date" data-auto-close="true" data-date-format="dd-mm-yyyy" data-date-autoclose="true">
+													<input class="form-control" type="text" name="tanggal_mulai" value="'.date('d-m-Y').'" />
+													<span class="input-group-addon"><i class="fa fa-calendar"></i></span>
+												</div>
+												<span class="help-block">dd-mm-yyyy</span>
+											</div> <!-- /.col -->
+										</div> <!-- /.form-group -->
+										<div class="form-group">
 											<label class="col-md-3">Status Tanah </label>
 											<div class="col-md-7">
 												<input type="text" name="status_tanah" placeholder="Status Tanah" class="form-control" />
+											</div> <!-- /.col -->
+										</div> <!-- /.form-group -->
+										<div class="form-group">
+											<label class="col-md-3">No. Kode Tanah</label>
+											<div class="col-md-7">
+												<input type="text" name="no_tanah" placeholder="No. Kode Tanah" class="form-control" />
 											</div> <!-- /.col -->
 										</div> <!-- /.form-group -->
 										<div class="form-group">
@@ -1000,7 +1016,7 @@
 											<div class="col-md-7">
 												<div class="input-group">
 													<span class="input-group-addon">Rp</span>
-													<input class="form-control" id="harga" name="harga" type="number">
+													<input class="form-control" id="harga" name="harga" value="0" type="number">
 												</div>
 											</div> <!-- /.col -->
 										</div> <!-- /.form-group -->
