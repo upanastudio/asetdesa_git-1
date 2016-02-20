@@ -114,9 +114,12 @@
 													<td>'.$data_tanah['no_sertifikat'].'</td>
 													<td>'.$data_tanah['penggunaan'].'</td>
 													<td>'.$data_tanah['asal_usul'].'</td>
-													<td>'.$data_tanah['harga'].'</td>
+													<td>'.number_format($data_tanah['harga'], 0, ',', '.').'</td>
 													<td>'.$data_tanah['keterangan'].'</td>
-													<td><a href="'.ROOT.'edit/tanah/'.$data_tanah['id'].'">Edit</a> | <a href="#" onclick="hapusData(\''.$data_tanah['id'].'\')">X</a></td>
+													<td>
+														<a href="'.ROOT.'edit/tanah/'.$data_tanah['id'].'">Edit</a> | 
+														<a href="#" onclick="hapusData(\''.$data_tanah['id'].'\')">X</a>
+													</td>
 												</tr>
 					';
 					$i++;
@@ -126,7 +129,7 @@
 				echo '
 												<tr class="jumlahtabel">
 													<td colspan="12" style="text-align: center;">JUMLAH ASET TETAP (TANAH)</td>
-													<td>'.$total.'</td>
+													<td>'.number_format($total, 0, ',', '.').'</td>
 													<td></td><td></td>
 												</tr>
 											</tbody>
@@ -194,12 +197,15 @@
 													<td>'.$data_peralatan['no_rangka'].'</td>
 													<td>'.$data_peralatan['no_mesin'].'</td>
 													<td>'.$data_peralatan['no_polisi'].'</td>
+													<td>'.$data_peralatan['no_bpkb'].'</td>
+													<td>'.$data_peralatan['asal_usul'].'</td>
+													<td>'.number_format($data_peralatan['harga'], 0, ',', '.').'</td>
+													<td>'.$data_peralatan['keterangan'].'</td>
 													<td>&nbsp;</td>
-													<td>APBD</td>
-													<td> 7.800.000 </td>
-													<td>Dikuasai Pemda</td>
-													<td>&nbsp;</td>
-													<td><a href="">Edit</a></td>
+													<td>
+														<a href="'.ROOT.'edit/peralatan/'.$data_peralatan['id'].'">Edit</a> | 
+														<a href="#" onclick="hapusData(\''.$data_peralatan['id'].'\')">X</a>
+													</td>
 												</tr>
 					';
 					$i++;
@@ -209,471 +215,408 @@
 				echo '
 
 												<tr class="jumlahtabel">
-												 <td>&nbsp;</td>
-												 <td colspan="13" style="text-align: center;">JUMLAH TOTAL ASET TETAP (PERALATAN DAN MESIN)</td>
-												 <td> 7.800.000 </td>
-												 <td></td>
-												 <td>&nbsp;</td>
-												 <td></td>
-													
-												</tr>
-												<tr>
-												 
-												</tr>
-												<tr>
-													
+													<td colspan="14" style="text-align: center;">JUMLAH TOTAL ASET TETAP (PERALATAN DAN MESIN)</td>
+													<td>'.number_format($total, 0, ',', '.').'</td>
+													<td></td><td></td><td></td>
 												</tr>
 											</tbody>
 										</table>
 									</div> <!--Tabel Laporan (Peralatan dan Mesin)-->
-							</div>
+								</div>
 
-							<div class="tab-pane fade in '.$gedung_tab.'" id="gedung">
+								<div class="tab-pane fade in '.$gedung_tab.'" id="gedung">
 									<div class="tabellaporan "> <!--Tabel Laporan (Gedung dan Bangunan)-->
-									
-										<h4 class="heading">Gedung dan Bangunan</h4>
+										<hr/>
 
 										<form id="hapusSubmit" action="'.$aksi_gedung.'hapus" method="POST">
 											<input type="hidden" id="hapus_id" name="id" value="">
 										</form>
 
-										<table class="table table-bordered table-highlight ">
-											<thead >
-												<tr >
-													<th rowspan="2">No</th>
+										<table class="table table-bordered table-highlight">
+											<thead>
+												<tr>
+													<th rowspan="2">No.</th>
 													<th rowspan="2">Jenis/Nama Barang</th>
-													<th colspan="2" style="text-align: center;">Nomor</th>
-													<th rowspan="2"> Kondisi Bangunan</th>
-													<th colspan="2" style="text-align: center;">Konstruksi Bangunan</th>
-													<th rowspan="2">Luas Lantai </th>
+													<th colspan="2">Nomor</th>
+													<th rowspan="2">Kondisi Bangunan</th>
+													<th colspan="2">Konstruksi Bangunan</th>
+													<th rowspan="2">Luas Lantai</th>
 													<th rowspan="2">Alamat</th>
-													<th colspan="2" style="text-align: center;">Dokumen</th>
-													<th rowspan="2">Luas M2</th>
+													<th colspan="2">Dokumen</th>
+													<th rowspan="2">Luas (m<sup>2</sup>)</th>
 													<th rowspan="2">Status Tanah</th>
 													<th rowspan="2">No. Kode Tanah</th>
 													<th rowspan="2">Asal-Usul</th>
 													<th rowspan="2">Harga</th>
 													<th rowspan="2">Keterangan</th>
-													<th rowspan="2">Aksi</th>
+													<th rowspan="2">Tindakan</th>
 												</tr>
-
-												 <tr class="headingtable2">
-													 <td>Kode Barang</td>
-													 <td>Register</td>
-													 <td>Bertingkat/ Tidak</td>
-													 <td>Beton/ Tidak</td>
-													 <td>Tanggal</td>
-													 <td>nomor</td>
-													 
-												 </tr>
-												 <tr class="headingtable3" >
-													<td>1</td>
-													<td>2</td>
-													<td>3</td>
-													<td>4</td>
-													<td>5</td>
-													<td>6</td>
-													<td>7</td>
-													<td>8</td>
-													<td>9</td>
-													<td>10</td>
-													<td>11</td>
-													<td>12</td>
-													<td>13</td>
-													<td>14</td>
-													<td>15</td>
-													<td>16</td>
-													<td>17</td>
+												<tr class="headingtable2">
+													<th>Kode Barang</th>
+													<th>Register</th>
+													<th>Bertingkat/Tidak</th>
+													<th>Beton/Tidak</th>
+													<th style="width: 90px;">Tanggal</th>
+													<th>Nomor</th>
+												</tr>
+												<tr class="headingtable3">
+													<td>1</td><td>2</td><td>3</td><td>4</td><td>5</td><td>6</td><td>7</td><td>8</td><td>9</td>
+													<td>10</td><td>11</td><td>12</td><td>13</td><td>14</td><td>15</td><td>16</td><td>17</td>
 													<td></td>
-												 </tr>
-
+												</tr>
 											</thead>
 											<tbody>
-												<tr>
-												 <td>1</td>
-												 <td>Bangunan Kantor Desa</td>                     
-												 <td>0311010101</td>
-												 <td>0001</td>
-												 <td>KB</td>
-												 <td>Tidak</td>
-												 <td>Beton</td>
-												 <td>70</td>
-												 <td>Pincara</td>
-												 <td>2008</td>
-												 <td>APBD</td>
-												 <td>&nbsp;</td>
-												 <td>70</td>
-												 <td>Milik</td>
-												 <td>APBD</td>
-												 <td>133000000</td>
-												 <td>&nbsp;</td>
-												 <td><a href="">Edit</a></td>
-											 </tr>
+				';
 
+				$i = 1;
+				$total = 0;
+				$data_gedung = $gedung->getDataLengkap();
+				foreach ($data_gedung as $data_gedung) {
+					$kon = explode(", ", trim($data_gedung['konstruksi'], ", "));
+					if (sizeof($kon) == 2) {
+						$bertingkat = "Bertingkat";
+						$beton = "Beton";
+					} else if (sizeof($kon) == 1) {
+						$bertingkat = $kon[0] == "Bertingkat"? "Bertingkat":"Tidak";
+						$beton = $kon[0] == "Beton"? "Beton":"Tidak";
+					} else {
+						$bertingkat = "Tidak";
+						$beton = "Tidak";
+					}
+
+					echo '
+												<tr>
+													<td style="text-align: center;">'.$i.'</td>
+													<td>'.$data_gedung['jenis_barang'].'</td>
+													<td>'.$data_gedung['kode_barang'].'</td>
+													<td>'.$data_gedung['register'].'</td>
+													<td>'.$data_gedung['kondisi'].'</td>
+													<td>'.$bertingkat.'</td>
+													<td>'.$beton.'</td>
+													<td>'.$data_gedung['luas_lantai'].'</td>
+													<td>'.$data_gedung['alamat'].'</td>
+													<td>'.$data_gedung['tanggal_beli'].'</td>
+													<td>'.$data_gedung['no_dokumen'].'</td>
+													<td>'.$data_gedung['luas_lahan'].'</td>
+													<td>'.$data_gedung['status_tanah'].'</td>
+													<td>'.$data_gedung['no_sertifikat'].'</td>
+													<td>'.$data_gedung['asal_usul'].'</td>
+													<td>'.number_format($data_gedung['harga'], 0, ',', '.').'</td>
+													<td>'.$data_gedung['keterangan'].'</td>
+													<td>
+														<a href="'.ROOT.'edit/gedung/'.$data_gedung['id'].'">Edit</a> | 
+														<a href="#" onclick="hapusData(\''.$data_gedung['id'].'\')">X</a>
+													</td>
+												</tr>
+					';
+					$i++;
+					$total += $data_gedung['harga'];
+				}
+
+				echo '
 												<tr class="jumlahtabel">
-												 <td>&nbsp;</td>
-												 <td colspan="14" style="text-align: right;">JUMLAH TOTAL ASET TETAP (Gedung dan Bangunan)</td>
-												 <td> 7.800.000 </td>
-												 
-												 <td></td>
-												 <td>&nbsp;</td>
-												</tr>
-												<tr>
-												 
-												</tr>
-												<tr>
-													
+													<td colspan="15" style="text-align: center;">JUMLAH TOTAL ASET TETAP (Gedung dan Bangunan)</td>
+													<td>'.number_format($total, 0, ',', '.').'</td>
+													<td></td><td></td>
 												</tr>
 											</tbody>
 										</table>
-
 									</div> <!--Tabel Laporan (Gedung dan Bangunan)-->
-							</div>
+								</div>
 
-							<div class="tab-pane fade in '.$jalan_tab.'" id="jalan">
+								<div class="tab-pane fade in '.$jalan_tab.'" id="jalan">
 									<div class="tabellaporan "> <!--Tabel Laporan (JALAN, IRIGASI DAN JARINGAN)-->
-										<h4 class="heading">
-											JALAN, IRIGASI DAN JARINGAN
-										</h4>
+										<hr/>
 
 										<form id="hapusSubmit" action="'.$aksi_jalan.'hapus" method="POST">
 											<input type="hidden" id="hapus_id" name="id" value="">
 										</form>
 
-										<table class="table table-bordered table-highlight ">
-											<thead >
-												<tr >
-													<th rowspan="2">No</th>
+										<table class="table table-bordered table-highlight">
+											<thead>
+												<tr>
+													<th rowspan="2">No.</th>
 													<th rowspan="2">Jenis/Nama Barang</th>
-													<th colspan="2" style="text-align: center;">Nomor</th>
-													
-													<th rowspan="2"> Konstruksi</th>
+													<th colspan="2">Nomor</th>
+													<th rowspan="2">Konstruksi</th>
 													<th rowspan="2">Panjang</th>
-													<th rowspan="2">Lebar </th>
+													<th rowspan="2">Lebar</th>
 													<th rowspan="2">Luas</th>
 													<th rowspan="2">Lokasi</th>
-													<th colspan="2" style="text-align: center;">Dokumen</th>
+													<th colspan="2">Dokumen</th>
 													<th rowspan="2">Status Tanah</th>
 													<th rowspan="2">No. Kode Tanah</th>
 													<th rowspan="2">Asal-Usul</th>
 													<th rowspan="2">Harga</th>
 													<th rowspan="2">Kondisi</th>
 													<th rowspan="2">Keterangan</th>
-													<th rowspan="2">Aksi</th>
+													<th rowspan="2">Tindakan</th>
 												</tr>
-
-												 <tr class="headingtable2">
-													 <td>Kode Barang</td>
-													 <td>Register</td>
-													 <td>Tanggal</td>
-													 <td>nomor</td>
-													 
-												 </tr>
-												 <tr class="headingtable3" >
-													<td>1</td>
-													<td>2</td>
-													<td>3</td>
-													<td>4</td>
-													<td>5</td>
-													<td>6</td>
-													<td>7</td>
-													<td>8</td>
-													<td>9</td>
-													<td>10</td>
-													<td>11</td>
-													<td>12</td>
-													<td>13</td>
-													<td>14</td>
-													<td>15</td>
-													<td>16</td>
-													<td>17</td>
+												<tr class="headingtable2">
+													<th>Kode Barang</th>
+													<th>Register</th>
+													<th style="width: 90px;">Tanggal</th>
+													<th>Nomor</th>
+												</tr>
+												<tr class="headingtable3">
+													<td>1</td><td>2</td><td>3</td><td>4</td><td>5</td><td>6</td><td>7</td><td>8</td><td>9</td>
+													<td>10</td><td>11</td><td>12</td><td>13</td><td>14</td><td>15</td><td>16</td><td>17</td>
 													<td></td>
-												 </tr>
-
+												</tr>
 											</thead>
 											<tbody>
-												<tr>
-												 <td>1</td>
-												 <td>Bangunan Kantor Desa</td>                     
-												 <td>0311010101</td>
-												 <td>0001</td>
-												 <td>KB</td>
-												 <td>200 km</td>
-												 <td>3 m</td>
-												 <td>70 m</td>
-												 <td>Pincara</td>
-												 <td>2008</td>
-												 <td>APBD</td>
-												 <td>&nbsp;</td>
-												 <td>70</td>
-												 <td>Milik</td>
-												 <td>APBD</td>
-												 <td>133000000</td>
-												 <td>&nbsp;</td>
-												 <td><a href="">Edit</a></td>
-											 </tr>
+				';
 
+				$i = 1;
+				$total = 0;
+				$data_jalan = $jalan->getDataLengkap();
+				foreach ($data_jalan as $data_jalan) {
+					echo '
+												<tr>
+													<td style="text-align: center;">'.$i.'</td>
+													<td>'.$data_jalan['jenis_barang'].'</td>
+													<td>'.$data_jalan['kode_barang'].'</td>
+													<td>'.$data_jalan['register'].'</td>
+													<td>'.$data_jalan['konstruksi'].'</td>
+													<td>'.$data_jalan['panjang'].'</td>
+													<td>'.$data_jalan['lebar'].'</td>
+													<td>'.$data_jalan['luas_tanah'].'</td>
+													<td>'.$data_jalan['alamat'].'</td>
+													<td>'.$data_jalan['tanggal_dokumen'].'</td>
+													<td>'.$data_jalan['no_dokumen'].'</td>
+													<td>'.$data_jalan['status_tanah'].'</td>
+													<td>'.$data_jalan['no_tanah'].'</td>
+													<td>'.$data_jalan['asal_usul'].'</td>
+													<td>'.$data_jalan['kondisi'].'</td>
+													<td>'.number_format($data_jalan['harga'], 0, ',', '.').'</td>
+													<td>'.$data_jalan['keterangan'].'</td>
+													<td>
+														<a href="'.ROOT.'edit/jalan/'.$data_jalan['id'].'">Edit</a> | 
+														<a href="#" onclick="hapusData(\''.$data_jalan['id'].'\')">X</a>
+													</td>
+												</tr>
+					';
+					$i++;
+					$total += $data_jalan['harga'];
+				}
+
+				echo '
 												<tr class="jumlahtabel">
-												 <td>&nbsp;</td>
-												 <td colspan="14" style="text-align: right;">JUMLAH TOTAL ASET TETAP (JALAN, IRIGASI, DAN JARINGAN)</td>
-												 <td> 133000000 </td>
-												 <td>&nbsp;</td>
-												 
-												 <td></td>
-													
-												</tr>
-												<tr>
-												 
-												</tr>
-												<tr>
-													
+													<td colspan="15" style="text-align: center;">
+														JUMLAH TOTAL ASET TETAP (Jalan, Irigasi, dan Jaringan)
+													</td>
+													<td>'.number_format($total, 0, ',', '.').'</td>
+													<td></td><td></td>
 												</tr>
 											</tbody>
 										</table>
 									</div> <!--Tabel Laporan (JALAN, IRIGASI DAN JARINGAN)-->
-							</div>
+								</div>
 
-							<div class="tab-pane fade in '.$asetlain_tab.'" id="asetlain">
-										<div class="tabellaporan "> <!--Tabel Laporan (ASET TETAP LAINNYA)-->
-											<h4 class="heading">
-												ASET TETAP LAINNYA
-											</h4>
+								<div class="tab-pane fade in '.$asetlain_tab.'" id="asetlain">
+									<div class="tabellaporan "> <!--Tabel Laporan (ASET TETAP LAINNYA)-->
+										<hr/>
 
 										<form id="hapusSubmit" action="'.$aksi_asetlain.'hapus" method="POST">
 											<input type="hidden" id="hapus_id" name="id" value="">
 										</form>
 
-											<table class="table table-bordered table-highlight ">
-												<thead >
-													<tr >
-														<th rowspan="2">No</th>
-														<th rowspan="2">Jenis/Nama Barang</th>
-														<th colspan="2" style="text-align: center;">Nomor</th>
-													 
-														<th colspan="2" style="text-align: center;">Buku Perpustakaan</th>
-														<th colspan="3" style="text-align: center;">Barang Bercorak Kesenian/ Kebudayaan</th>
-														<th colspan="2" style="text-align: center;">Hewan/Ternak dan Tumbuhan</th>
-														<th rowspan="2">Tahun Cetak / Pembelian</th>
-														<th rowspan="2">Jumlah</th>
-														<th rowspan="2">Asal-Usul</th>
-														<th rowspan="2">Harga</th>
-														<th rowspan="2">Keterangan</th>
-														<th rowspan="2">Aksi</th>
-													</tr>
+										<table class="table table-bordered table-highlight ">
+											<thead >
+												<tr >
+													<th rowspan="2">No.</th>
+													<th rowspan="2">Jenis/Nama Barang</th>
+													<th colspan="2">Nomor</th>
+													<th colspan="2">Buku Perpustakaan</th>
+													<th colspan="3">Barang Bercorak Kesenian/ Kebudayaan</th>
+													<th colspan="2">Hewan/Ternak dan Tumbuhan</th>
+													<th rowspan="2">Tahun Cetak/Pembelian</th>
+													<th rowspan="2">Jumlah</th>
+													<th rowspan="2">Asal-Usul</th>
+													<th rowspan="2">Harga</th>
+													<th rowspan="2">Keterangan</th>
+													<th rowspan="2">Tindakan</th>
+												</tr>
+												<tr class="headingtable2">
+													<th>Kode Barang</th>
+													<th>Register</th>
+													<th>Judul/Pencipta</th>
+													<th>Spesifikasi</th>
+													<th>Asal Daerah</th>
+													<th>Pencipta</th>
+													<th>Bahan</th>
+													<th>Jenis</th>
+													<th>ukuran</th>
+												</tr>
+												<tr class="headingtable3">
+													<td>1</td><td>2</td><td>3</td><td>4</td><td>5</td><td>6</td><td>7</td><td>8</td>
+													<td>9</td><td>10</td><td>11</td><td>12</td><td>13</td><td>14</td><td>15</td>
+													<td>16</td><td></td>
+												</tr>
+											</thead>
+											<tbody>
+				';
 
-													 <tr class="headingtable2">
-														 <td>Kode Barang</td>
-														 <td>Register</td>
-														 <td>Judul/Pencipta</td>
-														 <td>Spesifikasi</td>
-														 <td>Asal Daerah</td>
-														 <td>Pencipta</td>
-														 <td>Bahan</td>
-														 <td>Jenis</td>
-														 <td>ukuran</td>
-														 
-													 </tr>
-													 <tr class="headingtable3" >
-														<td>1</td>
-														<td>2</td>
-														<td>3</td>
-														<td>4</td>
-														<td>5</td>
-														<td>6</td>
-														<td>7</td>
-														<td>8</td>
-														<td>9</td>
-														<td>10</td>
-														<td>11</td>
-														<td>12</td>
-														<td>13</td>
-														<td>14</td>
-														<td>15</td>
-														<td>16</td>
-														<td>17</td>
-													 </tr>
+				$i = 1;
+				$total = 0;
+				$data_asetlain = $asetlain->getDataLengkap();
+				foreach ($data_asetlain as $data_asetlain) {
+					echo '
+												<tr>
+													<td style="text-align: center;">'.$i.'</td>
+													<td>'.$data_asetlain['jenis_barang'].'</td>
+													<td>'.$data_asetlain['kode_barang'].'</td>
+													<td>'.$data_asetlain['register'].'</td>
+													<td>'.$data_asetlain['judul_buku'].'</td>
+													<td>'.$data_asetlain['spesifikasi_buku'].'</td>
+													<td>'.$data_asetlain['asal_daerah'].'</td>
+													<td>'.$data_asetlain['pencipta_kesenian'].'</td>
+													<td>'.$data_asetlain['bahan_kesenian'].'</td>
+													<td>'.$data_asetlain['jenis'].'</td>
+													<td>'.$data_asetlain['ukuran'].'</td>
+													<td>'.$data_asetlain['tanggal_cetak'].'</td>
+													<td>'.$data_asetlain['jumlah'].'</td>
+													<td>'.$data_asetlain['asal_usul'].'</td>
+													<td>'.number_format($data_asetlain['harga'], 0, ',', '.').'</td>
+													<td>'.$data_asetlain['keterangan'].'</td>
+													<td>
+														<a href="'.ROOT.'edit/asetlain/'.$data_asetlain['id'].'">Edit</a> | 
+														<a href="#" onclick="hapusData(\''.$data_asetlain['id'].'\')">X</a>
+													</td>
+												</tr>
+					';
+					$i++;
+					$total += $data_asetlain['harga'];
+				}
 
-												</thead>
-												<tbody>
-													<tr>
-													 <td>1</td>
-													 <td>Buku </td>                     
-													 <td>0311010101</td>
-													 <td>0001</td>
-													 <td>Aku ?</td>
-													 <td>Baru</td>
-													 <td>Makassar</td>
-													 <td>Dg. Gaga</td>
-													 <td>Kertas</td>
-													 <td>Jilid</td>
-													 <td>30x20</td>
-													 <td>2015</td>
-													 <td>5</td>
-													 <td>Donasi</td>
-													 <td>150000</td>
-													 <td>&nbsp;</td>
-													 <td><a href="">Edit</a></td>
-												 </tr>
-
-													<tr class="jumlahtabel">
-													 <td>&nbsp;</td>
-													 <td colspan="13" style="text-align: right;">JUMLAH TOTAL ASET Lain </td>
-													 <td> 133000000 </td>
-													 <td>&nbsp;</td>
-													 <td>&nbsp;</td>
-													
-														
-													</tr>
-													<tr>
-													 
-													</tr>
-													<tr>
-														
-													</tr>
-												</tbody>
-											</table>
+				echo '
+												<tr class="jumlahtabel">
+													<td colspan="14" style="text-align: center;">JUMLAH TOTAL ASET TETAP (Lainnya)</td>
+													<td>'.number_format($total, 0, ',', '.').'</td>
+													<td></td><td></td>
+												</tr>
+											</tbody>
+										</table>
 									</div> <!--Tabel Laporan (ASET TETAP LAINNYA)-->
-							</div>
+								</div>
 
-							<div class="tab-pane fade in '.$konstruksi_tab.'" id="konstruksi">
+								<div class="tab-pane fade in '.$konstruksi_tab.'" id="konstruksi">
 									<div class="tabellaporan "> <!--Tabel Laporan (KONSTRUKSI DALAM PENGERJAAN)-->
-									
-
-											<h4 class="heading">
-												Konstruksi Dalam Pengerjaan
-											</h4>
+										<hr/>
 
 										<form id="hapusSubmit" action="'.$aksi_konstruksi.'hapus" method="POST">
 											<input type="hidden" id="hapus_id" name="id" value="">
 										</form>
 
-											<table class="table table-bordered table-highlight ">
-												<thead >
-													<tr >
-														<th rowspan="2">No</th>
-														<th rowspan="2">Jenis/Nama Barang</th>
-														<th rowspan="2">Bangunan</th>
-														<th colspan="2" style="text-align: center;">Konstruksi Bangunan</th>
+										<table class="table table-bordered table-highlight">
+											<thead>
+												<tr>
+													<th rowspan="2">No.</th>
+													<th rowspan="2">Jenis/Nama Barang</th>
+													<th rowspan="2">Bangunan</th>
+													<th colspan="2">Konstruksi Bangunan</th>
+													<th rowspan="2">Luas</th>
+													<th rowspan="2">Lokasi</th>
+													<th colspan="2">Dokumen</th>
+													<th rowspan="2">Tanggal Mulai</th>
+													<th rowspan="2">Status Tanah</th>
+													<th rowspan="2">No. Kode Tanah</th>
+													<th rowspan="2">Asal-Usul</th>
+													<th rowspan="2">Nilai Kontrak</th>
+													<th rowspan="2">Keterangan</th>
+													<th rowspan="2">Tindakan</th>
+												</tr>
 
-														<th rowspan="2">Luas</th>
-														<th rowspan="2">Lokasi</th>
+												<tr class="headingtable2">
+													<th>Bertingkat/Tidak</th>
+													<th>Beton/Tidak</th>
+													<th style="width: 90px;">Tanggal</th>
+													<th>Nomor</th>
+												</tr>
+												<tr class="headingtable3">
+													<td>1</td><td>2</td><td>3</td><td>4</td><td>5</td><td>6</td><td>7</td><td>8</td>
+													<td>9</td><td>10</td><td>11</td><td>12</td><td>13</td><td>14</td><td>15</td><td></td>
+												</tr>
+											</thead>
+											<tbody>
+				';
 
-													 
-														<th colspan="2" style="text-align: center;">Dokumen</th>
-														<th rowspan="2">Tanggal Mulai</th>
-														<th rowspan="2">Status Tanah</th>
-														<th rowspan="2">No. Kode Tanah</th>
-														<th rowspan="2">Asal-Usul</th>
-														<th rowspan="2">Nilai Kontrak</th>
-														<th rowspan="2">Keterangan</th>
-														<th rowspan="2">Aksi</th>
-													</tr>
+				$i = 1;
+				$total = 0;
+				$data_konstruksi = $konstruksi->getDataLengkap();
+				foreach ($data_konstruksi as $data_konstruksi) {
+					$kon2 = explode(", ", trim($data_konstruksi['konstruksi'], ", "));
+					if (sizeof($kon2) == 2) {
+						$bertingkat = "Bertingkat";
+						$beton = "Beton";
+					} else if (sizeof($kon) == 1) {
+						$bertingkat = $kon[0] == "Bertingkat"? "Bertingkat":"Tidak";
+						$beton = $kon[0] == "Beton"? "Beton":"Tidak";
+					} else {
+						$bertingkat = "Tidak";
+						$beton = "Tidak";
+					}
 
-													 <tr class="headingtable2">
-														 <td>Bertingkat/ Tidak</td>
-														 <td>Beton/ Tidak</td>
-														 <td>Tanggal</td>
-														 <td>Nomor</td>
-														 
-														 
-													 </tr>
-													 <tr class="headingtable3" >
-														<td>1</td>
-														<td>2</td>
-														<td>3</td>
-														<td>4</td>
-														<td>5</td>
-														<td>6</td>
-														<td>7</td>
-														<td>8</td>
-														<td>9</td>
-														<td>10</td>
-														<td>11</td>
-														<td>12</td>
-														<td>13</td>
-														<td>14</td>
-														<td>15</td>
-														<td>16</td>
-													 </tr>
+					echo '
+												<tr>
+													<td style="text-align: center;">'.$i.'</td>
+													<td>'.$data_konstruksi['jenis_barang'].'</td>
+													<td>'.$data_konstruksi['bangunan'].'</td>
+													<td>'.$bertingkat.'</td>
+													<td>'.$beton.'</td>
+													<td>'.$data_konstruksi['luas_konstruksi'].'</td>
+													<td>'.$data_konstruksi['alamat'].'</td>
+													<td>'.$data_konstruksi['tanggal_dokumen'].'</td>
+													<td>'.$data_konstruksi['no_dokumen'].'</td>
+													<td>'.$data_konstruksi['status_tanah'].'</td>
+													<td>'.$data_konstruksi['asal_usul'].'</td>
+													<td>'.number_format($data_konstruksi['harga'], 0, ',', '.').'</td>
+													<td>'.$data_konstruksi['keterangan'].'</td>
+													<td>
+														<a href="'.ROOT.'edit/konstruksi/'.$data_konstruksi['id'].'">Edit</a> | 
+														<a href="#" onclick="hapusData(\''.$data_konstruksi['id'].'\')">X</a>
+													</td>
+												</tr>
+					';
+					$i++;
+					$total += $data_konstruksi['harga'];
+				}
 
-												</thead>
-												<tbody>
-													<tr>
-													 <td>1</td>
-													 <td>Bangunan Kantor Desa</td>                     
-													
-													 <td>P</td>
-													 
-													 <td>Tidak</td>
-													 <td>Beton</td>
-													 <td>70</td>
-													 <td>Pincara</td>
-													 <td>12/6/2016</td>
-													 <td>002</td>
-													 <td>12/6/2016</td>
-													 <td>Milik</td>
-													 <td>90</td>
-													 <td>APBD</td>
-													 <td>133000000</td>
-													 <td>&nbsp;</td>
-													 <td><a href="">Edit</a></td>
-												 </tr>
-
-													<tr class="jumlahtabel">
-													 <td>&nbsp;</td>
-													 <td colspan="12" style="text-align: right;">JUMLAH KONSTRUKSI DALAM PENGERJAAN</td>
-													 <td> 133000000 </td>
-													 <td>&nbsp;</td>
-													 <td>&nbsp;</td>
-													
-														
-													</tr>
-													<tr>
-													 
-													</tr>
-													<tr>
-														
-													</tr>
-												</tbody>
-											</table>
-
+				echo '
+												<tr class="jumlahtabel">
+													<td colspan="13" style="text-align: center;">JUMLAH KONSTRUKSI DALAM PENGERJAAN</td>
+													<td>'.number_format($total, 0, ',', '.').'</td>
+													<td></td><td></td>
+												</tr>
+											</tbody>
+										</table>
 									</div> <!--Tabel Laporan (KONSTRUKSI DALAM PENGERJAAN)-->  
-							</div>
-					 </div>
-			</div>
+								</div>
+							</div> <!--Tab Content-->
+						</div> <!--col-->
 
-
-
-
-
-						<h4>Laporan Rekap Desa </h4>
-						<hr />
+						<h4>Laporan Rekap Desa</h4>
+						<hr/>
 						<div class="list-group">
-
 							<a href="javascript:;" class="list-group-item">
 								<i class="fa fa-envelope"></i> 
 								&nbsp;&nbsp;<strong>Kirim</strong> Rekapitulasi
 							</a>
-
-							
-
 							<a href="javascript:;" class="list-group-item">
 								<i class="fa fa-print"></i>
 								&nbsp;&nbsp;<strong>Print</strong> Rekapitulasi
 							</a>
-
 							<a href="javascript:;" class="list-group-item">
 								<i class="fa fa-copy"></i>
 								&nbsp;&nbsp;<strong>Simpan</strong> Rekapitulasi
 							</a>
-
 							<a href="javascript:;" class="list-group-item">
 								<i class="fa fa-times"></i>
 								&nbsp;&nbsp;<strong>Hapus</strong> Rekapitulasi
 							</a>
-
 						</div>
-		 
+					</div>
+
 				';
 				break;
 		}

@@ -17,6 +17,7 @@
 				$jenis_barang 		='';
 				$bangunan	 		= '';
 				$alamat				= '';
+				$konstruksi			='';
 				$luas_konstruksi	='';
 				$tanggal_dokumen	='';
 				$no_dokumen			='';
@@ -26,14 +27,14 @@
 				$keterangan			='';
 
 
-				$kode_barang			= $_POST['kode_barang'];
+				$kode_barang			= $_POST['jenis_barang'];
 				if (empty($kode_barang)) {
 					header("location:".ROOT."input?tab=konstruksi&act=err");
 				}else{
 
 					$jb						= $data_barang->getNamaBarangByKB($kode_barang);
 					$jenis_barang			= $jb['nama_barang'];
-					$register				= $_POST['register'];
+					// $register				= $_POST['register'];
 					$kon 					= $_POST['konstruksi'];
 
 					if (!empty($kon)) {
@@ -44,7 +45,8 @@
 					}
 
 					$luas_konstruksi 			= $_POST['luas_konstruksi'];
-					$alamat 					= $_POST['alamat'];
+					$alamat 						= $_POST['alamat'];
+					$bangunan					= $_POST['bangunan'];
 					$tanggal_dokumen 			= $_POST['tanggal_dokumen'];
 					$no_dokumen 				= $_POST['no_dokumen'];
 					$status_tanah 				= $_POST['status_tanah'];
@@ -52,8 +54,7 @@
 					$harga 						= $_POST['harga'];
 					$keterangan 				= $_POST['keterangan'];
 
-					$konstruksi->insertData($kode_barang, $jenis_barang, $register, $konstruksi, $luas_konstruksi, $alamat, 
-						$tanggal_dokumen, $no_dokumen, $status_tanah, $asal_usul, $harga, $keterangan);
+					$konstruksi->insertData($kode_barang, $jenis_barang, $bangunan, $konstruksi, $luas_konstruksi, $alamat, $tanggal_dokumen, $no_dokumen, $status_tanah, $asal_usul, $harga, $keterangan);
 
 					header("location:".ROOT."inventaris?tab=konstruksi&act=add");
 				}

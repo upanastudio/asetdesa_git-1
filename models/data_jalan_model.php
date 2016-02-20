@@ -55,19 +55,21 @@
 			return $query->fetchAll(PDO::FETCH_ASSOC);
 		}
 
-		public function insertData($kode_barang, $jenis_barang, $register, $kondisi, $konstruksi, $panjang, $lebar, $luas_tanah, $tanggal_dokumen,
-		$no_dokumen, $status_tanah, $asal_usul, $harga, $keterangan) {
+		public function insertData($kode_barang, $jenis_barang, $register, $kondisi, $konstruksi, $panjang, $lebar, $luas_tanah, $alamat, $tanggal_dokumen,
+		$no_dokumen, $status_tanah, $no_tanah, $asal_usul, $harga, $keterangan) {
 			$query = $this->db->prepare("INSERT INTO `data_jalan` SET	`kode_barang`			= :kode_barang,
 																							`jenis_barang`			= :jenis_barang,
 																							`register`				= :register,
 																							`kondisi`				= :kondisi,
 																							`konstruksi`			= :konstruksi,
-																							`panjang`		= :panjang,
-																							`lebar`			= :lebar,
+																							`panjang`				= :panjang,
+																							`lebar`					= :lebar,
 																							`luas_tanah`			= :luas_tanah,
-																							`tanggal_dokumen`	= :tanggal_dokumen,
+																							`alamat`					= :alamat,
+																							`tanggal_dokumen`		= :tanggal_dokumen,
 																							`no_dokumen`			= :no_dokumen,
 																							`status_tanah`			= :status_tanah,
+																							`no_tanah`				= :no_tanah,
 																							`asal_usul`				= :asal_usul,
 																							`harga`					= :harga,
 																							`keterangan`			= :keterangan
@@ -81,8 +83,10 @@
 			$query->bindParam(':panjang', $panjang, PDO::PARAM_STR);
 			$query->bindParam(':lebar', $lebar, PDO::PARAM_STR);
 			$query->bindParam(':luas_tanah', $luas_tanah, PDO::PARAM_STR);
+			$query->bindParam(':alamat', $alamat, PDO::PARAM_STR);
 			$query->bindParam(':tanggal_dokumen', $tanggal_dokumen, PDO::PARAM_STR);
 			$query->bindParam(':status_tanah', $status_tanah, PDO::PARAM_STR);
+			$query->bindParam(':no_tanah', $no_tanah, PDO::PARAM_STR);
 			$query->bindParam(':no_dokumen', $no_dokumen, PDO::PARAM_STR);
 			$query->bindParam(':asal_usul', $asal_usul, PDO::PARAM_STR);
 			$query->bindParam(':harga', $harga, PDO::PARAM_STR);
