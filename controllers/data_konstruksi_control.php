@@ -15,13 +15,8 @@
 				
 				// Inisiasi Value pada tiap input di Tab Jalur
 				$jenis_barang 		='';
-<<<<<<< HEAD
 				$bangunan	 		='';
 				$alamat				='';
-=======
-				$bangunan	 		= '';
-				$alamat				= '';
->>>>>>> d3dbc957bec8867243c12cd24d8b27e0946d0f34
 				$konstruk			='';
 				$luas_konstruksi	='';
 				$tanggal_dokumen	='';
@@ -55,25 +50,15 @@
 					$bangunan					= $_POST['bangunan'];
 					$tanggal_dokumen 			= $_POST['tanggal_dokumen'];
 					$no_dokumen 				= $_POST['no_dokumen'];
-<<<<<<< HEAD
 					$tanggal_mulai 				= $_POST['tanggal_mulai'];
 					$status_tanah 				= $_POST['status_tanah'];
 					$no_tanah 					= $_POST['no_tanah'];
-=======
-					$tanggal_mulai				= $_POST['tanggal_mulai'];
-					$status_tanah 				= $_POST['status_tanah'];
-					$no_tanah 				= $_POST['no_tanah'];
->>>>>>> d3dbc957bec8867243c12cd24d8b27e0946d0f34
 					$asal_usul 					= $_POST['asal_usul'];
 					$harga 						= $_POST['harga'];
 					$keterangan 				= $_POST['keterangan'];
 
-<<<<<<< HEAD
 					$konstruksi->insertData($kode_barang, $jenis_barang, $bangunan, $konstruk, $luas_konstruksi, $alamat, 
 						$tanggal_dokumen, $no_dokumen, $tanggal_mulai, $status_tanah, $no_tanah, $asal_usul, $harga, $keterangan);
-=======
-					$konstruksi->insertData($kode_barang, $jenis_barang, $bangunan, $konstruk, $luas_konstruksi, $alamat, $tanggal_dokumen, $no_dokumen, $tanggal_mulai, $status_tanah, $no_tanah, $asal_usul, $harga, $keterangan);
->>>>>>> d3dbc957bec8867243c12cd24d8b27e0946d0f34
 
 					header("location:".ROOT."inventaris?tab=konstruksi&act=add");
 				}
@@ -134,6 +119,7 @@
 				header("location:".ROOT."inventaris?tab=konstruksi&act=upd");
 			}
 		}
+	}
 
 		if($model == 'konstruksi' AND $method == 'hapus') {
 			$id = filter_var($_GET['id'],FILTER_VALIDATE_INT);

@@ -107,7 +107,7 @@
 				header("location:".ROOT."inventaris?tab=jalan&act=upd");
 			}
 		}
-
+	}
 		if($model == 'jalan' AND $method == 'hapus') {
 			$id = filter_var($_GET['id'],FILTER_VALIDATE_INT);
 			$jalan->deleteData($id);

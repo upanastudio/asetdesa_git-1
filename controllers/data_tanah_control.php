@@ -87,7 +87,7 @@
 				header("location:".ROOT."inventaris?tab=tanah&act=upd");
 			}
 		}
-
+	}
 		if($model == 'tanah' AND $method == 'hapus') {
 			$id = filter_var($_POST['id'],FILTER_VALIDATE_INT);
 

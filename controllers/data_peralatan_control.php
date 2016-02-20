@@ -117,6 +117,7 @@
 				header("location:".ROOT."inventaris?tab=peralatan&act=upd");
 			}
 		}
+	}
 
 		if($model == 'peralatan' AND $method == 'hapus') {
 			$id = filter_var($_GET['id'],FILTER_VALIDATE_INT);

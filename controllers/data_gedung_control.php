@@ -123,6 +123,7 @@
 				header("location:".ROOT."inventaris?tab=gedung&act=upd");
 			}
 		}
+	}
 
 		if($model == 'gedung' AND $method == 'hapus') {
 			$id = filter_var($_GET['id'],FILTER_VALIDATE_INT);			
