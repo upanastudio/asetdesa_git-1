@@ -1,7 +1,6 @@
 <?php
 	if(isset($method)):
 		date_default_timezone_set('Asia/Jakarta');
-		// include('../../lib');
 		$aksi = ROOT."controllers/home_control.php?model=home&method="; // halaman untuk eksekusi
 
 		switch($method) {
@@ -12,14 +11,15 @@
 			case '':
 				echo '
 
-			<h2>Ini halaman depan</h2>
-			<hr/>
-			<a href="'.ROOT.'pagemodel">Halaman Pagemodel</a>
+					<div class="content-header">
+						<h2 class="content-header-title">Beranda</h2>
+					</div> <!-- /.content-header -->
+					<div class="row">
+						<center><h1>SELAMAT DATANG DI APLIKASI ASET DESA</h1></center>
+					</div>
 
 				';
 				break;
-
-			
 		}
 
 	endif;

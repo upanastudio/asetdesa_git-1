@@ -58,7 +58,7 @@
 								</li>
 							</ul>
 						</li>
-						<li class="dropdown <?php echo $model=='inventaris' OR $model=='penyusutan' OR $model=='mutasi' OR $model=='neraca'? 'active':''; ?>">
+						<li class="dropdown <?php echo ($model=='inventaris' OR $model=='penyusutan' OR $model=='mutasi' OR $model=='neraca')? 'active':''; ?>">
 							<a href="javascript:;" class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown">
 								<i class="fa fa-align-left"></i> 
 								Laporan

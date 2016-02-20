@@ -13,10 +13,6 @@
 
 					<div class="content-header">
 						<h2 class="content-header-title">Kirim Data</h2>
-						<ol class="breadcrumb">
-							<li><a href="'.ROOT.'">Beranda</a></li>
-							<li class="active">Kirim Data Laporan</li>
-						</ol>
 					</div> <!-- /.content-header -->
 				';
 

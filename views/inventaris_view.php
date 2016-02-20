@@ -27,11 +27,6 @@
 
 					<div class="content-header">
 						<h2 class="content-header-title">Laporan Inventaris</h2>
-						<ol class="breadcrumb">
-							<li><a href="'.ROOT.'">Beranda</a></li>
-							<li><a href="javascript:;">Laporan</a></li>
-							<li class="active">Laporan Inventaris Aset</li>
-						</ol>
 					</div> <!-- /.content-header -->
 				';
 
@@ -116,9 +111,9 @@
 													<td>'.$data_tanah['asal_usul'].'</td>
 													<td>'.number_format($data_tanah['harga'], 0, ',', '.').'</td>
 													<td>'.$data_tanah['keterangan'].'</td>
-													<td>
-														<a href="'.ROOT.'edit/tanah/'.$data_tanah['id'].'">Edit</a> | 
-														<a href="#" onclick="hapusData(\''.$data_tanah['id'].'\')">X</a>
+													<td style="text-align: center;">
+														<a href="'.ROOT.'edit/tanah/'.$data_tanah['id'].'"><i class="fa fa-edit"></i></a> | 
+														<a href="#" onclick="hapusData(\''.$data_tanah['id'].'\')"><i class="fa fa-trash-o"></i></a>
 													</td>
 												</tr>
 					';
@@ -202,9 +197,9 @@
 													<td>'.number_format($data_peralatan['harga'], 0, ',', '.').'</td>
 													<td>'.$data_peralatan['keterangan'].'</td>
 													<td>&nbsp;</td>
-													<td>
-														<a href="'.ROOT.'edit/peralatan/'.$data_peralatan['id'].'">Edit</a> | 
-														<a href="#" onclick="hapusData(\''.$data_peralatan['id'].'\')">X</a>
+													<td style="text-align: center;">
+														<a href="'.ROOT.'edit/peralatan/'.$data_peralatan['id'].'"><i class="fa fa-edit"></i></a> | 
+														<a href="#" onclick="hapusData(\''.$data_peralatan['id'].'\')"><i class="fa fa-trash-o"></i></a>
 													</td>
 												</tr>
 					';
@@ -303,9 +298,9 @@
 													<td>'.$data_gedung['asal_usul'].'</td>
 													<td>'.number_format($data_gedung['harga'], 0, ',', '.').'</td>
 													<td>'.$data_gedung['keterangan'].'</td>
-													<td>
-														<a href="'.ROOT.'edit/gedung/'.$data_gedung['id'].'">Edit</a> | 
-														<a href="#" onclick="hapusData(\''.$data_gedung['id'].'\')">X</a>
+													<td style="text-align: center;">
+														<a href="'.ROOT.'edit/gedung/'.$data_gedung['id'].'"><i class="fa fa-edit"></i></a> | 
+														<a href="#" onclick="hapusData(\''.$data_gedung['id'].'\')"><i class="fa fa-trash-o"></i></a>
 													</td>
 												</tr>
 					';
@@ -390,9 +385,9 @@
 													<td>'.$data_jalan['kondisi'].'</td>
 													<td>'.number_format($data_jalan['harga'], 0, ',', '.').'</td>
 													<td>'.$data_jalan['keterangan'].'</td>
-													<td>
-														<a href="'.ROOT.'edit/jalan/'.$data_jalan['id'].'">Edit</a> | 
-														<a href="#" onclick="hapusData(\''.$data_jalan['id'].'\')">X</a>
+													<td style="text-align: center;">
+														<a href="'.ROOT.'edit/jalan/'.$data_jalan['id'].'"><i class="fa fa-edit"></i></a> | 
+														<a href="#" onclick="hapusData(\''.$data_jalan['id'].'\')"><i class="fa fa-trash-o"></i></a>
 													</td>
 												</tr>
 					';
@@ -479,9 +474,9 @@
 													<td>'.$data_asetlain['asal_usul'].'</td>
 													<td>'.number_format($data_asetlain['harga'], 0, ',', '.').'</td>
 													<td>'.$data_asetlain['keterangan'].'</td>
-													<td>
-														<a href="'.ROOT.'edit/asetlain/'.$data_asetlain['id'].'">Edit</a> | 
-														<a href="#" onclick="hapusData(\''.$data_asetlain['id'].'\')">X</a>
+													<td style="text-align: center;">
+														<a href="'.ROOT.'edit/asetlain/'.$data_asetlain['id'].'"><i class="fa fa-edit"></i></a> | 
+														<a href="#" onclick="hapusData(\''.$data_asetlain['id'].'\')"><i class="fa fa-trash-o"></i></a>
 													</td>
 												</tr>
 					';
@@ -574,9 +569,9 @@
 													<td>'.$data_konstruksi['asal_usul'].'</td>
 													<td>'.number_format($data_konstruksi['harga'], 0, ',', '.').'</td>
 													<td>'.$data_konstruksi['keterangan'].'</td>
-													<td>
-														<a href="'.ROOT.'edit/konstruksi/'.$data_konstruksi['id'].'">Edit</a> | 
-														<a href="#" onclick="hapusData(\''.$data_konstruksi['id'].'\')">X</a>
+													<td style="text-align: center;">
+														<a href="'.ROOT.'edit/konstruksi/'.$data_konstruksi['id'].'"><i class="fa fa-edit"></i></a> | 
+														<a href="#" onclick="hapusData(\''.$data_konstruksi['id'].'\')"><i class="fa fa-trash-o"></i></a>
 													</td>
 												</tr>
 					';

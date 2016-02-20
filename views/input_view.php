@@ -25,11 +25,6 @@
 
 					<div class="content-header">
 						<h2 class="content-header-title">Pemasukan Data Aset Desa</h2>
-						<ol class="breadcrumb">
-							<li><a href="'.ROOT.'">Home</a></li>
-							<li class="active">Pengadaan dan Pendataan</li>
-							<!-- <li class="active">Tanah</li> -->
-						</ol>
 					</div> <!-- /.content-header -->
 				';
 
