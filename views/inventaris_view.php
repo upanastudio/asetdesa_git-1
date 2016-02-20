@@ -51,7 +51,7 @@
 							<div id="myTab1Content" class="tab-content">
 								<div class="tab-pane fade in '.$tanah_tab.'" id="tanah">
 									<div class="tabellaporan"> <!--Tabel Laporan (tanah)-->
-									<hr/>
+										<hr/>
 
 										<form id="hapusSubmit" action="'.$aksi_tanah.'hapus" method="POST">
 											<input type="hidden" id="hapus_id" name="id" value="">
@@ -112,7 +112,7 @@
 													<td>'.number_format($data_tanah['harga'], 0, ',', '.').'</td>
 													<td>'.$data_tanah['keterangan'].'</td>
 													<td style="text-align: center;">
-														<a href="'.ROOT.'edit/tanah/'.$data_tanah['id'].'"><i class="fa fa-edit"></i></a> | 
+														<a data-toggle="modal" href="#editdata"><i class="fa fa-edit"></i></a> | 
 														<a href="#" onclick="hapusData(\''.$data_tanah['id'].'\')"><i class="fa fa-trash-o"></i></a>
 													</td>
 												</tr>
@@ -611,14 +611,12 @@
 								<i class="fa fa-times"></i>
 								&nbsp;&nbsp;<strong>Hapus</strong> Rekapitulasi
 							</a>
-						</div>
+						</div> <!--list-->
 					</div>
 
 				';
 				break;
 		}
 ?>
-
-<link rel="stylesheet" href="<?php echo ROOT; ?>assets/css/laporan.css">
 
 <?php endif; ?>

@@ -9,8 +9,8 @@
 					<ul class="nav navbar-nav mainbar-nav">
 						<li class="<?php echo $model==''? 'active':''; ?>">
 							<a href="<?php echo ROOT; ?>">
-								<i class="fa fa-dashboard"></i>
-								Rekapitulasi
+								<i class="fa fa-institution"></i>
+								Beranda
 							</a>
 						</li>
 						<li class="dropdown <?php echo $model=='input'? 'active':''; ?>">
@@ -22,37 +22,37 @@
 							<ul class="dropdown-menu">   
 								<li>
 									<a href="<?php echo ROOT; ?>input?tab=tanah">
-										<i class="fa fa-user nav-icon"></i>
+										<i class="fa fa-map-marker nav-icon"></i>
 										Tanah
 									</a>
 								</li>
 								<li>
 									<a href="<?php echo ROOT; ?>input?tab=peralatan">
-										<i class="fa fa-bars nav-icon"></i>
+										<i class="fa fa-cogs nav-icon"></i>
 										Peralatan dan Mesin
 									</a>
 								</li>
 								<li>
 									<a href="<?php echo ROOT; ?>input?tab=gedung">
-										<i class="fa fa-asterisk nav-icon"></i>
+										<i class="fa fa-building nav-icon"></i>
 										Gedung dan Bangunan
 									</a>
 								</li>
 								<li>
 									<a href="<?php echo ROOT; ?>input?tab=jalan">
-										<i class="fa fa-tasks nav-icon"></i>
+										<i class="fa fa-road nav-icon"></i>
 										Jalan, Irigasi, dan Jaringan
 									</a>
 								</li>
 								<li>
 									<a href="<?php echo ROOT; ?>input?tab=asetlain">
-										<i class="fa fa-font nav-icon"></i>
+										<i class="fa fa-folder-open nav-icon"></i>
 										Aset Tetap Lainnya
 									</a>
 								</li>
 								<li>
 									<a href="<?php echo ROOT; ?>input?tab=konstruksi">
-										<i class="fa fa-list-alt nav-icon"></i>
+										<i class="fa fa-warning nav-icon"></i>
 										Konstruksi dalam Pengerjaan
 									</a>
 								</li>

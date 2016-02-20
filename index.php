@@ -45,6 +45,7 @@
 		<!-- App CSS -->
 		<link rel="stylesheet" href="<?php echo ROOT; ?>assets/css/target-admin.css">
 		<link rel="stylesheet" href="<?php echo ROOT; ?>assets/css/custom.css">
+		<link rel="stylesheet" href="<?php echo ROOT; ?>assets/css/laporan.css">
 
 		<!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
 		<!--[if lt IE 9]>
@@ -54,6 +55,34 @@
 
 		<!-- jQuery -->
 		<script src="<?php echo ROOT; ?>assets/js/libs/jquery-1.10.1.min.js"></script>
+		<script src="<?php echo ROOT; ?>assets/js/libs/jquery-ui-1.9.2.custom.min.js"></script>
+		<script src="<?php echo ROOT; ?>assets/js/libs/bootstrap.min.js"></script>
+
+		<!--[if lt IE 9]>
+			<script src="./js/libs/excanvas.compiled.js"></script>
+		<![endif]-->
+
+		<!-- Plugin JS -->
+		<script src="<?php echo ROOT; ?>assets/js/plugins/icheck/jquery.icheck.js"></script>
+		<script src="<?php echo ROOT; ?>assets/js/plugins/select2/select2.js"></script>
+		<script src="<?php echo ROOT; ?>assets/js/libs/raphael-2.1.2.min.js"></script>
+		<script src="<?php echo ROOT; ?>assets/js/plugins/sparkline/jquery.sparkline.min.js"></script>
+		<script src="<?php echo ROOT; ?>assets/js/plugins/nicescroll/jquery.nicescroll.min.js"></script>
+		<script src="<?php echo ROOT; ?>assets/js/plugins/datepicker/bootstrap-datepicker.js"></script>
+		<script src="<?php echo ROOT; ?>assets/js/plugins/timepicker/bootstrap-timepicker.js"></script>
+		<script src="<?php echo ROOT; ?>assets/js/plugins/simplecolorpicker/jquery.simplecolorpicker.js"></script>
+		<script src="<?php echo ROOT; ?>assets/js/plugins/autosize/jquery.autosize.min.js"></script>
+		<script src="<?php echo ROOT; ?>assets/js/plugins/textarea-counter/jquery.textarea-counter.js"></script>
+		<script src="<?php echo ROOT; ?>assets/js/plugins/fileupload/bootstrap-fileupload.js"></script>
+		<!-- <script src="assets/js/plugins/howl/howl.js"></script> -->
+
+		<!-- App JS -->
+		<script src="<?php echo ROOT; ?>assets/js/target-admin.js"></script>
+
+		<!-- Plugin JS -->
+		<script src="<?php echo ROOT; ?>assets/js/demos/dashboard.js"></script>
+		<script src="<?php echo ROOT; ?>assets/js/demos/ui-notifications.js"></script>
+		<script src="<?php echo ROOT; ?>assets/js/demos/form-extended.js"></script>
 
 	</head>
 	<body>
@@ -119,36 +148,10 @@
 			</div> <!-- /.content -->
 		</div> <!-- /.container -->
 
-<?php include "components/footer.php"; ?>
-
-		<script src="<?php echo ROOT; ?>assets/js/libs/jquery-ui-1.9.2.custom.min.js"></script>
-		<script src="<?php echo ROOT; ?>assets/js/libs/bootstrap.min.js"></script>
-
-		<!--[if lt IE 9]>
-			<script src="./js/libs/excanvas.compiled.js"></script>
-		<![endif]-->
-
-		<!-- Plugin JS -->
-		<script src="<?php echo ROOT; ?>assets/js/plugins/icheck/jquery.icheck.js"></script>
-		<script src="<?php echo ROOT; ?>assets/js/plugins/select2/select2.js"></script>
-		<script src="<?php echo ROOT; ?>assets/js/libs/raphael-2.1.2.min.js"></script>
-		<script src="<?php echo ROOT; ?>assets/js/plugins/sparkline/jquery.sparkline.min.js"></script>
-		<script src="<?php echo ROOT; ?>assets/js/plugins/nicescroll/jquery.nicescroll.min.js"></script>
-		<script src="<?php echo ROOT; ?>assets/js/plugins/datepicker/bootstrap-datepicker.js"></script>
-		<script src="<?php echo ROOT; ?>assets/js/plugins/timepicker/bootstrap-timepicker.js"></script>
-		<script src="<?php echo ROOT; ?>assets/js/plugins/simplecolorpicker/jquery.simplecolorpicker.js"></script>
-		<script src="<?php echo ROOT; ?>assets/js/plugins/autosize/jquery.autosize.min.js"></script>
-		<script src="<?php echo ROOT; ?>assets/js/plugins/textarea-counter/jquery.textarea-counter.js"></script>
-		<script src="<?php echo ROOT; ?>assets/js/plugins/fileupload/bootstrap-fileupload.js"></script>
-		<!-- <script src="assets/js/plugins/howl/howl.js"></script> -->
-
-		<!-- App JS -->
-		<script src="<?php echo ROOT; ?>assets/js/target-admin.js"></script>
-
-		<!-- Plugin JS -->
-		<script src="<?php echo ROOT; ?>assets/js/demos/dashboard.js"></script>
-		<script src="<?php echo ROOT; ?>assets/js/demos/ui-notifications.js"></script>
-		<script src="<?php echo ROOT; ?>assets/js/demos/form-extended.js"></script>
+<?php
+	if ($model == 'inventaris') include "views/edit_view.php";
+	include "components/footer.php";
+?>
 
 		<script type='text/javascript'> 
 			function hapusData(id) {
