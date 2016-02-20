@@ -57,22 +57,22 @@
 
 		public function insertData($kode_barang, $jenis_barang, $register, $merek, $ukuran, $bahan, $tanggal_beli, $no_pabrik, $no_rangka, 
 			$no_mesin, $no_polisi, $no_bpkb, $asal_usul, $harga, $keterangan, $foto) {
-			$query = $this->db->prepare("INSERT INTO `data_peralatan` SET	`kode_barang`			= :kode_barang,
-																							`jenis_barang`			= :jenis_barang,
-																							`register`				= :register,
+			$query = $this->db->prepare("INSERT INTO `data_peralatan` SET	`kode_barang`						= :kode_barang,
+																							`jenis_barang`		= :jenis_barang,
+																							`register`			= :register,
 																							`merek`				= :merek,
 																							`ukuran`			= :ukuran,
-																							`bahan`			= :bahan,
+																							`bahan`				= :bahan,
 																							`tanggal_beli`		= :tanggal_beli,
 																							`no_pabrik`			= :no_pabrik,
 																							`no_rangka`			= :no_rangka,
-																							`no_mesin`	= :no_mesin,
+																							`no_mesin`			= :no_mesin,
 																							`no_polisi`			= :no_polisi,
 																							`no_bpkb`			= :no_bpkb,
-																							`asal_usul`				= :asal_usul,
-																							`harga`					= :harga,
-																							`keterangan`			= :keterangan,
-																							`foto`			= :foto
+																							`asal_usul`			= :asal_usul,
+																							`harga`				= :harga,
+																							`keterangan`		= :keterangan,
+																							`foto`				= :foto
 
 			");
 
@@ -101,37 +101,44 @@
 			}
 		}
 
-		public function updateData($kode_barang, $jenis_barang, $register, $luas_tanah, $tanggal_beli, $alamat, $hak, $no_sertifikat, $tanggal_sertifikat, $penggunaan, $asal_usul, $harga, $keterangan, $id) {
-			$query = $this->db->prepare("UPDATE `data_peralatan` SET			`kode_barang`			= :kode_barang,
-																							`jenis_barang`			= :jenis_barang,
-																							`register`				= :register,
-																							`luas_tanah`			= :luas_tanah,
-																							`tanggal_beli`			= :tanggal_beli,
-																							`alamat`					= :alamat,
-																							`hak`						= :hak,
-																							`no_sertifikat`		= :no_sertifikat,
-																							`tanggal_sertifikat`	= :tanggal_sertifikat,
-																							`penggunaan`			= :penggunaan,
-																							`asal_usul`				= :asal_usul,
-																							`harga`					= :harga,
-																							`keterangan`			= :keterangan
-																				WHERE		`id`						= :id
+		public function updateData($kode_barang, $jenis_barang, $register, $merek, $ukuran, $bahan, $tanggal_beli, $no_pabrik, $no_rangka, 
+			$no_mesin, $no_polisi, $no_bpkb, $asal_usul, $harga, $keterangan, $foto, $id) {
+			$query = $this->db->prepare("UPDATE `data_peralatan` SET			`kode_barang`					= :kode_barang,
+																							`jenis_barang`		= :jenis_barang,
+																							`register`			= :register,
+																							`merek`				= :merek,
+																							`ukuran`			= :ukuran,
+																							`bahan`				= :bahan,
+																							`tanggal_beli`		= :tanggal_beli,
+																							`no_pabrik`			= :no_pabrik,
+																							`no_rangka`			= :no_rangka,
+																							`no_mesin`			= :no_mesin,
+																							`no_polisi`			= :no_polisi,
+																							`no_bpkb`			= :no_bpkb,
+																							`asal_usul`			= :asal_usul,
+																							`harga`				= :harga,
+																							`keterangan`		= :keterangan,
+																							`foto`				= :foto
+																				WHERE		`id`				= :id
 			");
 
 			$query->bindParam(':id', $id, PDO::PARAM_INT);
 			$query->bindParam(':kode_barang', $kode_barang, PDO::PARAM_STR);
 			$query->bindParam(':jenis_barang', $jenis_barang, PDO::PARAM_STR);
 			$query->bindParam(':register', $register, PDO::PARAM_STR);
-			$query->bindParam(':luas_tanah', $luas_tanah, PDO::PARAM_STR);
+			$query->bindParam(':merek', $merek, PDO::PARAM_STR);
+			$query->bindParam(':ukuran', $ukuran, PDO::PARAM_STR);
+			$query->bindParam(':bahan', $bahan, PDO::PARAM_STR);
 			$query->bindParam(':tanggal_beli', $tanggal_beli, PDO::PARAM_STR);
-			$query->bindParam(':alamat', $alamat, PDO::PARAM_STR);
-			$query->bindParam(':hak', $hak, PDO::PARAM_STR);
-			$query->bindParam(':no_sertifikat', $no_sertifikat, PDO::PARAM_STR);
-			$query->bindParam(':tanggal_sertifikat', $tanggal_sertifikat, PDO::PARAM_STR);
-			$query->bindParam(':penggunaan', $penggunaan, PDO::PARAM_STR);
+			$query->bindParam(':no_pabrik', $no_pabrik, PDO::PARAM_STR);
+			$query->bindParam(':no_rangka', $no_rangka, PDO::PARAM_STR);
+			$query->bindParam(':no_mesin', $no_mesin, PDO::PARAM_STR);
+			$query->bindParam(':no_polisi', $no_polisi, PDO::PARAM_STR);
+			$query->bindParam(':no_bpkb', $no_bpkb, PDO::PARAM_STR);
 			$query->bindParam(':asal_usul', $asal_usul, PDO::PARAM_STR);
 			$query->bindParam(':harga', $harga, PDO::PARAM_STR);
 			$query->bindParam(':keterangan', $keterangan, PDO::PARAM_STR);
+			$query->bindParam(':foto', $foto, PDO::PARAM_STR);
 
 			try {
 				$query->execute();

@@ -56,16 +56,18 @@
 		}
 
 		public function insertData($kode_barang, $jenis_barang, $bangunan, $konstruksi, $luas_konstruksi, $alamat, 
-			$tanggal_dokumen, $no_dokumen, $status_tanah, $asal_usul, $harga, $keterangan) {
+			$tanggal_dokumen, $no_dokumen, $tanggal_mulai, $status_tanah, $no_tanah, $asal_usul, $harga, $keterangan) {
 			$query = $this->db->prepare("INSERT INTO `data_konstruksi` SET	`kode_barang`		= :kode_barang,
 																							`jenis_barang`			= :jenis_barang,
 																							`bangunan`				= :bangunan,
 																							`konstruksi`			= :konstruksi,
 																							`luas_konstruksi`		= :luas_konstruksi,
-																							`alamat`					= :alamat,
+																							`alamat`				= :alamat,
 																							`tanggal_dokumen`		= :tanggal_dokumen,
 																							`status_tanah`			= :status_tanah,
+																							`no_tanah`				= :no_tanah,
 																							`no_dokumen`			= :no_dokumen,
+																							`tanggal_mulai`			= :tanggal_mulai,
 																							`asal_usul`				= :asal_usul,
 																							`harga`					= :harga,
 																							`keterangan`			= :keterangan
@@ -73,12 +75,15 @@
 
 			$query->bindParam(':kode_barang', $kode_barang, PDO::PARAM_STR);
 			$query->bindParam(':jenis_barang', $jenis_barang, PDO::PARAM_STR);
+			$query->bindParam(':bangunan', $bangunan, PDO::PARAM_STR);
 			$query->bindParam(':konstruksi', $konstruksi, PDO::PARAM_STR);
 			$query->bindParam(':luas_konstruksi', $luas_konstruksi, PDO::PARAM_STR);
 			$query->bindParam(':alamat', $alamat, PDO::PARAM_STR);
 			$query->bindParam(':tanggal_dokumen', $tanggal_dokumen, PDO::PARAM_STR);
 			$query->bindParam(':status_tanah', $status_tanah, PDO::PARAM_STR);
+			$query->bindParam(':no_tanah', $no_tanah, PDO::PARAM_STR);
 			$query->bindParam(':no_dokumen', $no_dokumen, PDO::PARAM_STR);
+			$query->bindParam(':tanggal_mulai', $tanggal_mulai, PDO::PARAM_STR);
 			$query->bindParam(':asal_usul', $asal_usul, PDO::PARAM_STR);
 			$query->bindParam(':harga', $harga, PDO::PARAM_STR);
 			$query->bindParam(':keterangan', $keterangan, PDO::PARAM_STR);
@@ -91,17 +96,19 @@
 			}
 		}
 
-		public function updateData($kode_barang, $jenis_barang, $register, $luas_tanah, $tanggal_beli, $alamat, $hak, $no_sertifikat, $tanggal_sertifikat, $penggunaan, $asal_usul, $harga, $keterangan, $id) {
-			$query = $this->db->prepare("UPDATE `data_konstruksi` SET			`kode_barang`			= :kode_barang,
+		public function updateData($kode_barang, $jenis_barang, $bangunan, $konstruksi, $luas_konstruksi, $alamat, 
+			$tanggal_dokumen, $no_dokumen, $tanggal_mulai, $status_tanah, $no_tanah, $asal_usul, $harga, $keterangan, $id) {
+			$query = $this->db->prepare("UPDATE `data_konstruksi` SET			`kode_barang`		= :kode_barang,
 																							`jenis_barang`			= :jenis_barang,
-																							`register`				= :register,
-																							`luas_tanah`			= :luas_tanah,
-																							`tanggal_beli`			= :tanggal_beli,
-																							`alamat`					= :alamat,
-																							`hak`						= :hak,
-																							`no_sertifikat`		= :no_sertifikat,
-																							`tanggal_sertifikat`	= :tanggal_sertifikat,
-																							`penggunaan`			= :penggunaan,
+																							`bangunan`				= :bangunan,
+																							`konstruksi`			= :konstruksi,
+																							`luas_konstruksi`		= :luas_konstruksi,
+																							`alamat`				= :alamat,
+																							`tanggal_dokumen`		= :tanggal_dokumen,
+																							`status_tanah`			= :status_tanah,
+																							`no_tanah`				= :no_tanah,
+																							`no_dokumen`			= :no_dokumen,
+																							`tanggal_mulai`			= :tanggal_mulai,
 																							`asal_usul`				= :asal_usul,
 																							`harga`					= :harga,
 																							`keterangan`			= :keterangan
@@ -111,14 +118,15 @@
 			$query->bindParam(':id', $id, PDO::PARAM_INT);
 			$query->bindParam(':kode_barang', $kode_barang, PDO::PARAM_STR);
 			$query->bindParam(':jenis_barang', $jenis_barang, PDO::PARAM_STR);
-			$query->bindParam(':register', $register, PDO::PARAM_STR);
-			$query->bindParam(':luas_tanah', $luas_tanah, PDO::PARAM_STR);
-			$query->bindParam(':tanggal_beli', $tanggal_beli, PDO::PARAM_STR);
+			$query->bindParam(':bangunan', $bangunan, PDO::PARAM_STR);
+			$query->bindParam(':konstruksi', $konstruksi, PDO::PARAM_STR);
+			$query->bindParam(':luas_konstruksi', $luas_konstruksi, PDO::PARAM_STR);
 			$query->bindParam(':alamat', $alamat, PDO::PARAM_STR);
-			$query->bindParam(':hak', $hak, PDO::PARAM_STR);
-			$query->bindParam(':no_sertifikat', $no_sertifikat, PDO::PARAM_STR);
-			$query->bindParam(':tanggal_sertifikat', $tanggal_sertifikat, PDO::PARAM_STR);
-			$query->bindParam(':penggunaan', $penggunaan, PDO::PARAM_STR);
+			$query->bindParam(':tanggal_dokumen', $tanggal_dokumen, PDO::PARAM_STR);
+			$query->bindParam(':status_tanah', $status_tanah, PDO::PARAM_STR);
+			$query->bindParam(':no_tanah', $no_tanah, PDO::PARAM_STR);
+			$query->bindParam(':no_dokumen', $no_dokumen, PDO::PARAM_STR);
+			$query->bindParam(':tanggal_mulai', $tanggal_mulai, PDO::PARAM_STR);
 			$query->bindParam(':asal_usul', $asal_usul, PDO::PARAM_STR);
 			$query->bindParam(':harga', $harga, PDO::PARAM_STR);
 			$query->bindParam(':keterangan', $keterangan, PDO::PARAM_STR);

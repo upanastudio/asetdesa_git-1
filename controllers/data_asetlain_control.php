@@ -14,15 +14,20 @@
 			if(isset($_POST['tambah'])) {
 				
 				// Inisiasi Value pada tiap input di Tab Jalur
-				$jenis_barang ='';
-				$judul_buku ='';
-				$spesifikasi_buku ='';
-				$asal_daerah ='';
-				$pencipta_kesenian ='';
-				$bahan_kesenian ='';
-				$jenis ='';
-				$ukuran ='';
-				$foto ='';
+				$jenis_barang 		='';
+				$judul_buku 		='';
+				$spesifikasi_buku 	='';
+				$asal_daerah 		='';
+				$pencipta_kesenian 	='';
+				$bahan_kesenian 	='';
+				$jenis 				='';
+				$ukuran 			='';
+				$jumlah 			='';
+				$tanggal_cetak		='';
+				$asal_usul			='';
+				$harga				='';
+				$keterangan			='';
+				$foto 				='';
 
 				$kode_barang			= $_POST['kode_barang'];
 				if (empty($kode_barang)) {
@@ -86,6 +91,11 @@
 				$bahan_kesenian 	='';
 				$jenis 				='';
 				$ukuran 			='';
+				$jumlah 			='';
+				$tanggal_cetak		='';
+				$asal_usul			='';
+				$harga				='';
+				$keterangan			='';
 				$foto 				='';
 
 
@@ -126,6 +136,7 @@
 					$harga 					= $_POST['harga'];
 					$keterangan 			= $_POST['keterangan'];
 					$efoto 					= $_POST['efoto'];
+					$id						= $_POST['id'];
 
 
 					// Update Foto

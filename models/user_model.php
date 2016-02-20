@@ -97,41 +97,5 @@
 			}
 		}
 
-		public function kirimEmailAdmin($isi) {
-			$email1 = $this->getUsers();
-			require '../PHPMailer/PHPMailerAutoload.php';
-
-			foreach($email1 as $emailnya) {
-				$email = $emailnya['email'];
-				if (!filter_var($email, FILTER_VALIDATE_EMAIL) === false) {
-					//kirim email
-					$mail = new PHPMailer;
-					$mail->isSMTP();
-					$mail->SMTPDebug = 0;
-					$mail->Debugoutput = 'html';
-					$mail->Host = 'smtp.gmail.com';
-					$mail->Port = 587;
-					$mail->SMTPSecure = 'tls';
-					$mail->SMTPAuth = true;
-					$mail->Timeout     =   60; // set the timeout (seconds)
-					$mail->Username = "bsmlregional4@gmail.com"; // username akun
-					$mail->Password = "bsml4#123"; //password akun
-
-					// syarat menggunakan smtp google:
-					// 1. pastikan keamanan 2 langkah google telah mati(non aktif)
-					// 2. pastikan konfigurasi 'akses untuk aplikasi tidak aman' diaktifkan
-					$mail->SMTPKeepAlive = true; 
-					$mail->setFrom('bsmlregional4@gmail.com', 'Notifikasi Website'); // oleh siapa
-					$mail->addReplyTo($email, ''); //altermatif alamat
-					$mail->addAddress($email, ''); // kesiapa mau dikirim
-
-					$mail->Subject = "Disposisi"; // subyek ato judul
-					$mail->Body = "anda mendapatkan 1 aspirasi baru: <br/>
-								".$isi.". <br/>Silahkan buka halaman admin untuk memberi tanggapan 
-								'"; //isi mail
-					$mail->send(); 
-				}
-			}
-		}
 	}
 ?>

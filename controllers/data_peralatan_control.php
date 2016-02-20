@@ -18,15 +18,17 @@
 				$register			='';
 				$merek		 		='';
 				$ukuran				='';
+				$bahan				='';
 				$tanggal_beli		='';
 				$no_pabrik			='';
 				$no_rangka			='';
 				$no_mesin			='';
 				$no_polisi			='';
-				$no_bpkb				='';
+				$no_bpkb			='';
 				$asal_usul			='';
 				$harga				='';
 				$keterangan			='';
+				$foto				='';
 
 
 				$kode_barang			= $_POST['kode_barang'];
@@ -63,19 +65,54 @@
 
 		if($model == 'peralatan' AND $method == 'edit') {
 			if(isset($_POST['edit'])) {
-				$apa			= $_POST['apa'];
-				$file_upload	= $_POST['file_upload'];
-				$id				= $_POST['id'];
+				// Inisiasi Value pada tiap input di Tab Jalur
+				$jenis_barang 		='';
+				$register			='';
+				$merek		 		='';
+				$ukuran				='';
+				$bahan				='';
+				$tanggal_beli		='';
+				$no_pabrik			='';
+				$no_rangka			='';
+				$no_mesin			='';
+				$no_polisi			='';
+				$no_bpkb			='';
+				$asal_usul			='';
+				$harga				='';
+				$keterangan			='';
+				$foto				='';
 
-				//sanitasi
-				$apa			= filter_var($apa,FILTER_SANITIZE_STRING);
 
-				if($_FILES['foto']['tmp_name'] != "") {
-					$libs->deleteFile("../upload/images/",$file_upload);
-					$foto = $libs->uploadFile('../upload/images/',$_FILES['foto']);
-				}
+				$kode_barang			= $_POST['kode_barang'];
+				if (empty($kode_barang)) {
+					header("location:".ROOT."input?tab=peralatan&act=err");
+				}else{
 
-				$peralatan->updateData($kode_barang, $jenis_barang, $register, $merek, $ukuran, $tanggal_beli, $no_pabrik, $no_rangka, $no_mesin, $no_polisi, $asal_usul, $harga, $keterangan, $foto, $id);
+					$jb						= $data_barang->getNamaBarangByKB($kode_barang);
+					$jenis_barang			= $jb['nama_barang'];
+					$register				= $_POST['register'];
+					$merek					= $_POST['merek'];
+					$ukuran					= $_POST['ukuran'];
+					$bahan					= $_POST['bahan'];
+					$tanggal_beli 			= $_POST['tanggal_beli'];
+					$no_pabrik 				= $_POST['no_pabrik'];
+					$no_rangka 				= $_POST['no_rangka'];
+					$no_mesin 				= $_POST['no_mesin'];
+					$no_polisi 				= $_POST['no_polisi'];
+					$no_bpkb 				= $_POST['no_bpkb'];
+					$asal_usul 				= $_POST['asal_usul'];
+					$harga 					= $_POST['harga'];
+					$keterangan 			= $_POST['keterangan'];
+					$id						= $_POST['id'];
+					$efoto 					= $_POST['efoto'];
+
+					if($_FILES['foto']['tmp_name'] != "") {
+						$libs->deleteFile("../upload/images/",$efoto);
+						$foto = $libs->uploadFile('../upload/images/',$_FILES['foto']);
+					}
+
+					$peralatan->updateData($kode_barang, $jenis_barang, $register, $merek, $ukuran, $bahan, $tanggal_beli, $no_pabrik, $no_rangka, 
+						$no_mesin, $no_polisi, $no_bpkb, $asal_usul, $harga, $keterangan, $foto, $id);
 
 				header("location:".ROOT."inventaris?tab=peralatan&act=upd");
 			}

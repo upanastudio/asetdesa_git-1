@@ -42,15 +42,16 @@
 			return $query->fetch(PDO::FETCH_ASSOC);
 		}
 
-		public function insertData($kode_barang, $jenis_barang, $register, $luas_tanah, $tanggal_beli, $alamat, $hak, $no_sertifikat, $tanggal_sertifikat, $penggunaan, $asal_usul, $harga, $keterangan) {
+		public function insertData($kode_barang, $jenis_barang, $register, $luas_tanah, $tanggal_beli, $alamat, 
+			$hak, $no_sertifikat, $tanggal_sertifikat, $penggunaan, $asal_usul, $harga, $keterangan) {
 			$query = $this->db->prepare("INSERT INTO `data_tanah` SET	`kode_barang`			= :kode_barang,
 																							`jenis_barang`			= :jenis_barang,
 																							`register`				= :register,
 																							`luas_tanah`			= :luas_tanah,
 																							`tanggal_beli`			= :tanggal_beli,
-																							`alamat`					= :alamat,
-																							`hak`						= :hak,
-																							`no_sertifikat`		= :no_sertifikat,
+																							`alamat`				= :alamat,
+																							`hak`					= :hak,
+																							`no_sertifikat`			= :no_sertifikat,
 																							`tanggal_sertifikat`	= :tanggal_sertifikat,
 																							`penggunaan`			= :penggunaan,
 																							`asal_usul`				= :asal_usul,
@@ -80,15 +81,16 @@
 			}
 		}
 
-		public function updateData($kode_barang, $jenis_barang, $register, $luas_tanah, $tanggal_beli, $alamat, $hak, $no_sertifikat, $tanggal_sertifikat, $penggunaan, $asal_usul, $harga, $keterangan, $id) {
+		public function updateData($kode_barang, $jenis_barang, $register, $luas_tanah, $tanggal_beli, $alamat, 
+			$hak, $no_sertifikat, $tanggal_sertifikat, $penggunaan, $asal_usul, $harga, $keterangan, $id) {
 			$query = $this->db->prepare("UPDATE `data_tanah` SET			`kode_barang`			= :kode_barang,
 																							`jenis_barang`			= :jenis_barang,
 																							`register`				= :register,
 																							`luas_tanah`			= :luas_tanah,
 																							`tanggal_beli`			= :tanggal_beli,
-																							`alamat`					= :alamat,
-																							`hak`						= :hak,
-																							`no_sertifikat`		= :no_sertifikat,
+																							`alamat`				= :alamat,
+																							`hak`					= :hak,
+																							`no_sertifikat`			= :no_sertifikat,
 																							`tanggal_sertifikat`	= :tanggal_sertifikat,
 																							`penggunaan`			= :penggunaan,
 																							`asal_usul`				= :asal_usul,

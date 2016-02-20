@@ -17,10 +17,12 @@
 				$jenis_barang 	='';
 				$register		='';
 				$kondisi		='';
-				$konstruksi 	= '';
-				$alamat			= '';
-				$no_dokumen		='';
+				$konstruksi 	='';
 				$luas_lantai	='';
+				$alamat			='';
+				$tanggal_beli	='';
+				$no_dokumen		='';
+				$luas_lahan		='';
 				$status_tanah	='';
 				$no_sertifikat	='';
 				$asal_usul		='';
@@ -28,7 +30,7 @@
 				$keterangan		='';
 
 
-				$kode_barang			= $_POST['ko*de_barang'];
+				$kode_barang			= $_POST['kode_barang'];
 				if (empty($kode_barang)) {
 					header("location:".ROOT."input?tab=gedung&act=err");
 				}else{
@@ -47,12 +49,12 @@
 					}
 
 					$luas_lantai 				= $_POST['luas_lantai'];
-					$alamat 						= $_POST['alamat'];
+					$alamat 					= $_POST['alamat'];
 					$tanggal_beli 				= $_POST['tanggal_beli'];
 					$no_dokumen 				= $_POST['no_dokumen'];
 					$luas_lahan 				= $_POST['luas_lahan'];
 					$status_tanah 				= $_POST['status_tanah'];
-					$no_sertifikat 			= $_POST['no_sertifikat'];
+					$no_sertifikat 				= $_POST['no_sertifikat'];
 					$asal_usul 					= $_POST['asal_usul'];
 					$harga 						= $_POST['harga'];
 					$keterangan 				= $_POST['keterangan'];
@@ -67,15 +69,56 @@
 
 		if($model == 'gedung' AND $method == 'edit') {
 			if(isset($_POST['edit'])) {
-				$apa			= $_POST['apa'];
-				$file_upload	= $_POST['file_upload'];
-				$id				= $_POST['id'];
 
-				//sanitasi
-				$apa			= filter_var($apa,FILTER_SANITIZE_STRING);
+				//Inisiasi Tiap Variabel
+				$jenis_barang 	='';
+				$register		='';
+				$kondisi		='';
+				$konstruksi 	='';
+				$luas_lantai	='';
+				$alamat			='';
+				$tanggal_beli	='';
+				$no_dokumen		='';
+				$luas_lahan		='';
+				$status_tanah	='';
+				$no_sertifikat	='';
+				$asal_usul		='';
+				$harga			='';
+				$keterangan		='';
 
-				$gedung->updateData($kode_barang, $jenis_barang, $register, $kondisi, $konstruksi, $luas_lantai, $alamat, 
-						$tanggal_beli, $no_dokumen, $status_tanah, $no_sertifikat, $asal_usul, $harga, $keterangan, $id);
+
+				$kode_barang			= $_POST['kode_barang'];
+				if (empty($kode_barang)) {
+					header("location:".ROOT."input?tab=gedung&act=err");
+				}else{
+
+					$id						= $_POST['id'];
+					$jb						= $data_barang->getNamaBarangByKB($kode_barang);
+					$jenis_barang			= $jb['nama_barang'];
+					$register				= $_POST['register'];
+					$kondisi				= $_POST['kondisi'];
+					$kon 					= $_POST['konstruksi'];
+
+					if (!empty($kon)) {
+						$N = count($kon);
+						for ($i=0; $i < $N ; $i++) { 
+							$konstruksi .= $kon[$i].", ";
+						}
+					}
+
+					$luas_lantai 				= $_POST['luas_lantai'];
+					$alamat 					= $_POST['alamat'];
+					$tanggal_beli 				= $_POST['tanggal_beli'];
+					$no_dokumen 				= $_POST['no_dokumen'];
+					$luas_lahan 				= $_POST['luas_lahan'];
+					$status_tanah 				= $_POST['status_tanah'];
+					$no_sertifikat 				= $_POST['no_sertifikat'];
+					$asal_usul 					= $_POST['asal_usul'];
+					$harga 						= $_POST['harga'];
+					$keterangan 				= $_POST['keterangan'];
+
+					$gedung->updateData($kode_barang, $jenis_barang, $register, $kondisi, $konstruksi, $luas_lantai, $alamat, 
+						$tanggal_beli, $no_dokumen, $luas_lahan, $status_tanah, $no_sertifikat, $asal_usul, $harga, $keterangan, $id);
 
 				header("location:".ROOT."inventaris?tab=gedung&act=upd");
 			}
