@@ -28,7 +28,7 @@
 				$keterangan		='';
 
 
-				$kode_barang			= $_POST['kode_barang'];
+				$kode_barang			= $_POST['ko*de_barang'];
 				if (empty($kode_barang)) {
 					header("location:".ROOT."input?tab=gedung&act=err");
 				}else{
