@@ -85,7 +85,7 @@
 			$query->bindParam(':no_rangka', $no_rangka, PDO::PARAM_STR);
 			$query->bindParam(':no_mesin', $no_mesin, PDO::PARAM_STR);
 			$query->bindParam(':no_polisi', $no_polisi, PDO::PARAM_STR);
-			$query->bindParam(':no_bpkb', $no_bpkb, PDO::PARAM_STR);no_bpkb
+			$query->bindParam(':no_bpkb', $no_bpkb, PDO::PARAM_STR);
 			$query->bindParam(':asal_usul', $asal_usul, PDO::PARAM_STR);
 			$query->bindParam(':harga', $harga, PDO::PARAM_STR);
 			$query->bindParam(':keterangan', $keterangan, PDO::PARAM_STR);
