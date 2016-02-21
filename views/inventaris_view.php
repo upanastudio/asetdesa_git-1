@@ -112,7 +112,7 @@
 													<td>'.number_format($data_tanah['harga'], 0, ',', '.').'</td>
 													<td>'.$data_tanah['keterangan'].'</td>
 													<td style="text-align: center;">
-														<a data-toggle="modal" href="#editdata"><i class="fa fa-edit"></i></a> | 
+														<a data-toggle="modal" href="#edit_tanah"><i class="fa fa-edit"></i></a> | 
 														<a href="#" onclick="hapusData(\''.$data_tanah['id'].'\')"><i class="fa fa-trash-o"></i></a>
 													</td>
 												</tr>
@@ -198,7 +198,7 @@
 													<td>'.$data_peralatan['keterangan'].'</td>
 													<td>&nbsp;</td>
 													<td style="text-align: center;">
-														<a href="'.ROOT.'edit/peralatan/'.$data_peralatan['id'].'"><i class="fa fa-edit"></i></a> | 
+														<a data-toggle="modal" href="#edit_peralatan"><i class="fa fa-edit"></i></a> | 
 														<a href="#" onclick="hapusData(\''.$data_peralatan['id'].'\')"><i class="fa fa-trash-o"></i></a>
 													</td>
 												</tr>
@@ -299,7 +299,7 @@
 													<td>'.number_format($data_gedung['harga'], 0, ',', '.').'</td>
 													<td>'.$data_gedung['keterangan'].'</td>
 													<td style="text-align: center;">
-														<a href="'.ROOT.'edit/gedung/'.$data_gedung['id'].'"><i class="fa fa-edit"></i></a> | 
+														<a data-toggle="modal" href="#edit_gedung"><i class="fa fa-edit"></i></a> | 
 														<a href="#" onclick="hapusData(\''.$data_gedung['id'].'\')"><i class="fa fa-trash-o"></i></a>
 													</td>
 												</tr>
@@ -386,7 +386,7 @@
 													<td>'.number_format($data_jalan['harga'], 0, ',', '.').'</td>
 													<td>'.$data_jalan['keterangan'].'</td>
 													<td style="text-align: center;">
-														<a href="'.ROOT.'edit/jalan/'.$data_jalan['id'].'"><i class="fa fa-edit"></i></a> | 
+														<a data-toggle="modal" href="#edit_jalan"><i class="fa fa-edit"></i></a> | 
 														<a href="#" onclick="hapusData(\''.$data_jalan['id'].'\')"><i class="fa fa-trash-o"></i></a>
 													</td>
 												</tr>
@@ -475,7 +475,7 @@
 													<td>'.number_format($data_asetlain['harga'], 0, ',', '.').'</td>
 													<td>'.$data_asetlain['keterangan'].'</td>
 													<td style="text-align: center;">
-														<a href="'.ROOT.'edit/asetlain/'.$data_asetlain['id'].'"><i class="fa fa-edit"></i></a> | 
+														<a data-toggle="modal" href="#edit_asetlain"><i class="fa fa-edit"></i></a> | 
 														<a href="#" onclick="hapusData(\''.$data_asetlain['id'].'\')"><i class="fa fa-trash-o"></i></a>
 													</td>
 												</tr>
@@ -570,7 +570,7 @@
 													<td>'.number_format($data_konstruksi['harga'], 0, ',', '.').'</td>
 													<td>'.$data_konstruksi['keterangan'].'</td>
 													<td style="text-align: center;">
-														<a href="'.ROOT.'edit/konstruksi/'.$data_konstruksi['id'].'"><i class="fa fa-edit"></i></a> | 
+														<a data-toggle="modal" href="#edit_konstruksi"><i class="fa fa-edit"></i></a> | 
 														<a href="#" onclick="hapusData(\''.$data_konstruksi['id'].'\')"><i class="fa fa-trash-o"></i></a>
 													</td>
 												</tr>
