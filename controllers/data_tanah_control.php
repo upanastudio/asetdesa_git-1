@@ -52,18 +52,18 @@
 
 		if($model == 'tanah' AND $method == 'edit') {
 			if(isset($_POST['edit'])) {
-				$jenis_barang 		='';
-				$register			='';
-				$luas_tanah			='';
-				$alamat				='';
-				$tanggal_beli		='';
-				$hak				='';
-				$no_sertifikat		='';
+				$jenis_barang 			='';
+				$register				='';
+				$luas_tanah				='';
+				$alamat					='';
+				$tanggal_beli			='';
+				$hak						='';
+				$no_sertifikat			='';
 				$tanggal_sertifikat	='';
-				$penggunaan			='';
-				$asal_usul			='';
-				$harga				='';
-				$keterangan			='';
+				$penggunaan				='';
+				$asal_usul				='';
+				$harga					='';
+				$keterangan				='';
 
 				$kode_barang		= $_POST['kode_barang'];
 				if (empty($kode_barang)) {
@@ -82,6 +82,7 @@
 					$asal_usul				= $_POST['asal_usul'];
 					$harga					= $_POST['harga'];
 					$keterangan				= $_POST['keterangan'];
+					$id						= $_POST['id'];
 
 					$tanah->updateData($kode_barang, $jenis_barang, $register, $luas_tanah, $tanggal_beli, $alamat, $hak, $no_sertifikat, $tanggal_sertifikat, $penggunaan, $asal_usul, $harga, $keterangan, $id);
 				header("location:".ROOT."inventaris?tab=tanah&act=upd");

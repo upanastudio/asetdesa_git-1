@@ -80,7 +80,6 @@
 				$asal_usul			='';
 				$harga				='';
 				$keterangan			='';
-				$foto				='';
 
 
 				$kode_barang			= $_POST['kode_barang'];
@@ -104,7 +103,7 @@
 					$harga 					= $_POST['harga'];
 					$keterangan 			= $_POST['keterangan'];
 					$id						= $_POST['id'];
-					$efoto 					= $_POST['efoto'];
+					$foto 					= $_POST['efoto'];
 
 					if($_FILES['foto']['tmp_name'] != "") {
 						$libs->deleteFile("../upload/images/",$efoto);

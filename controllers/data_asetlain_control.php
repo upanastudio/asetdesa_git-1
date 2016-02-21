@@ -96,7 +96,6 @@
 				$asal_usul			='';
 				$harga				='';
 				$keterangan			='';
-				$foto 				='';
 
 
 				$kode_barang	= $_POST['kode_barang'];
@@ -135,7 +134,7 @@
 					$asal_usul 				= $_POST['asal_usul'];
 					$harga 					= $_POST['harga'];
 					$keterangan 			= $_POST['keterangan'];
-					$efoto 					= $_POST['efoto'];
+					$foto 					= $_POST['efoto'];
 					$id						= $_POST['id'];
 
 

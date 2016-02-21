@@ -157,7 +157,7 @@
 		echo '
 
 		<div id="edit-data" class="modal modal-styled fade">
-			<div class="modal-dialog">
+			<div class="modal-dialog" style="width: 750px;">
 				<div id="edit-ajax" class="modal-content">
 				</div><!-- /.modal-content -->
 			</div><!-- /.modal-dialog -->

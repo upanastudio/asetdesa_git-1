@@ -613,7 +613,7 @@
 											<label class="col-md-3">Luas</label>
 											<div class="col-md-7">
 												<div class="input-group">
-													<input type="text" name="luas_tanah" placeholder="Luas Konstruksi (m2)"class="form-control" />
+													<input type="text" name="luas_tanah" placeholder="Luas Konstruksi (m2)" class="form-control" />
 													<span class="input-group-addon">m<sup>2</sup></span>
 												</div>
 											</div> <!-- /.col -->
@@ -629,7 +629,7 @@
 											<label class="col-md-3"> &nbsp;Tanggal </label>
 											<div class="col-md-7">
 												<div id="dp-ex-5" class="input-group date" data-auto-close="true" data-date-format="dd-mm-yyyy" data-date-autoclose="true">
-													<input class="form-control" type="text" name="tanggal_dokumen" placeholder="Tanggal Pada Dokumen" >
+													<input class="form-control" type="text" name="tanggal_dokumen" placeholder="Tanggal Pada Dokumen" />
 													<span class="input-group-addon"><i class="fa fa-calendar"></i></span>
 												</div>
 												<span class="help-block">dd-mm-yyyy</span>

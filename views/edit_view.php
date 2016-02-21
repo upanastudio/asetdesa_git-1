@@ -20,9 +20,10 @@
 						<div class="modal-body">
 										<div class="form-group">
 											<label class="col-md-3">Jenis/Nama Barang</label>
-											<div class="col-sm-7">
+											<div class="col-md-7">
 												<select id="s2_basic" class="form-control" name="jenis_barang" onclick="getKodeBarang(\'tanah\', this.value)">
 													<option value="'.$data['kode_barang'].'">'.$data['jenis_barang'].'</option>
+													<option disabled>==============================================</option>
 				';
 
 				$first1 = true;
@@ -141,6 +142,7 @@
 										</div> <!-- /.form-group -->
 						</div>
 						<div class="modal-footer">
+							<input type="hidden" name="id" value="'.$data['id'].'" />
 							<button type="button" class="btn btn-warning" data-dismiss="modal">Batal</button>
 							<button type="submit" name="edit" class="btn btn-primary">Update Data</button>
 						</div>
@@ -161,9 +163,10 @@
 						<div class="modal-body">
 										<div class="form-group">
 											<label class="col-md-3">Jenis/Nama Barang</label>
-											<div class="col-sm-7">
+											<div class="col-md-7">
 												<select id="s3_basic" class="form-control" name="jenis_barang" onclick="getKodeBarang(\'peralatan\', this.value)">
-													<option>Pilih Jenis Barang:</option>
+													<option value="'.$data['kode_barang'].'">'.$data['jenis_barang'].'</option>
+													<option disabled>==============================================</option>
 				';
 
 				$first2 = true;
@@ -198,38 +201,38 @@
 										<div class="form-group">
 											<label class="col-md-3">Kode Barang</label>
 											<div class="col-md-7">
-												<input type="number" id="kodeperalatan" name="kode_barang" placeholder="-" class="form-control" readonly/>
+												<input type="number" id="kodeperalatan" name="kode_barang" value="'.$data['kode_barang'].'" class="form-control" readonly/>
 											</div> <!-- /.col -->
 										</div> <!-- /.form-group -->
 										<div class="form-group">
 											<label class="col-md-3">Register</label>
 											<div class="col-md-7">
-												<input type="number" name="register" placeholder="Nomor Register" class="form-control" />
+												<input type="number" name="register" value="'.$data['register'].'" class="form-control" />
 											</div> <!-- /.col -->
 										</div> <!-- /.form-group -->
 										<div class="form-group">
-											<label class="col-md-3">Merek / Tipe</label>
+											<label class="col-md-3">Merek/Tipe</label>
 											<div class="col-md-7">
-												<input type="text" name="merek" placeholder="Merek atau Tipe Peralatan" class="form-control" />
+												<input type="text" name="merek" value="'.$data['merek'].'" class="form-control" />
 											</div> <!-- /.col -->
 										</div> <!-- /.form-group -->
 										<div class="form-group">
-											<label class="col-md-3">Ukuran / CC</label>
+											<label class="col-md-3">Ukuran/CC</label>
 											<div class="col-md-7">
-												<input type="text" name="ukuran" placeholder="Ukuran Aset" class="form-control" />
+												<input type="text" name="ukuran" value="'.$data['ukuran'].'" class="form-control" />
 											</div> <!-- /.col -->
 										</div> <!-- /.form-group -->
 										<div class="form-group">
 											<label class="col-md-3">Bahan</label>
 											<div class="col-md-7">
-												<input type="text" name="bahan" placeholder="Bahan" class="form-control" />
+												<input type="text" name="bahan" value="'.$data['bahan'].'" class="form-control" />
 											</div> <!-- /.col -->
 										</div> <!-- /.form-group -->
 										<div class="form-group">
 											<label class="col-md-3">Tanggal Beli </label>
 											<div class="col-md-7">
 												<div id="dp-ex-3" class="input-group date" data-auto-close="true" data-date-format="dd-mm-yyyy" data-date-autoclose="true">
-													<input class="form-control" type="text" name="tanggal_beli"  />
+													<input class="form-control" type="text" name="tanggal_beli" value="'.$data['tanggal_beli'].'" />
 													<span class="input-group-addon"><i class="fa fa-calendar"></i></span>
 												</div>
 												<span class="help-block">dd-mm-yyyy</span>
@@ -239,26 +242,26 @@
 											<label class="col-md-3">Nomor </label>
 											<div style="col-md-7 col-sm-11">
 												<div style="width:11.56%; float:left; padding-left:15px; padding-right:10px;">
-													<input type="text" name="no_pabrik" placeholder="Pabrik" class="form-control" />
+													<input type="text" name="no_pabrik" value="'.$data['no_pabrik'].'" class="form-control" />
 												</div> <!-- /.col -->
 												<div style="width:11.56%; float:left; padding-right:10px;">
-													<input type="text" name="no_rangka" placeholder="Rangka" class="form-control" />
+													<input type="text" name="no_rangka" value="'.$data['no_rangka'].'" class="form-control" />
 												</div> <!-- /.col -->
 												<div style="width:11.56%; float:left; padding-right:10px;">
-													<input type="text" name="no_mesin" placeholder="Mesin" class="form-control" />
+													<input type="text" name="no_mesin" value="'.$data['no_mesin'].'" class="form-control" />
 												</div> <!-- /.col -->
 												<div style="width:11.56%; float:left; padding-right:10px;">
-													<input type="text" name="no_polisi" placeholder="Polisi" class="form-control" />
+													<input type="text" name="no_polisi" value="'.$data['no_polisi'].'" class="form-control" />
 												</div> <!-- /.col -->
 												<div style="width:11.56%; float:left; padding-right:10px;">
-													<input type="text" name="no_bpkb" placeholder="BPKB" class="form-control" />
+													<input type="text" name="no_bpkb" value="'.$data['no_bpkb'].'" class="form-control" />
 												</div> <!-- /.col -->
 											</div>
 										</div> <!-- /.form-group -->
 										<div class="form-group">
 											<label class="col-md-3">Asal Usul </label>
 											<div class="col-md-7">
-												<input type="text" name="asal_usul" placeholder="Asal Usul Pengadaan" class="form-control" />
+												<input type="text" name="asal_usul" value="'.$data['asal_usul'].'" class="form-control" />
 											</div> <!-- /.col -->
 										</div> <!-- /.form-group -->
 										<div class="form-group">
@@ -266,23 +269,24 @@
 											<div class="col-md-7">
 												<div class="input-group">
 													<span class="input-group-addon">Rp</span>
-													<input type="number" class="form-control" id="harga" name="harga" value="0">
+													<input type="number" class="form-control" id="harga" name="harga" value="'.$data['harga'].'">
 												</div>
 											</div> <!-- /.col -->
 										</div> <!-- /.form-group -->
 										<div class="form-group">
 											<label class="col-md-3">Keterangan </label>
 											<div class="col-md-7">
-												<input type="text" name="keterangan" class="form-control" />
+												<input type="text" name="keterangan" value="'.$data['keterangan'].'" class="form-control" />
 											</div> <!-- /.col -->
 										</div> <!-- /.form-group -->
 
+										<input type="hidden" name="efoto" value="'.$data['foto'].'" />
 										<div class="row">
 											<label class="col-md-3">Gambar</label>
 											<div class="col-sm-4">
 												<div class="fileupload fileupload-new" data-provides="fileupload">
 													<div class="fileupload-new thumbnail" style="width: 200px; height: 150px;">
-														<img src="'.ROOT.'assets/img/noimage.jpg" alt="Placeholder" />
+														<img src="'.ROOT.'upload/images/'.$data['foto'].'" alt="Placeholder" />
 													</div>
 													<div class="fileupload-preview fileupload-exists thumbnail" style="max-width: 200px; max-height: 150px; line-height: 20px;"></div>
 													<div>
@@ -294,15 +298,9 @@
 												</div>
 											</div> <!-- /.col -->
 										</div> <!-- /.row -->  
-										<br/><br/>
-										<div class="form-group">
-											<div class="col-md-7 col-md-push-3">
-												<button type="submit" name="tambah" class="btn btn-primary">Masukkan Data</button>&nbsp;
-												<button type="reset" class="btn btn-default">Batalkan</button>
-											</div> <!-- /.col -->
-										</div> <!-- /.form-group -->
 						</div>
 						<div class="modal-footer">
+							<input type="hidden" name="id" value="'.$data['id'].'" />
 							<button type="button" class="btn btn-warning" data-dismiss="modal">Batal</button>
 							<button type="submit" name="edit" class="btn btn-primary">Update Data</button>
 						</div>
@@ -323,9 +321,10 @@
 						<div class="modal-body">
 										<div class="form-group">
 											<label class="col-md-3">Jenis/Nama Barang</label>
-											<div class="col-sm-7">
+											<div class="col-md-7">
 												<select id="s4_basic" class="form-control" name="jenis_barang" onclick="getKodeBarang(\'gedung\', this.value)">
-													<option>Pilih Jenis Barang:</option>
+													<option value="'.$data['kode_barang'].'">'.$data['jenis_barang'].'</option>
+													<option disabled>==============================================</option>
 				';
 
 				$first3 = true;
@@ -360,37 +359,59 @@
 										<div class="form-group">
 											<label class="col-md-3">Kode Barang</label>
 											<div class="col-md-7">
-												<input type="number" id="kodegedung" name="kode_barang" placeholder="-" class="form-control" readonly/>
+												<input type="number" id="kodegedung" name="kode_barang" value="'.$data['kode_barang'].'" class="form-control" readonly />
 											</div> <!-- /.col -->
 										</div> <!-- /.form-group -->
 										<div class="form-group">
 											<label class="col-md-3">Register</label>
 											<div class="col-md-7">
-												<input type="number" name="register" placeholder="Nomor Register" class="form-control" />
+												<input type="number" name="register" value="'.$data['register'].'" class="form-control" />
 											</div> <!-- /.col -->
 										</div> <!-- /.form-group -->
 										<div class="form-group">
 											<label class="col-md-3">Kondisi Bangunan</label>
 											<div class="col-md-7">
+				';
+
+				$kondisi_baru = $data['kondisi'] == "Baru"? "checked":"";
+				$kondisi_kb = $data['kondisi'] == "KB"? "checked":"";
+				$kondisi_renov = $data['kondisi'] == "Renovasi Baru"? "checked":"";
+
+				echo '
 												<label class="radio-inline">
-													<input type="radio" name="kondisi" class="" value="Baru" checked> Baru
+													<input type="radio" name="kondisi" class="" value="Baru" '.$kondisi_baru.' /> Baru
 												</label>
 												<label class="radio-inline">
-													<input type="radio" name="kondisi" class="" value="KB"> KB
+													<input type="radio" name="kondisi" class="" value="KB" '.$kondisi_kb.' /> KB
 												</label>
 												<label class="radio-inline">
-													<input type="radio" name="kondisi" class="" value="Renovasi Baru"> Renovasi Baru
+													<input type="radio" name="kondisi" class="" value="Renovasi Baru" '.$kondisi_renov.' /> Renovasi Baru
 												</label>
 											</div> <!-- /.col -->
 										</div> <!-- /.form-group -->
 										<div class="form-group">
 											<label class="col-md-3">Konstruksi Bangunan</label>
 											<div class="col-md-7">
+				';
+
+				$kon = explode(", ", trim($data['konstruksi'], ", "));
+				if (sizeof($kon) == 2) {
+					$bertingkat = "checked";
+					$beton = "checked";
+				} else if (sizeof($kon) == 1) {
+					$bertingkat = $kon[0] == "Bertingkat"? "checked":"";
+					$beton = $kon[0] == "Beton"? "checked":"";
+				} else {
+					$bertingkat = "";
+					$beton = "";
+				}
+
+				echo '
 												<label class="checkbox-inline">
-													<input type="checkbox" id="inlineCheckbox1" class="" name="konstruksi[]" value="Bertingkat"> Bertingkat
+													<input type="checkbox" id="inlineCheckbox1" class="" name="konstruksi[]" value="Bertingkat" '.$bertingkat.' /> Bertingkat
 												</label>
 												<label class="checkbox-inline">
-													<input type="checkbox" id="inlineCheckbox1" class="" name="konstruksi[]" value="Beton"> Beton
+													<input type="checkbox" id="inlineCheckbox1" class="" name="konstruksi[]" value="Beton" '.$beton.' /> Beton
 												</label>
 											</div> <!-- /.col -->
 										</div> <!-- /.form-group -->
@@ -398,7 +419,7 @@
 											<label class="col-md-3">Luas Lantai</label>
 											<div class="col-md-7">
 												<div class="input-group">
-													<input type="text" name="luas_lantai" placeholder="Luas Lantai" class="form-control" />
+													<input type="text" name="luas_lantai" value="'.$data['luas_lantai'].'" class="form-control" />
 													<span class="input-group-addon">m<sup>2</sup></span>
 												</div>
 											</div> <!-- /.col -->
@@ -406,7 +427,7 @@
 										<div class="form-group">
 											<label class="col-md-3">Letak/Alamat</label>
 											<div class="col-md-7">
-												<input type="text" name="alamat" placeholder="Jalan/Alamat Lokasi Gedung" class="form-control" />
+												<input type="text" name="alamat" value="'.$data['alamat'].'" class="form-control" />
 											</div> <!-- /.col -->
 										</div> <!-- /.form-group -->
 										<br/>
@@ -415,7 +436,7 @@
 											<label class="col-md-3"> &nbsp;&nbsp;1. Tanggal</label>
 											<div class="col-md-7">
 												<div id="dp-ex-4" class="input-group date" data-auto-close="true" data-date-format="dd-mm-yyyy" data-date-autoclose="true">
-													<input class="form-control" type="text" name="tanggal_beli" value="'.date('d-m-Y').'">
+													<input class="form-control" type="text" name="tanggal_beli" value="'.$data['tanggal_beli'].'" />
 													<span class="input-group-addon"><i class="fa fa-calendar"></i></span>
 												</div>
 												<span class="help-block">dd-mm-yyyy</span>
@@ -424,7 +445,7 @@
 										<div class="form-group">
 											<label class="col-md-3">&nbsp;&nbsp;2. Nomor</label>
 											<div class="col-md-7">
-												<input type="number" name="no_dokumen" value="0001" class="form-control" />
+												<input type="number" name="no_dokumen" value="'.$data['no_dokumen'].'" class="form-control" />
 											</div> <!-- /.col -->
 										</div> <!-- /.form-group -->
 										<br/>
@@ -432,7 +453,7 @@
 											<label class="col-md-3">Luas Lahan</label>
 											<div class="col-md-7">
 												<div class="input-group">
-													<input type="number" placeholder="Luas Lahan" name="luas_lahan" class="form-control" />
+													<input type="number" name="luas_lahan" value="'.$data['luas_lahan'].'" class="form-control" />
 													<span class="input-group-addon">m<sup>2</sup></span>
 												</div>
 											</div> <!-- /.col -->
@@ -440,19 +461,19 @@
 										<div class="form-group">
 											<label class="col-md-3">Status Tanah </label>
 											<div class="col-md-7">
-												<input type="text" name="status_tanah" placeholder="Status Kepemilikan Tanah Gedung" class="form-control" />
+												<input type="text" name="status_tanah" value="'.$data['status_tanah'].'" class="form-control" />
 											</div> <!-- /.col -->
 										</div> <!-- /.form-group -->
 										<div class="form-group">
 											<label class="col-md-3">Nomor Kode Tanah </label>
 											<div class="col-md-7">
-												<input type="text" name="no_sertifikat" class="form-control" />
+												<input type="text" name="no_sertifikat" value="'.$data['no_sertifikat'].'" class="form-control" />
 											</div> <!-- /.col -->
 										</div> <!-- /.form-group -->
 										<div class="form-group">
 											<label class="col-md-3">Asal Usul </label>
 											<div class="col-md-7">
-												<input type="text" name="asal_usul" placeholder="Asal Usul Dana Gedung" class="form-control" />
+												<input type="text" name="asal_usul" value="'.$data['asal_usul'].'" class="form-control" />
 											</div> <!-- /.col -->
 										</div> <!-- /.form-group -->
 										<div class="form-group">
@@ -460,25 +481,19 @@
 											<div class="col-md-7">
 												<div class="input-group">
 													<span class="input-group-addon">Rp</span>
-													<input type="number" class="form-control" id="harga" name="harga" value="0">
+													<input type="number" class="form-control" id="harga" name="harga" value="'.$data['harga'].'" />
 												</div>
 											</div> <!-- /.col -->
 										</div> <!-- /.form-group -->
 										<div class="form-group">
 											<label class="col-md-3">Keterangan </label>
 											<div class="col-md-7">
-												<input type="text" name="keterangan" class="form-control" />
-											</div> <!-- /.col -->
-										</div> <!-- /.form-group -->
-										<br/>
-										<div class="form-group">
-											<div class="col-md-7 col-md-push-3">
-												<button type="submit" name="tambah" class="btn btn-primary">Masukkan Data</button>&nbsp;
-												<button type="reset" class="btn btn-default">Batalkan</button>
+												<input type="text" name="keterangan" value="'.$data['keterangan'].'" class="form-control" />
 											</div> <!-- /.col -->
 										</div> <!-- /.form-group -->
 						</div>
 						<div class="modal-footer">
+							<input type="hidden" name="id" value="'.$data['id'].'" />
 							<button type="button" class="btn btn-warning" data-dismiss="modal">Batal</button>
 							<button type="submit" name="edit" class="btn btn-primary">Update Data</button>
 						</div>
@@ -499,9 +514,10 @@
 						<div class="modal-body">
 										<div class="form-group">
 											<label class="col-md-3">Jenis/Nama Barang</label>
-											<div class="col-sm-7">
+											<div class="col-md-7">
 												<select id="s5_basic" class="form-control" name="jenis_barang" onclick="getKodeBarang(\'jalan\', this.value)">
-													<option>Pilih Jenis Barang:</option>
+													<option value="'.$data['kode_barang'].'">'.$data['jenis_barang'].'</option>
+													<option disabled>==============================================</option>
 				';
 
 				$first4 = true;
@@ -536,26 +552,26 @@
 										<div class="form-group">
 											<label class="col-md-3">Kode Barang</label>
 											<div class="col-md-7">
-												<input type="number" id="kodejalan" name="kode_barang" placeholder="-" class="form-control" readonly/>
+												<input type="number" id="kodejalan" name="kode_barang" value="'.$data['kode_barang'].'" class="form-control" readonly/>
 											</div> <!-- /.col -->
 										</div> <!-- /.form-group -->
 										<div class="form-group">
 											<label class="col-md-3">Register</label>
 											<div class="col-md-7">
-												<input type="number" name="register" placeholder="Nomor Register" class="form-control" />
+												<input type="number" name="register" value="'.$data['register'].'" class="form-control" />
 											</div> <!-- /.col -->
 										</div> <!-- /.form-group -->
 										<div class="form-group">
 											<label class="col-md-3">Konstruksi</label>
 											<div class="col-md-7">
-												<input type="text" name="konstruksi" placeholder="Jenis Konstruksi" class="form-control" />
+												<input type="text" name="konstruksi" value="'.$data['konstruksi'].'" class="form-control" />
 											</div> <!-- /.col -->
 										</div> <!-- /.form-group -->
 										<div class="form-group">
 											<label class="col-md-3">Panjang</label>
 											<div class="col-md-7">
 												<div class="input-group">
-													<input type="text" name="panjang" placeholder="Panjang Konstruksi (km)" class="form-control" />
+													<input type="text" name="panjang" value="'.$data['panjang'].'" class="form-control" />
 													<span class="input-group-addon">km</span>
 												</div>
 											</div> <!-- /.col -->
@@ -564,7 +580,7 @@
 											<label class="col-md-3">Lebar</label>
 											<div class="col-md-7">
 												<div class="input-group">
-													<input type="text" name="lebar" placeholder="Lebar (m)" class="form-control" />
+													<input type="text" name="lebar" value="'.$data['lebar'].'" class="form-control" />
 													<span class="input-group-addon">m</span>
 												</div>
 											</div> <!-- /.col -->
@@ -573,7 +589,7 @@
 											<label class="col-md-3">Luas</label>
 											<div class="col-md-7">
 												<div class="input-group">
-													<input type="text" name="luas_tanah" placeholder="Luas Konstruksi (m2)"class="form-control" />
+													<input type="text" name="luas_tanah" value="'.$data['luas_tanah'].'" class="form-control" />
 													<span class="input-group-addon">m<sup>2</sup></span>
 												</div>
 											</div> <!-- /.col -->
@@ -581,7 +597,7 @@
 										<div class="form-group">
 											<label class="col-md-3">Lokasi</label>
 											<div class="col-md-7">
-												<input type="text" name="alamat" placeholder="Letak/Lokasi" class="form-control" />
+												<input type="text" name="alamat" value="'.$data['alamat'].'" class="form-control" />
 											</div> <!-- /.col -->
 										</div> <!-- /.form-group -->
 										<div class="form-group">
@@ -589,7 +605,7 @@
 											<label class="col-md-3"> &nbsp;Tanggal </label>
 											<div class="col-md-7">
 												<div id="dp-ex-5" class="input-group date" data-auto-close="true" data-date-format="dd-mm-yyyy" data-date-autoclose="true">
-													<input class="form-control" type="text" name="tanggal_dokumen" placeholder="Tanggal Pada Dokumen" >
+													<input class="form-control" type="text" name="tanggal_dokumen" value="'.$data['tanggal_dokumen'].'" />
 													<span class="input-group-addon"><i class="fa fa-calendar"></i></span>
 												</div>
 												<span class="help-block">dd-mm-yyyy</span>
@@ -598,39 +614,46 @@
 										<div class="form-group">
 											<label class="col-md-3">&nbsp;Nomor </label>
 											<div class="col-md-7">
-												<input type="text" name="no_dokumen" placeholder="Nomor Pada Dokumen" class="form-control" />
+												<input type="text" name="no_dokumen" value="'.$data['no_dokumen'].'" class="form-control" />
 											</div> <!-- /.col -->
 										</div> <!-- /.form-group -->
 										<br/>
 										<div class="form-group">
 											<label class="col-md-3">Status Tanah</label>
 											<div class="col-md-7">
-												<input type="text" name="status_tanah" placeholder="Status Tanah" class="form-control" />
+												<input type="text" name="status_tanah" value="'.$data['status_tanah'].'" class="form-control" />
 											</div> <!-- /.col -->
 										</div> <!-- /.form-group -->
 										<div class="form-group">
 											<label class="col-md-3">Nomor Kode Tanah  </label>
 											<div class="col-md-7">
-												<input type="text" name="no_tanah" placeholder="Nomor Kode Tanah" class="form-control" />
+												<input type="text" name="no_tanah" value="'.$data['no_tanah'].'" class="form-control" />
 											</div> <!-- /.col -->
 										</div> <!-- /.form-group -->
 										<div class="form-group">
 											<label class="col-md-3">Asal Usul </label>
 											<div class="col-md-7">
-												<input type="text" name="asal_usul" value="" class="form-control" />
+												<input type="text" name="asal_usul" value="'.$data['asal_usul'].'" class="form-control" />
 											</div> <!-- /.col -->
 										</div> <!-- /.form-group -->
 										<div class="form-group">
 											<label class="col-md-3">Kondisi Bangunan</label>
 											<div class="col-md-7">
+				';
+
+				$kondisi_baru = $data['kondisi'] == "Baru"? "checked":"";
+				$kondisi_kb = $data['kondisi'] == "KB"? "checked":"";
+				$kondisi_renov = $data['kondisi'] == "Renovasi Baru"? "checked":"";
+
+				echo '
 												<label class="radio-inline">
-													<input type="radio" name="kondisi" class="" value="Baru" checked> Baru
+													<input type="radio" name="kondisi" class="" value="Baru" '.$kondisi_baru.' /> Baru
 												</label>
 												<label class="radio-inline">
-													<input type="radio" name="kondisi" class="" value="KB"> KB
+													<input type="radio" name="kondisi" class="" value="KB" '.$kondisi_kb.' /> KB
 												</label>
 												<label class="radio-inline">
-													<input type="radio" name="kondisi" class="" value="Renovasi Baru"> Renovasi Baru
+													<input type="radio" name="kondisi" class="" value="Renovasi Baru" '.$kondisi_renov.' /> Renovasi Baru
 												</label>
 											</div> <!-- /.col -->
 										</div> <!-- /.form-group -->
@@ -639,25 +662,19 @@
 											<div class="col-md-7">
 												<div class="input-group">
 													<span class="input-group-addon">Rp</span>
-													<input class="form-control" id="harga" name="harga" value="0" type="number">
+													<input class="form-control" id="harga" name="harga" value="'.$data['harga'].'" type="number" />
 												</div>
 											</div> <!-- /.col -->
 										</div> <!-- /.form-group -->
 										<div class="form-group">
 											<label class="col-md-3">Keterangan </label>
 											<div class="col-md-7">
-												<input type="text" name="keterangan" class="form-control" />
-											</div> <!-- /.col -->
-										</div> <!-- /.form-group -->
-										<br/>
-										<div class="form-group">
-											<div class="col-md-7 col-md-push-3">
-												<button type="submit" name="tambah" class="btn btn-primary">Masukkan Data</button>&nbsp;
-												<button type="reset" class="btn btn-default">Batalkan</button>
+												<input type="text" name="keterangan" value="'.$data['keterangan'].'" class="form-control" />
 											</div> <!-- /.col -->
 										</div> <!-- /.form-group -->
 						</div>
 						<div class="modal-footer">
+							<input type="hidden" name="id" value="'.$data['id'].'" />
 							<button type="button" class="btn btn-warning" data-dismiss="modal">Batal</button>
 							<button type="submit" name="edit" class="btn btn-primary">Update Data</button>
 						</div>
@@ -678,9 +695,10 @@
 						<div class="modal-body">
 										<div class="form-group">
 											<label class="col-md-3">Jenis/Nama Barang</label>
-											<div class="col-sm-7">
+											<div class="col-md-7">
 												<select id="s6_basic" class="form-control" name="jenis_barang" onclick="getKodeBarang(\'asetlain\', this.value)">
-													<option>Pilih Jenis Barang:</option>
+													<option value="'.$data['kode_barang'].'">'.$data['jenis_barang'].'</option>
+													<option disabled>==============================================</option>
 				';
 
 				$first5 = true;
@@ -715,70 +733,77 @@
 										<div class="form-group">
 											<label class="col-md-3">Kode Barang</label>
 											<div class="col-md-7">
-												<input type="number" id="kodeasetlain" name="kode_barang" placeholder="-" class="form-control" readonly/>
+												<input type="number" id="kodeasetlain" name="kode_barang" value="'.$data['kode_barang'].'" class="form-control" readonly />
 											</div> <!-- /.col -->
 										</div> <!-- /.form-group -->
 										<div class="form-group">
 											<label class="col-md-3">Register</label>
 											<div class="col-md-7">
-												<input type="number" name="register" value="0001" class="form-control" />
+												<input type="number" name="register" value="'.$data['register'].'" class="form-control" />
 											</div> <!-- /.col -->
 										</div> <!-- /.form-group -->
 										<ul id="myTab2" class="nav nav-pills">
-											<li class="active"><a href="#Perpustakaan" data-toggle="tab" onclick="setJalur(\'1\')">Buku Perpustakaan</a></li>
-											<li><a href="#kesenian" data-toggle="tab" onclick="setJalur(\'2\')">Barang Bercorak Kesenian/Kebudayaan</a></li>
-											<li><a href="#ternak" data-toggle="tab" onclick="setJalur(\'3\')">Hewan/Ternak dan Tumbuhan</a></li>
+				';
+
+				$jalur_perpus = $data['jalur'] == "1"? "active":"";
+				$jalur_seni = $data['jalur'] == "2"? "active":"";
+				$jalur_ternak = $data['jalur'] == "3"? "active":"";
+
+				echo '
+											<li class="'.$jalur_perpus.'"><a href="#Perpustakaan" data-toggle="tab" onclick="setJalur(\'1\')">Buku Perpustakaan</a></li>
+											<li class="'.$jalur_seni.'"><a href="#kesenian" data-toggle="tab" onclick="setJalur(\'2\')">Barang Bercorak Kesenian/Kebudayaan</a></li>
+											<li class="'.$jalur_ternak.'"><a href="#ternak" data-toggle="tab" onclick="setJalur(\'3\')">Hewan/Ternak dan Tumbuhan</a></li>
 										</ul>
-										<input type="hidden" id="jalur" name="jalur" value="1">
+										<input type="hidden" id="jalur" name="jalur" value="'.$data['jalur'].'" />
 										<div id="myTab2Content" class="tab-content">
-											<div class="tab-pane fade in active" id="Perpustakaan">
+											<div class="tab-pane fade in '.$jalur_perpus.'" id="Perpustakaan">
 												<div class="form-group">
 													<label class="col-md-12">Buku Perpustakaan</label>
 													<label class="col-md-3"> &nbsp;1. Judul/Pencipta</label>
 													<div class="col-md-7">
-														<input type="text" name="judul_buku" placeholder="Judul Atau Pencipta" class="form-control" />
+														<input type="text" name="judul_buku" value="'.$data['judul_buku'].'" class="form-control" />
 													</div> <!-- /.col -->
 												</div> <!-- /.form-group -->
 												<div class="form-group">
 													<label class="col-md-3">&nbsp;2. Spesifikasi </label>
 													<div class="col-md-7">
-														<input type="text" name="spesifikasi_buku" placeholder="Spesifikasi Buku" class="form-control" />
+														<input type="text" name="spesifikasi_buku" value="'.$data['spesifikasi_buku'].'" class="form-control" />
 													</div> <!-- /.col -->
 												</div> <!-- /.form-group -->
 											</div>
-											<div class="tab-pane fade" id="kesenian">
+											<div class="tab-pane fade in '.$jalur_seni.'" id="kesenian">
 												<div class="form-group">
 													<label class="col-md-12">Barang Bercorak Kesenian/Kebudayaan</label>
 													<label class="col-md-3"> &nbsp;1. Asal Daerah</label>
 													<div class="col-md-7">
-														<input type="text" name="asal_daerah" placeholder="Asal Daerah Kesenian/Kebudayaan" class="form-control" />
+														<input type="text" name="asal_daerah" value="'.$data['asal_daerah'].'" class="form-control" />
 													</div> <!-- /.col -->
 												</div> <!-- /.form-group -->
 												<div class="form-group">
 													<label class="col-md-3">&nbsp;2. Pencipta </label>
 													<div class="col-md-7">
-														<input type="text" name="pencipta_kesenian" placeholder="Pencipta" class="form-control" />
+														<input type="text" name="pencipta_kesenian" value="'.$data['pencipta_kesenian'].'" class="form-control" />
 													</div> <!-- /.col -->
 												</div> <!-- /.form-group -->
 												<div class="form-group">
 													<label class="col-md-3">&nbsp;3. Bahan </label>
 													<div class="col-md-7">
-														<input type="text" name="bahan_kesenian" placeholder="Bahan Kesenian" class="form-control" />
+														<input type="text" name="bahan_kesenian" value="'.$data['bahan_kesenian'].'" class="form-control" />
 													</div> <!-- /.col -->
 												</div> <!-- /.form-group -->
 											</div>
-											<div class="tab-pane fade" id="ternak">
+											<div class="tab-pane fade in '.$jalur_ternak.'" id="ternak">
 												<div class="form-group">
 													<label class="col-md-12">Hewan/Ternak dan Tumbuhan</label>
 													<label class="col-md-3"> &nbsp;1. Jenis</label>
 													<div class="col-md-7">
-														<input type="text" name="jenis" placeholder="Jenis" class="form-control" />
+														<input type="text" name="jenis" value="'.$data['jenis'].'" class="form-control" />
 													</div> <!-- /.col -->
 												</div> <!-- /.form-group -->
 												<div class="form-group">
 													<label class="col-md-3">&nbsp;2. Ukuran </label>
 													<div class="col-md-7">
-														<input type="text" name="ukuran" placeholder="Ukuran" class="form-control" />
+														<input type="text" name="ukuran" value="'.$data['ukuran'].'" class="form-control" />
 													</div> <!-- /.col -->
 												</div> <!-- /.form-group -->
 											</div>
@@ -787,14 +812,14 @@
 										<div class="form-group">
 											<label class="col-md-3">Jumlah</label>
 											<div class="col-md-7">
-												<input type="number" name="jumlah" class="form-control" />
+												<input type="number" name="jumlah" value="'.$data['jumlah'].'" class="form-control" />
 											</div> <!-- /.col -->
 										</div> <!-- /.form-group -->
 										<div class="form-group">
 											<label class="col-md-3">Tahun Cetak/Pembelian </label>
 											<div class="col-md-7">
 												<div id="dp-ex-6" class="input-group date" data-auto-close="true" data-date-format="dd-mm-yyyy" data-date-autoclose="true">
-													<input class="form-control" type="text" name="tanggal_cetak" />
+													<input class="form-control" type="text" name="tanggal_cetak" value="'.$data['tanggal_cetak'].'" />
 													<span class="input-group-addon"><i class="fa fa-calendar"></i></span>
 												</div>
 												<span class="help-block">dd-mm-yyyy</span>
@@ -803,7 +828,7 @@
 										<div class="form-group">
 											<label class="col-md-3">Asal Usul Cara Perolehan</label>
 											<div class="col-md-7">
-												<input type="text" name="asal_usul" class="form-control" />
+												<input type="text" name="asal_usul" value="'.$data['asal_usul'].'" class="form-control" />
 											</div> <!-- /.col -->
 										</div> <!-- /.form-group -->
 										<div class="form-group">
@@ -811,22 +836,23 @@
 											<div class="col-md-7">
 												<div class="input-group">
 													<span class="input-group-addon">Rp</span>
-													<input class="form-control" id="harga" name="harga" value="0" type="number">
+													<input class="form-control" id="harga" name="harga" value="'.$data['harga'].'" type="number" />
 												</div>
 											</div> <!-- /.col -->
 										</div> <!-- /.form-group -->
 										<div class="form-group">
 											<label class="col-md-3">Keterangan </label>
 											<div class="col-md-7">
-												<input type="text" name="keterangan" class="form-control" />
+												<input type="text" name="keterangan" value="'.$data['keterangan'].'" class="form-control" />
 											</div> <!-- /.col -->
 										</div> <!-- /.form-group -->
+										<input type="hidden" name="efoto" value="'.$data['foto'].'" />
 										<div class="row">
 											<label class="col-md-3">Gambar</label>
 											<div class="col-sm-4">
 												<div class="fileupload fileupload-new" data-provides="fileupload">
 													<div class="fileupload-new thumbnail" style="width: 200px; height: 150px;">
-														<img src="'.ROOT.'assets/img/noimage.jpg" alt="Placeholder" />
+														<img src="'.ROOT.'upload/images/'.$data['foto'].'" alt="Placeholder" />
 													</div>
 													<div class="fileupload-preview fileupload-exists thumbnail" style="max-width: 200px; max-height: 150px; line-height: 20px;"></div>
 													<div>
@@ -839,15 +865,9 @@
 												</div>
 											</div> <!-- /.col -->
 										</div> <!-- /.row -->
-										<br/>
-										<div class="form-group">
-											<div class="col-md-7 col-md-push-3">
-												<button type="submit" name="tambah" class="btn btn-primary">Masukkan Data</button>&nbsp;
-												<button type="reset" class="btn btn-default">Batalkan</button>
-											</div> <!-- /.col -->
-										</div> <!-- /.form-group -->
 						</div>
 						<div class="modal-footer">
+							<input type="hidden" name="id" value="'.$data['id'].'" />
 							<button type="button" class="btn btn-warning" data-dismiss="modal">Batal</button>
 							<button type="submit" name="edit" class="btn btn-primary">Update Data</button>
 						</div>
@@ -868,7 +888,7 @@
 						<div class="modal-body">
 										<div class="form-group">
 											<label class="col-md-3">Jenis/Nama Barang</label>
-											<div class="col-sm-7">
+											<div class="col-md-7">
 												<select id="s7_basic" class="form-control" name="jenis_barang" onclick="getKodeBarang(\'konstruksi\', this.value)">
 													<option value="06000000000" selected>Konstruksi dalam Pengerjaan</option>
 				';
@@ -905,25 +925,47 @@
 										<div class="form-group">
 											<label class="col-md-3">Bangunan </label>
 											<div class="col-md-7">
+				';
+
+				$bangunan_p = $data['bangunan'] == "P"? "checked":"";
+				$bangunan_sp = $data['bangunan'] == "SP"? "checked":"";
+				$bangunan_d = $data['bangunan'] == "D"? "checked":"";
+
+				echo '
 												<label class="radio-inline">
-													<input type="radio" name="bangunan" class="" value="P" checked> P
+													<input type="radio" name="bangunan" class="" value="P" '.$bangunan_p.' /> P
 												</label>
 												<label class="radio-inline">
-													<input type="radio" name="bangunan" class="" value="SP"> SP
+													<input type="radio" name="bangunan" class="" value="SP" '.$bangunan_sp.' /> SP
 												</label>
 												<label class="radio-inline">
-													<input type="radio" name="bangunan" class="" value="D"> D
+													<input type="radio" name="bangunan" class="" value="D" '.$bangunan_d.' /> D
 												</label>
 											</div> <!-- /.col -->
 										</div> <!-- /.form-group -->
 										<div class="form-group">
 											<label class="col-md-3">Konstruksi Bangunan</label>
 											<div class="col-md-7">
+				';
+
+				$kon = explode(", ", trim($data['konstruksi'], ", "));
+				if (sizeof($kon) == 2) {
+					$bertingkat = "checked";
+					$beton = "checked";
+				} else if (sizeof($kon) == 1) {
+					$bertingkat = $kon[0] == "Bertingkat"? "checked":"";
+					$beton = $kon[0] == "Beton"? "checked":"";
+				} else {
+					$bertingkat = "";
+					$beton = "";
+				}
+
+				echo '
 												<label class="checkbox-inline">
-													<input type="checkbox" id="inlineCheckbox1" class="" name="konstruksi[]" value="Bertingkat"> Bertingkat
+													<input type="checkbox" id="inlineCheckbox1" class="" name="konstruksi[]" value="Bertingkat" '.$bertingkat.' /> Bertingkat
 												</label>
 												<label class="checkbox-inline">
-													<input type="checkbox" id="inlineCheckbox1" class="" name="konstruksi[]" value="Beton"> Beton
+													<input type="checkbox" id="inlineCheckbox1" class="" name="konstruksi[]" value="Beton" '.$beton.' /> Beton
 												</label>
 											</div> <!-- /.col -->
 										</div> <!-- /.form-group -->
@@ -931,7 +973,7 @@
 											<label class="col-md-3">Luas</label>
 											<div class="col-md-7">
 												<div class="input-group">
-													<input type="text" name="luas_konstruksi" placeholder="Luas Daerah Konstruksi" class="form-control" />
+													<input type="text" name="luas_konstruksi" value="'.$data['luas_konstruksi'].'" class="form-control" />
 													<span class="input-group-addon">m<sup>2</sup></span>
 												</div>
 											</div> <!-- /.col -->
@@ -939,7 +981,7 @@
 										<div class="form-group">
 											<label class="col-md-3">Letak/Alamat</label>
 											<div class="col-md-7">
-												<input type="text" name="alamat" placeholder="Letak Lokasi/Alamat" class="form-control" />
+												<input type="text" name="alamat" value="'.$data['alamat'].'" class="form-control" />
 											</div> <!-- /.col -->
 										</div> <!-- /.form-group -->
 										<div class="form-group">
@@ -947,7 +989,7 @@
 											<label class="col-md-3"> &nbsp;&nbsp;1. Tanggal</label>
 											<div class="col-md-7">
 												<div id="dp-ex-7" class="input-group date" data-auto-close="true" data-date-format="dd-mm-yyyy" data-date-autoclose="true">
-													<input class="form-control" type="text" name="tanggal_dokumen" placeholder="00-00-0000">
+													<input class="form-control" type="text" name="tanggal_dokumen" value="'.$data['tanggal_dokumen'].'" />
 													<span class="input-group-addon"><i class="fa fa-calendar"></i></span>
 												</div>
 												<span class="help-block">dd-mm-yyyy</span>
@@ -956,7 +998,7 @@
 										<div class="form-group">
 											<label class="col-md-3">&nbsp;&nbsp;2. Nomor</label>
 											<div class="col-md-7">
-												<input type="number" name="no_dokumen" value="0001" class="form-control" />
+												<input type="number" name="no_dokumen" value="'.$data['no_dokumen'].'" class="form-control" />
 											</div> <!-- /.col -->
 										</div> <!-- /.form-group -->
 										<br/>
@@ -964,7 +1006,7 @@
 											<label class="col-md-3">Tanggal Mulai</label>
 											<div class="col-md-7">
 												<div id="dp-ex-8" class="input-group date" data-auto-close="true" data-date-format="dd-mm-yyyy" data-date-autoclose="true">
-													<input class="form-control" type="text" name="tanggal_mulai" value="'.date('d-m-Y').'" />
+													<input class="form-control" type="text" name="tanggal_mulai" value="'.$data['tanggal_mulai'].'" />
 													<span class="input-group-addon"><i class="fa fa-calendar"></i></span>
 												</div>
 												<span class="help-block">dd-mm-yyyy</span>
@@ -973,19 +1015,19 @@
 										<div class="form-group">
 											<label class="col-md-3">Status Tanah </label>
 											<div class="col-md-7">
-												<input type="text" name="status_tanah" placeholder="Status Tanah" class="form-control" />
+												<input type="text" name="status_tanah" value="'.$data['status_tanah'].'" class="form-control" />
 											</div> <!-- /.col -->
 										</div> <!-- /.form-group -->
 										<div class="form-group">
 											<label class="col-md-3">No. Kode Tanah</label>
 											<div class="col-md-7">
-												<input type="text" name="no_tanah" placeholder="No. Kode Tanah" class="form-control" />
+												<input type="text" name="no_tanah" value="'.$data['no_tanah'].'" class="form-control" />
 											</div> <!-- /.col -->
 										</div> <!-- /.form-group -->
 										<div class="form-group">
 											<label class="col-md-3">Asal Usul Pembiayaan</label>
 											<div class="col-md-7">
-												<input type="text" name="asal_usul" class="form-control" />
+												<input type="text" name="asal_usul" value="'.$data['asal_usul'].'" class="form-control" />
 											</div> <!-- /.col -->
 										</div> <!-- /.form-group -->
 										<div class="form-group">
@@ -993,25 +1035,19 @@
 											<div class="col-md-7">
 												<div class="input-group">
 													<span class="input-group-addon">Rp</span>
-													<input class="form-control" id="harga" name="harga" value="0" type="number">
+													<input class="form-control" id="harga" name="harga" value="'.$data['harga'].'" type="number" />
 												</div>
 											</div> <!-- /.col -->
 										</div> <!-- /.form-group -->
 										<div class="form-group">
 											<label class="col-md-3">Keterangan</label>
 											<div class="col-md-7">
-												<input type="text" name="keterangan" class="form-control" />
-											</div> <!-- /.col -->
-										</div> <!-- /.form-group -->
-										<br/><br/>
-										<div class="form-group">
-											<div class="col-md-7 col-md-push-3">
-												<button type="submit" name="tambah" class="btn btn-primary">Masukkan Data</button>&nbsp;
-												<button type="reset" class="btn btn-default">Batalkan</button>
+												<input type="text" name="keterangan" value="'.$data['keterangan'].'" class="form-control" />
 											</div> <!-- /.col -->
 										</div> <!-- /.form-group -->
 						</div>
 						<div class="modal-footer">
+							<input type="hidden" name="id" value="'.$data['id'].'" />
 							<button type="button" class="btn btn-warning" data-dismiss="modal">Batal</button>
 							<button type="submit" name="edit" class="btn btn-primary">Update Data</button>
 						</div>

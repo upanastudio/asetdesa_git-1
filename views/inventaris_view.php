@@ -109,7 +109,7 @@
 													<td>'.$data_tanah['no_sertifikat'].'</td>
 													<td>'.$data_tanah['penggunaan'].'</td>
 													<td>'.$data_tanah['asal_usul'].'</td>
-													<td>'.number_format($data_tanah['harga'], 0, ',', '.').'</td>
+													<td>'.number_format($data_tanah['harga'], 0, ',', '.').',-</td>
 													<td>'.$data_tanah['keterangan'].'</td>
 													<td style="text-align: center;">
 														<a data-toggle="modal" href="#edit-data" onclick="loadDoc(\'tanah\', \''.$data_tanah['id'].'\')"><i class="fa fa-edit"></i></a> | 
@@ -124,7 +124,7 @@
 				echo '
 												<tr class="jumlahtabel">
 													<td colspan="12" style="text-align: center;">JUMLAH ASET TETAP (TANAH)</td>
-													<td>'.number_format($total, 0, ',', '.').'</td>
+													<td>'.number_format($total, 0, ',', '.').',-</td>
 													<td></td><td></td>
 												</tr>
 											</tbody>
@@ -194,7 +194,7 @@
 													<td>'.$data_peralatan['no_polisi'].'</td>
 													<td>'.$data_peralatan['no_bpkb'].'</td>
 													<td>'.$data_peralatan['asal_usul'].'</td>
-													<td>'.number_format($data_peralatan['harga'], 0, ',', '.').'</td>
+													<td>'.number_format($data_peralatan['harga'], 0, ',', '.').',-</td>
 													<td>'.$data_peralatan['keterangan'].'</td>
 													<td>&nbsp;</td>
 													<td style="text-align: center;">
@@ -211,7 +211,7 @@
 
 												<tr class="jumlahtabel">
 													<td colspan="14" style="text-align: center;">JUMLAH TOTAL ASET TETAP (PERALATAN DAN MESIN)</td>
-													<td>'.number_format($total, 0, ',', '.').'</td>
+													<td>'.number_format($total, 0, ',', '.').',-</td>
 													<td></td><td></td><td></td>
 												</tr>
 											</tbody>
@@ -296,7 +296,7 @@
 													<td>'.$data_gedung['status_tanah'].'</td>
 													<td>'.$data_gedung['no_sertifikat'].'</td>
 													<td>'.$data_gedung['asal_usul'].'</td>
-													<td>'.number_format($data_gedung['harga'], 0, ',', '.').'</td>
+													<td>'.number_format($data_gedung['harga'], 0, ',', '.').',-</td>
 													<td>'.$data_gedung['keterangan'].'</td>
 													<td style="text-align: center;">
 														<a data-toggle="modal" href="#edit-data" onclick="loadDoc(\'gedung\', \''.$data_gedung['id'].'\')"><i class="fa fa-edit"></i></a> | 
@@ -311,7 +311,7 @@
 				echo '
 												<tr class="jumlahtabel">
 													<td colspan="15" style="text-align: center;">JUMLAH TOTAL ASET TETAP (Gedung dan Bangunan)</td>
-													<td>'.number_format($total, 0, ',', '.').'</td>
+													<td>'.number_format($total, 0, ',', '.').',-</td>
 													<td></td><td></td>
 												</tr>
 											</tbody>
@@ -342,8 +342,8 @@
 													<th rowspan="2">Status Tanah</th>
 													<th rowspan="2">No. Kode Tanah</th>
 													<th rowspan="2">Asal-Usul</th>
-													<th rowspan="2">Harga</th>
 													<th rowspan="2">Kondisi</th>
+													<th rowspan="2">Harga</th>
 													<th rowspan="2">Keterangan</th>
 													<th rowspan="2">Tindakan</th>
 												</tr>
@@ -383,7 +383,7 @@
 													<td>'.$data_jalan['no_tanah'].'</td>
 													<td>'.$data_jalan['asal_usul'].'</td>
 													<td>'.$data_jalan['kondisi'].'</td>
-													<td>'.number_format($data_jalan['harga'], 0, ',', '.').'</td>
+													<td>'.number_format($data_jalan['harga'], 0, ',', '.').',-</td>
 													<td>'.$data_jalan['keterangan'].'</td>
 													<td style="text-align: center;">
 														<a data-toggle="modal" href="#edit-data" onclick="loadDoc(\'jalan\', \''.$data_jalan['id'].'\')"><i class="fa fa-edit"></i></a> | 
@@ -400,7 +400,7 @@
 													<td colspan="15" style="text-align: center;">
 														JUMLAH TOTAL ASET TETAP (Jalan, Irigasi, dan Jaringan)
 													</td>
-													<td>'.number_format($total, 0, ',', '.').'</td>
+													<td>'.number_format($total, 0, ',', '.').',-</td>
 													<td></td><td></td>
 												</tr>
 											</tbody>
@@ -472,7 +472,7 @@
 													<td>'.$data_asetlain['tanggal_cetak'].'</td>
 													<td>'.$data_asetlain['jumlah'].'</td>
 													<td>'.$data_asetlain['asal_usul'].'</td>
-													<td>'.number_format($data_asetlain['harga'], 0, ',', '.').'</td>
+													<td>'.number_format($data_asetlain['harga'], 0, ',', '.').',-</td>
 													<td>'.$data_asetlain['keterangan'].'</td>
 													<td style="text-align: center;">
 														<a data-toggle="modal" href="#edit-data" onclick="loadDoc(\'asetlain\', \''.$data_asetlain['id'].'\')"><i class="fa fa-edit"></i></a> | 
@@ -487,7 +487,7 @@
 				echo '
 												<tr class="jumlahtabel">
 													<td colspan="14" style="text-align: center;">JUMLAH TOTAL ASET TETAP (Lainnya)</td>
-													<td>'.number_format($total, 0, ',', '.').'</td>
+													<td>'.number_format($total, 0, ',', '.').',-</td>
 													<td></td><td></td>
 												</tr>
 											</tbody>
@@ -544,9 +544,9 @@
 					if (sizeof($kon2) == 2) {
 						$bertingkat = "Bertingkat";
 						$beton = "Beton";
-					} else if (sizeof($kon) == 1) {
-						$bertingkat = $kon[0] == "Bertingkat"? "Bertingkat":"Tidak";
-						$beton = $kon[0] == "Beton"? "Beton":"Tidak";
+					} else if (sizeof($kon2) == 1) {
+						$bertingkat = $kon2[0] == "Bertingkat"? "Bertingkat":"Tidak";
+						$beton = $kon2[0] == "Beton"? "Beton":"Tidak";
 					} else {
 						$bertingkat = "Tidak";
 						$beton = "Tidak";
@@ -567,7 +567,7 @@
 													<td>'.$data_konstruksi['status_tanah'].'</td>
 													<td>'.$data_konstruksi['no_tanah'].'</td>
 													<td>'.$data_konstruksi['asal_usul'].'</td>
-													<td>'.number_format($data_konstruksi['harga'], 0, ',', '.').'</td>
+													<td>'.number_format($data_konstruksi['harga'], 0, ',', '.').',-</td>
 													<td>'.$data_konstruksi['keterangan'].'</td>
 													<td style="text-align: center;">
 														<a data-toggle="modal" href="#edit-data" onclick="loadDoc(\'konstruksi\', \''.$data_konstruksi['id'].'\')"><i class="fa fa-edit"></i></a> | 
@@ -582,7 +582,7 @@
 				echo '
 												<tr class="jumlahtabel">
 													<td colspan="13" style="text-align: center;">JUMLAH KONSTRUKSI DALAM PENGERJAAN</td>
-													<td>'.number_format($total, 0, ',', '.').'</td>
+													<td>'.number_format($total, 0, ',', '.').',-</td>
 													<td></td><td></td>
 												</tr>
 											</tbody>
