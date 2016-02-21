@@ -26,19 +26,19 @@
 				$harga				='';
 				$keterangan			='';
 
+				$kode_barang		= $_POST['kode_barang'];
 				if (empty($kode_barang)) {
 					header("location:".ROOT."input?tab=tanah&act=err");
 				} else {
 					$jb						= $data_barang->getNamaBarangByKB($kode_barang);
 					$jenis_barang			= $jb['nama_barang'];
-					$kode_barang			= $_POST['kode_barang'];
 					$register				= $_POST['register'];
 					$luas_tanah				= $_POST['luas_tanah'];
 					$tanggal_beli			= $_POST['tanggal_beli'];
 					$alamat					= $_POST['alamat'];
-					$hak					= $_POST['hak'];
+					$hak						= $_POST['hak'];
 					$no_sertifikat			= $_POST['no_sertifikat'];
-					$tanggal_sertifikat		= $_POST['tanggal_sertifikat'];
+					$tanggal_sertifikat	= $_POST['tanggal_sertifikat'];
 					$penggunaan				= $_POST['penggunaan'];
 					$asal_usul				= $_POST['asal_usul'];
 					$harga					= $_POST['harga'];
@@ -65,19 +65,19 @@
 				$harga				='';
 				$keterangan			='';
 
+				$kode_barang		= $_POST['kode_barang'];
 				if (empty($kode_barang)) {
-					header("location:".ROOT."input?tab=tanah&act=err");
+					header("location:".ROOT."inventaris?tab=tanah&act=err");
 				} else {
 					$jb						= $data_barang->getNamaBarangByKB($kode_barang);
 					$jenis_barang			= $jb['nama_barang'];
-					$kode_barang			= $_POST['kode_barang'];
 					$register				= $_POST['register'];
 					$luas_tanah				= $_POST['luas_tanah'];
 					$tanggal_beli			= $_POST['tanggal_beli'];
 					$alamat					= $_POST['alamat'];
-					$hak					= $_POST['hak'];
+					$hak						= $_POST['hak'];
 					$no_sertifikat			= $_POST['no_sertifikat'];
-					$tanggal_sertifikat		= $_POST['tanggal_sertifikat'];
+					$tanggal_sertifikat	= $_POST['tanggal_sertifikat'];
 					$penggunaan				= $_POST['penggunaan'];
 					$asal_usul				= $_POST['asal_usul'];
 					$harga					= $_POST['harga'];

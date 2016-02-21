@@ -68,7 +68,7 @@
 		<script src="<?php echo ROOT; ?>assets/js/libs/raphael-2.1.2.min.js"></script>
 		<script src="<?php echo ROOT; ?>assets/js/plugins/sparkline/jquery.sparkline.min.js"></script>
 		<script src="<?php echo ROOT; ?>assets/js/plugins/nicescroll/jquery.nicescroll.min.js"></script>
-		<script src="<?php echo ROOT; ?>assets/js/plugins/datepicker/bootstrap-datepicker.js"></script>
+		<script id="c-dp" src="<?php echo ROOT; ?>assets/js/plugins/datepicker/bootstrap-datepicker.js"></script>
 		<script src="<?php echo ROOT; ?>assets/js/plugins/timepicker/bootstrap-timepicker.js"></script>
 		<script src="<?php echo ROOT; ?>assets/js/plugins/simplecolorpicker/jquery.simplecolorpicker.js"></script>
 		<script src="<?php echo ROOT; ?>assets/js/plugins/autosize/jquery.autosize.min.js"></script>
@@ -77,12 +77,16 @@
 		<!-- <script src="assets/js/plugins/howl/howl.js"></script> -->
 
 		<!-- App JS -->
-		<script src="<?php echo ROOT; ?>assets/js/target-admin.js"></script>
+		<script id="c-ta" src="<?php echo ROOT; ?>assets/js/target-admin.js"></script>
 
 		<!-- Plugin JS -->
 		<script src="<?php echo ROOT; ?>assets/js/demos/dashboard.js"></script>
 		<script src="<?php echo ROOT; ?>assets/js/demos/ui-notifications.js"></script>
-		<script src="<?php echo ROOT; ?>assets/js/demos/form-extended.js"></script>
+		<script id="c-fe" src="<?php echo ROOT; ?>assets/js/demos/form-extended.js"></script>
+
+		<!-- Script for AJAX -->
+		<script src="<?php echo ROOT; ?>assets/js/edit-ajax.js"></script>
+		<script id="c-jbs" src="<?php echo ROOT; ?>assets/js/jenis-barang-selector.js"></script>
 
 	</head>
 	<body>
@@ -149,7 +153,19 @@
 		</div> <!-- /.container -->
 
 <?php
-	if ($model == 'inventaris') include "views/edit_view.php";
+	if ($model == 'inventaris') {
+		echo '
+
+		<div id="edit-data" class="modal modal-styled fade">
+			<div class="modal-dialog">
+				<div id="edit-ajax" class="modal-content">
+				</div><!-- /.modal-content -->
+			</div><!-- /.modal-dialog -->
+		</div><!-- /.modal -->
+
+		';
+	}
+
 	include "components/footer.php";
 ?>
 
