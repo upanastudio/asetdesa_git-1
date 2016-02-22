@@ -112,8 +112,8 @@
 													<td>'.number_format($data_tanah['harga'], 0, ',', '.').',-</td>
 													<td>'.$data_tanah['keterangan'].'</td>
 													<td style="text-align: center;">
-														<a data-toggle="modal" href="#edit-data" onclick="loadDoc(\'tanah\', \''.$data_tanah['id'].'\')"><i class="fa fa-edit"></i></a> | 
-														<a href="#" onclick="hapusData(\'tanah\', \''.$data_tanah['id'].'\')"><i class="fa fa-trash-o"></i></a>
+														<a data-toggle="modal" href="#edit-data" title="Edit" onclick="loadDoc(\'tanah\', \''.$data_tanah['id'].'\')"><i class="fa fa-edit"></i></a> | 
+														<a href="#" title="Hapus" onclick="hapusData(\'tanah\', \''.$data_tanah['id'].'\')"><i class="fa fa-trash-o"></i></a>
 													</td>
 												</tr>
 					';
@@ -198,8 +198,8 @@
 													<td>'.$data_peralatan['keterangan'].'</td>
 													<td>&nbsp;</td>
 													<td style="text-align: center;">
-														<a data-toggle="modal" href="#edit-data" onclick="loadDoc(\'peralatan\', \''.$data_peralatan['id'].'\')"><i class="fa fa-edit"></i></a> | 
-														<a href="#" onclick="hapusData(\'peralatan\', \''.$data_peralatan['id'].'\')"><i class="fa fa-trash-o"></i></a>
+														<a data-toggle="modal" href="#edit-data" title="Edit" onclick="loadDoc(\'peralatan\', \''.$data_peralatan['id'].'\')"><i class="fa fa-edit"></i></a> | 
+														<a href="#" title="Hapus" onclick="hapusData(\'peralatan\', \''.$data_peralatan['id'].'\')"><i class="fa fa-trash-o"></i></a>
 													</td>
 												</tr>
 					';
@@ -299,8 +299,8 @@
 													<td>'.number_format($data_gedung['harga'], 0, ',', '.').',-</td>
 													<td>'.$data_gedung['keterangan'].'</td>
 													<td style="text-align: center;">
-														<a data-toggle="modal" href="#edit-data" onclick="loadDoc(\'gedung\', \''.$data_gedung['id'].'\')"><i class="fa fa-edit"></i></a> | 
-														<a href="#" onclick="hapusData(\'gedung\', \''.$data_gedung['id'].'\')"><i class="fa fa-trash-o"></i></a>
+														<a data-toggle="modal" href="#edit-data" title="Edit" onclick="loadDoc(\'gedung\', \''.$data_gedung['id'].'\')"><i class="fa fa-edit"></i></a> | 
+														<a href="#" title="Hapus" onclick="hapusData(\'gedung\', \''.$data_gedung['id'].'\')"><i class="fa fa-trash-o"></i></a>
 													</td>
 												</tr>
 					';
@@ -386,8 +386,8 @@
 													<td>'.number_format($data_jalan['harga'], 0, ',', '.').',-</td>
 													<td>'.$data_jalan['keterangan'].'</td>
 													<td style="text-align: center;">
-														<a data-toggle="modal" href="#edit-data" onclick="loadDoc(\'jalan\', \''.$data_jalan['id'].'\')"><i class="fa fa-edit"></i></a> | 
-														<a href="#" onclick="hapusData(\'jalan\', \''.$data_jalan['id'].'\')"><i class="fa fa-trash-o"></i></a>
+														<a data-toggle="modal" href="#edit-data" title="Edit" onclick="loadDoc(\'jalan\', \''.$data_jalan['id'].'\')"><i class="fa fa-edit"></i></a> | 
+														<a href="#" title="Hapus" onclick="hapusData(\'jalan\', \''.$data_jalan['id'].'\')"><i class="fa fa-trash-o"></i></a>
 													</td>
 												</tr>
 					';
@@ -475,8 +475,8 @@
 													<td>'.number_format($data_asetlain['harga'], 0, ',', '.').',-</td>
 													<td>'.$data_asetlain['keterangan'].'</td>
 													<td style="text-align: center;">
-														<a data-toggle="modal" href="#edit-data" onclick="loadDoc(\'asetlain\', \''.$data_asetlain['id'].'\')"><i class="fa fa-edit"></i></a> | 
-														<a href="#" onclick="hapusData(\'asetlain\', \''.$data_asetlain['id'].'\')"><i class="fa fa-trash-o"></i></a>
+														<a data-toggle="modal" href="#edit-data" title="Edit" onclick="loadDoc(\'asetlain\', \''.$data_asetlain['id'].'\')"><i class="fa fa-edit"></i></a> | 
+														<a href="#" title="Hapus" onclick="hapusData(\'asetlain\', \''.$data_asetlain['id'].'\')"><i class="fa fa-trash-o"></i></a>
 													</td>
 												</tr>
 					';
@@ -570,8 +570,8 @@
 													<td>'.number_format($data_konstruksi['harga'], 0, ',', '.').',-</td>
 													<td>'.$data_konstruksi['keterangan'].'</td>
 													<td style="text-align: center;">
-														<a data-toggle="modal" href="#edit-data" onclick="loadDoc(\'konstruksi\', \''.$data_konstruksi['id'].'\')"><i class="fa fa-edit"></i></a> | 
-														<a href="#" onclick="hapusData(\'konstruksi\', \''.$data_konstruksi['id'].'\')"><i class="fa fa-trash-o"></i></a>
+														<a data-toggle="modal" href="#edit-data" title="Edit" onclick="loadDoc(\'konstruksi\', \''.$data_konstruksi['id'].'\')"><i class="fa fa-edit"></i></a> | 
+														<a href="#" title="Hapus" onclick="hapusData(\'konstruksi\', \''.$data_konstruksi['id'].'\')"><i class="fa fa-trash-o"></i></a>
 													</td>
 												</tr>
 					';

@@ -134,6 +134,10 @@
 			include "views/neraca_view.php";
 			break;
 
+		case 'rekap':
+			include "views/printpdf_view.php";
+			break;
+
 		case 'kirim':
 			include "views/kirim_view.php";
 			break;
