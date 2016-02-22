@@ -79,7 +79,11 @@
 
 <script type="text/javascript">
 	$(function() {
-		document.getElementById("notif_kirim").innerHTML = "File Berhasil Dikirim ke E-mail: <?php echo $_GET['email']; ?>";
+		var notif = document.getElementById("notif_kirim");
+		if (notif) {
+			email = "<?php echo isset($_GET['email'])? $_GET['email'] : ''; ?>";
+			notif.innerHTML = "File Berhasil Dikirim ke E-mail: " + email;
+		}
 	});
 </script>
 
