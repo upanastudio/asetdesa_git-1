@@ -98,6 +98,9 @@
 	include "components/navbar.php";
 ?>
 
+		<style type="text/css">
+			@media (min-width: 1200px) {.container { width: 1300px; }}
+		</style>
 		<div class="container">
 			<div class="content">
 				<div class="content-container">
