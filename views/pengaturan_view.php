@@ -37,7 +37,7 @@
 													</div>
 													<div class="fileupload-preview fileupload-exists thumbnail" style="max-width: 200px; max-height: 200px; line-height: 20px;"></div>
 													<div>
-														<span class="btn btn-default btn-file"><span class="fileupload-new">Select image</span><span class="fileupload-exists">Change</span><input type="file" name="logo" /></span>
+														<span class="btn btn-default btn-file"><span class="fileupload-new">Select image</span><span class="fileupload-exists">Change</span><input type="file" name="logo" accept="image/*" /></span>
 														<a href="#" class="btn btn-default fileupload-exists" data-dismiss="fileupload">Remove</a>
 													</div>
 												</div>

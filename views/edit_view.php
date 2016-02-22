@@ -292,7 +292,7 @@
 													<div>
 														<span class="btn btn-default btn-file">
 														<span class="fileupload-new">Select image</span>
-														<span class="fileupload-exists">Change</span><input type="file" name="foto" /></span>
+														<span class="fileupload-exists">Change</span><input type="file" name="foto" accept="image/*" /></span>
 														<a href="#" class="btn btn-default fileupload-exists" data-dismiss="fileupload">Remove</a>
 													</div>
 												</div>
@@ -859,7 +859,7 @@
 														<span class="btn btn-default btn-file">
 														<span class="fileupload-new">Select image</span>
 														<span class="fileupload-exists">Change</span>
-														<input type="file" name="foto" /></span>
+														<input type="file" name="foto" accept="image/*" /></span>
 														<a href="#" class="btn btn-default fileupload-exists" data-dismiss="fileupload">Remove</a>
 													</div>
 												</div>
