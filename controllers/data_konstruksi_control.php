@@ -69,7 +69,7 @@
 		}
 
 		if($model == 'konstruksi' AND $method == 'hapus') {
-			$id = filter_var($_GET['id'],FILTER_VALIDATE_INT);
+			$id = filter_var($_POST['id'],FILTER_VALIDATE_INT);
 			$konstruksi->deleteData($id);
 
 			header("location:".ROOT."inventaris?tab=konstruksi&act=del");

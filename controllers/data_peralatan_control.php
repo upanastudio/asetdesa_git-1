@@ -82,7 +82,7 @@
 		}
 
 		if($model == 'peralatan' AND $method == 'hapus') {
-			$id = filter_var($_GET['id'],FILTER_VALIDATE_INT);
+			$id = filter_var($_POST['id'],FILTER_VALIDATE_INT);
 			$data = $peralatan->getDataById($id);
 			$libs->deleteFile("../upload/images/",$data['foto']);
 

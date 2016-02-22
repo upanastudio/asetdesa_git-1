@@ -71,7 +71,7 @@
 		}
 
 		if($model == 'jalan' AND $method == 'hapus') {
-			$id = filter_var($_GET['id'],FILTER_VALIDATE_INT);
+			$id = filter_var($_POST['id'],FILTER_VALIDATE_INT);
 			$jalan->deleteData($id);
 
 			header("location:".ROOT."inventaris?tab=jalan&act=del");
