@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: Feb 17, 2016 at 12:34 PM
+-- Generation Time: Feb 22, 2016 at 08:47 AM
 -- Server version: 5.6.21
 -- PHP Version: 5.6.3
 
@@ -45,7 +45,14 @@ CREATE TABLE IF NOT EXISTS `data_asetlain` (
   `harga` varchar(20) NOT NULL,
   `keterangan` text NOT NULL,
   `foto` varchar(20) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8;
+
+--
+-- Dumping data for table `data_asetlain`
+--
+
+INSERT INTO `data_asetlain` (`id`, `kode_barang`, `jenis_barang`, `register`, `jalur`, `judul_buku`, `spesifikasi_buku`, `asal_daerah`, `pencipta_kesenian`, `bahan_kesenian`, `jenis`, `ukuran`, `jumlah`, `tanggal_cetak`, `asal_usul`, `harga`, `keterangan`, `foto`) VALUES
+(1, '05170101002', 'Bibliografi, Katalog', '001', 1, 'Skripshit', 'Arlit', '', '', '', '', '', 2, '22-02-2016', 'Beli dong', '51000', 'Buku baru', '56ca69cfaf650.png');
 
 -- --------------------------------------------------------
 
@@ -70,7 +77,15 @@ CREATE TABLE IF NOT EXISTS `data_gedung` (
   `asal_usul` varchar(100) NOT NULL,
   `harga` varchar(20) NOT NULL,
   `keterangan` text NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8;
+
+--
+-- Dumping data for table `data_gedung`
+--
+
+INSERT INTO `data_gedung` (`id`, `kode_barang`, `jenis_barang`, `register`, `kondisi`, `konstruksi`, `luas_lantai`, `alamat`, `tanggal_beli`, `no_dokumen`, `luas_lahan`, `status_tanah`, `no_sertifikat`, `asal_usul`, `harga`, `keterangan`) VALUES
+(1, '03110303002', 'Bangunan Menara Radio', '008', 'KB', 'Bertingkat, ', '1000', 'Telkom kah', '27-02-2016', '85235', '340', 'Sah kah', '4923796000', 'APBN kah', '40000000', 'Laku kah'),
+(4, '03110101002', 'Bangunan Gedung Kantor Semi Permanen', '', 'KB', '', '', '', '22-02-2016', '0001', '', '', '', '', '0', '');
 
 -- --------------------------------------------------------
 
@@ -87,6 +102,7 @@ CREATE TABLE IF NOT EXISTS `data_jalan` (
   `panjang` varchar(10) NOT NULL,
   `lebar` varchar(10) NOT NULL,
   `luas_tanah` varchar(20) NOT NULL,
+  `alamat` text NOT NULL,
   `tanggal_dokumen` varchar(10) NOT NULL,
   `no_dokumen` varchar(50) NOT NULL,
   `status_tanah` varchar(100) NOT NULL,
@@ -95,7 +111,14 @@ CREATE TABLE IF NOT EXISTS `data_jalan` (
   `kondisi` varchar(20) NOT NULL,
   `harga` varchar(20) NOT NULL,
   `keterangan` text NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8;
+
+--
+-- Dumping data for table `data_jalan`
+--
+
+INSERT INTO `data_jalan` (`id`, `kode_barang`, `jenis_barang`, `register`, `konstruksi`, `panjang`, `lebar`, `luas_tanah`, `alamat`, `tanggal_dokumen`, `no_dokumen`, `status_tanah`, `no_tanah`, `asal_usul`, `kondisi`, `harga`, `keterangan`) VALUES
+(1, '04130203001', 'Jembatan Beton', '001', 'Pake beton kah', '240', '100', '24000000', 'Maralleng kah', '23-02-2016', '529399000', 'Kuat Kokoh kah', '893756000', 'Dulu yah', 'Baru', '400000000', 'Nope kah');
 
 -- --------------------------------------------------------
 
@@ -113,11 +136,23 @@ CREATE TABLE IF NOT EXISTS `data_konstruksi` (
   `alamat` text NOT NULL,
   `tanggal_dokumen` varchar(10) NOT NULL,
   `no_dokumen` varchar(50) NOT NULL,
+  `tanggal_mulai` varchar(10) NOT NULL,
   `status_tanah` varchar(100) NOT NULL,
+  `no_tanah` varchar(50) NOT NULL,
   `asal_usul` varchar(100) NOT NULL,
   `harga` varchar(20) NOT NULL,
   `keterangan` text NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8;
+
+--
+-- Dumping data for table `data_konstruksi`
+--
+
+INSERT INTO `data_konstruksi` (`id`, `kode_barang`, `jenis_barang`, `bangunan`, `konstruksi`, `luas_konstruksi`, `alamat`, `tanggal_dokumen`, `no_dokumen`, `tanggal_mulai`, `status_tanah`, `no_tanah`, `asal_usul`, `harga`, `keterangan`) VALUES
+(1, '06000000000', 'GOLONGAN KONSTRUKSI DLM PENGERJAAN', 'SP', 'Bertingkat, Beton', '424', 'gergerg', '22-02-2016', '001', '15-02-2016', 'sah', '3452364', 'agahwr', '13000000', 'argehe'),
+(3, '06000000000', 'GOLONGAN KONSTRUKSI DLM PENGERJAAN', 'P', 'Bertingkat, Beton, ', '', '', '', '0001', '', '', '', '', '23534563', ''),
+(4, '06000000000', 'GOLONGAN KONSTRUKSI DLM PENGERJAAN', 'D', 'Beton, ', '5000', 'kgjhkj', '03-02-2016', '0001', '20-02-2016', 'oke', '4657458', 'fsakdga', '34236', 'fkjbdkf'),
+(5, '06000000000', 'GOLONGAN KONSTRUKSI DLM PENGERJAAN', 'SP', 'Bertingkat, ', '100', 'afaf', '23-02-2016', '002', '23-02-2016', 'aktif', '5327687', 'asal', '7000000', 'laku');
 
 -- --------------------------------------------------------
 
@@ -138,11 +173,19 @@ CREATE TABLE IF NOT EXISTS `data_peralatan` (
   `no_rangka` varchar(50) NOT NULL,
   `no_mesin` varchar(50) NOT NULL,
   `no_polisi` varchar(50) NOT NULL,
+  `no_bpkb` varchar(50) NOT NULL,
   `asal_usul` varchar(100) NOT NULL,
   `harga` varchar(20) NOT NULL,
   `keterangan` text NOT NULL,
   `foto` varchar(50) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8;
+
+--
+-- Dumping data for table `data_peralatan`
+--
+
+INSERT INTO `data_peralatan` (`id`, `jenis_barang`, `kode_barang`, `register`, `merek`, `ukuran`, `bahan`, `tanggal_beli`, `no_pabrik`, `no_rangka`, `no_mesin`, `no_polisi`, `no_bpkb`, `asal_usul`, `harga`, `keterangan`, `foto`) VALUES
+(1, 'Mesin Bleaching', '02090139014', '0004', 'Sanyo', '50', 'Polimer', '09-02-2016', '775', '87587', '57587', '7575', '8787', 'Ada saja', '560000', 'Masih berfungsi kah', '56ca06e6b647f.jpg');
 
 -- --------------------------------------------------------
 
@@ -172,7 +215,30 @@ CREATE TABLE IF NOT EXISTS `data_tanah` (
 --
 
 INSERT INTO `data_tanah` (`id`, `kode_barang`, `jenis_barang`, `register`, `luas_tanah`, `tanggal_beli`, `alamat`, `hak`, `no_sertifikat`, `tanggal_sertifikat`, `penggunaan`, `asal_usul`, `harga`, `keterangan`) VALUES
-(1, '01011309007', 'Tanah Untuk Bangunan Pengolahan Limbah', '002', '500', '17-02-2016', 'STPP Gowa', 'Abdul', '859623867', '02-03-2010', 'Gardu listrik', 'Pas', '120000000', 'Hmmmmm');
+(1, '01011309007', 'Tanah Untuk Bangunan Pengolahan Limbah', '005', '600', '24-02-2016', 'STPP Gowa ', 'Abdulmu', '859623867000', '05-03-2010', 'Gardu listrikmu', 'Pasmu', '20000000', 'Hmmmmmahhhh');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `pengaturan`
+--
+
+CREATE TABLE IF NOT EXISTS `pengaturan` (
+`id` int(11) NOT NULL,
+  `kode_lokasi` varchar(50) NOT NULL,
+  `nama_kepala` varchar(50) NOT NULL,
+  `nama_pengguna` varchar(50) NOT NULL,
+  `nama_pengurus` varchar(50) NOT NULL,
+  `email` varchar(50) NOT NULL,
+  `logo` varchar(50) NOT NULL
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8;
+
+--
+-- Dumping data for table `pengaturan`
+--
+
+INSERT INTO `pengaturan` (`id`, `kode_lokasi`, `nama_kepala`, `nama_pengguna`, `nama_pengurus`, `email`, `logo`) VALUES
+(1, '123', 'Itokun', 'Sidik', 'Aren', 'upanastudio@gmail.com', '56ca62b1b9833.jpg');
 
 -- --------------------------------------------------------
 
@@ -8871,7 +8937,7 @@ CREATE TABLE IF NOT EXISTS `user` (
 --
 
 INSERT INTO `user` (`id`, `username`, `password`, `fullname`, `email`, `id_session`, `verif_kode`) VALUES
-(1, 'admin', '2550bf061db91980f55361e65290751c', 'Administrator', 'asetdesa@gmail.com', '4h7o3es59inhrnfunh28a87pq6', ''),
+(1, 'admin', '2550bf061db91980f55361e65290751c', 'Administrator', 'asetdesa@gmail.com', '7k2h668q5cfrulqrhlts2q19t0', ''),
 (2, 'ito', '8ee49481c625d0d128cec6c408cdb84b', 'Ito Rijal', 'ophyeq@gmail.com', '1mig0msvs9ita4ode9kvniq0e2', '');
 
 --
@@ -8915,6 +8981,12 @@ ALTER TABLE `data_tanah`
  ADD PRIMARY KEY (`id`);
 
 --
+-- Indexes for table `pengaturan`
+--
+ALTER TABLE `pengaturan`
+ ADD PRIMARY KEY (`id`);
+
+--
 -- Indexes for table `tb_kode_barang`
 --
 ALTER TABLE `tb_kode_barang`
@@ -8934,31 +9006,36 @@ ALTER TABLE `user`
 -- AUTO_INCREMENT for table `data_asetlain`
 --
 ALTER TABLE `data_asetlain`
-MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=2;
 --
 -- AUTO_INCREMENT for table `data_gedung`
 --
 ALTER TABLE `data_gedung`
-MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=5;
 --
 -- AUTO_INCREMENT for table `data_jalan`
 --
 ALTER TABLE `data_jalan`
-MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=2;
 --
 -- AUTO_INCREMENT for table `data_konstruksi`
 --
 ALTER TABLE `data_konstruksi`
-MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=6;
 --
 -- AUTO_INCREMENT for table `data_peralatan`
 --
 ALTER TABLE `data_peralatan`
-MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=2;
 --
 -- AUTO_INCREMENT for table `data_tanah`
 --
 ALTER TABLE `data_tanah`
+MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=2;
+--
+-- AUTO_INCREMENT for table `pengaturan`
+--
+ALTER TABLE `pengaturan`
 MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=2;
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;

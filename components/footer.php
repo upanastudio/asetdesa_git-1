@@ -8,7 +8,7 @@
 						<br/>
 						<p>Membangun Desa Untuk Kemajuan Bangsa.</p>
 						<hr/>
-						<p>&copy; .U. <?php echo date("Y"); ?> Center Point of Indonesia</p>
+						<p>&copy; .U. <?php echo date("Y"); ?> <a href="http://www.upanastudio.com" target="_blank">Center Point of Indonesia</a></p>
 					</div> <!-- /.col -->
 					<div class="col-sm-3">
 						<h4>Bantuan</h4>

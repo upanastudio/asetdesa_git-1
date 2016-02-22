@@ -68,6 +68,7 @@
 		<script src="<?php echo ROOT; ?>assets/js/plugins/icheck/jquery.icheck.js"></script>
 		<script src="<?php echo ROOT; ?>assets/js/plugins/select2/select2.js"></script>
 		<script src="<?php echo ROOT; ?>assets/js/libs/raphael-2.1.2.min.js"></script>
+		<script src="<?php echo ROOT; ?>assets/js/plugins/morris/morris.min.js"></script>
 		<script src="<?php echo ROOT; ?>assets/js/plugins/sparkline/jquery.sparkline.min.js"></script>
 		<script src="<?php echo ROOT; ?>assets/js/plugins/nicescroll/jquery.nicescroll.min.js"></script>
 		<script id="c-dp" src="<?php echo ROOT; ?>assets/js/plugins/datepicker/bootstrap-datepicker.js"></script>
@@ -85,6 +86,7 @@
 		<script src="<?php echo ROOT; ?>assets/js/demos/dashboard.js"></script>
 		<script src="<?php echo ROOT; ?>assets/js/demos/ui-notifications.js"></script>
 		<script id="c-fe" src="<?php echo ROOT; ?>assets/js/demos/form-extended.js"></script>
+		<script src="<?php echo ROOT; ?>assets/js/statistik.js"></script>
 
 		<!-- Script for AJAX -->
 		<script src="<?php echo ROOT; ?>assets/js/edit-ajax.js"></script>
@@ -98,9 +100,6 @@
 	include "components/navbar.php";
 ?>
 
-		<style type="text/css">
-			@media (min-width: 1200px) {.container { width: 1300px; }}
-		</style>
 		<div class="container">
 			<div class="content">
 				<div class="content-container">
