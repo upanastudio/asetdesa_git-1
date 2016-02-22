@@ -104,7 +104,7 @@
 						</li>
 						<li class="dropdown navbar-profile">
 							<a class="dropdown-toggle" data-toggle="dropdown" href="javascript:;">
-								<img src="<?php echo ROOT; ?>assets/img/avatars/avatar-1-xs.jpg" class="navbar-profile-avatar" alt="">
+								<img src="<?php echo ROOT; ?>assets/img/<?php echo $desa['logo']; ?>" class="navbar-profile-avatar" alt="">
 								<span class="navbar-profile-label">sid@mydesa.co.id &nbsp;</span>
 								<i class="fa fa-caret-down"></i>
 							</a>

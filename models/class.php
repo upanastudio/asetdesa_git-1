@@ -18,6 +18,7 @@
 		$konstruksi		= new data_konstruksi_model($db);
 		$libs				= new libs_model($db);
 		$user				= new user_model($db);
+		$pengaturan		= new pengaturan_model($db);
 	} catch(Exception $e) {
 		echo "Menemukan kesalahan: ".$e->getMessage()."\n";
 	}

@@ -12,48 +12,30 @@
 
 		if($model == 'jalan' AND $method == 'tambah') {
 			if(isset($_POST['tambah'])) {
-				
-				// Inisiasi Value pada tiap input di Tab Jalur
-				$jenis_barang 		='';
-				$register			='';
-				$konstruksi 		='';
-				$panjang			='';
-				$lebar				='';
-				$luas_tanah			='';
-				$alamat				='';
-				$tanggal_dokumen	='';
-				$no_dokumen			='';
-				$status_tanah		='';
-				$kondisi			='';
-				$no_tanah			='';
-				$asal_usul			='';
-				$harga				='';
-				$keterangan			='';
-
-
 				$kode_barang			= $_POST['kode_barang'];
+
 				if (empty($kode_barang)) {
 					header("location:".ROOT."input?tab=jalan&act=err");
-				}else{
-
-					$jb						= $data_barang->getNamaBarangByKB($kode_barang);
-					$jenis_barang			= $jb['nama_barang'];
-					$register				= $_POST['register'];
+				} else {
+					$jb					= $data_barang->getNamaBarangByKB($kode_barang);
+					$jenis_barang		= $jb['nama_barang'];
+					$register			= $_POST['register'];
 					$kondisi				= $_POST['kondisi'];
-					$konstruksi				= $_POST['konstruksi'];
-					$panjang 				= $_POST['panjang'];
-					$lebar 					= $_POST['lebar'];
-					$luas_tanah 			= $_POST['luas_tanah'];
+					$konstruksi			= $_POST['konstruksi'];
+					$panjang 			= $_POST['panjang'];
+					$lebar 				= $_POST['lebar'];
+					$luas_tanah 		= $_POST['luas_tanah'];
 					$alamat 				= $_POST['alamat'];
-					$tanggal_dokumen 		= $_POST['tanggal_dokumen'];
-					$no_dokumen 			= $_POST['no_dokumen'];
-					$status_tanah 			= $_POST['status_tanah'];
-					$no_tanah 				= $_POST['no_tanah'];
-					$asal_usul 				= $_POST['asal_usul'];
-					$harga 					= $_POST['harga'];
-					$keterangan 			= $_POST['keterangan'];
+					$tanggal_dokumen 	= $_POST['tanggal_dokumen'];
+					$no_dokumen 		= $_POST['no_dokumen'];
+					$status_tanah 		= $_POST['status_tanah'];
+					$no_tanah 			= $_POST['no_tanah'];
+					$asal_usul 			= $_POST['asal_usul'];
+					$harga 				= empty($_POST['harga'])? '0' : $_POST['harga'];
+					$keterangan 		= $_POST['keterangan'];
 
-					$jalan->insertData($kode_barang, $jenis_barang, $register, $kondisi, $konstruksi, $panjang, $lebar, $luas_tanah, $alamat, $tanggal_dokumen, $no_dokumen, $status_tanah, $no_tanah, $asal_usul, $harga, $keterangan);
+					$jalan->insertData($kode_barang, $jenis_barang, $register, $kondisi, $konstruksi, $panjang, $lebar, $luas_tanah, 
+						$alamat, $tanggal_dokumen, $no_dokumen, $status_tanah, $no_tanah, $asal_usul, $harga, $keterangan);
 
 					header("location:".ROOT."inventaris?tab=jalan&act=add");
 				}
@@ -62,52 +44,32 @@
 
 		if($model == 'jalan' AND $method == 'edit') {
 			if(isset($_POST['edit'])) {
-				$jenis_barang 		='';
-				$register			='';
-				$konstruksi 		='';
-				$panjang			='';
-				$lebar				='';
-				$luas_tanah			='';
-				$alamat				='';
-				$tanggal_dokumen	='';
-				$no_dokumen			='';
-				$status_tanah		='';
-				$kondisi			='';
-				$no_tanah			='';
-				$asal_usul			='';
-				$harga				='';
-				$keterangan			='';
+				$kode_barang		= $_POST['kode_barang'];
+				$jb					= $data_barang->getNamaBarangByKB($kode_barang);
+				$jenis_barang		= $jb['nama_barang'];
+				$register			= $_POST['register'];
+				$kondisi				= $_POST['kondisi'];
+				$konstruksi			= $_POST['konstruksi'];
+				$panjang 			= $_POST['panjang'];
+				$lebar 				= $_POST['lebar'];
+				$luas_tanah 		= $_POST['luas_tanah'];
+				$alamat 				= $_POST['alamat'];
+				$tanggal_dokumen 	= $_POST['tanggal_dokumen'];
+				$no_dokumen 		= $_POST['no_dokumen'];
+				$status_tanah 		= $_POST['status_tanah'];
+				$no_tanah 			= $_POST['no_tanah'];
+				$asal_usul 			= $_POST['asal_usul'];
+				$harga 				= empty($_POST['harga'])? '0' : $_POST['harga'];
+				$keterangan 		= $_POST['keterangan'];
+				$id					= $_POST['id'];
 
-				$kode_barang			= $_POST['kode_barang'];
-				if (empty($kode_barang)) {
-					header("location:".ROOT."input?tab=jalan&act=err");
-				}else{
-
-					$id						= $_POST['id'];
-					$jb						= $data_barang->getNamaBarangByKB($kode_barang);
-					$jenis_barang			= $jb['nama_barang'];
-					$register				= $_POST['register'];
-					$kondisi				= $_POST['kondisi'];
-					$konstruksi				= $_POST['konstruksi'];
-					$panjang 				= $_POST['panjang'];
-					$lebar 					= $_POST['lebar'];
-					$luas_tanah 			= $_POST['luas_tanah'];
-					$alamat 				= $_POST['alamat'];
-					$tanggal_dokumen 		= $_POST['tanggal_dokumen'];
-					$no_dokumen 			= $_POST['no_dokumen'];
-					$status_tanah 			= $_POST['status_tanah'];
-					$no_tanah 				= $_POST['no_tanah'];
-					$asal_usul 				= $_POST['asal_usul'];
-					$harga 					= $_POST['harga'];
-					$keterangan 			= $_POST['keterangan'];
-
-					$jalan->updateData($kode_barang, $jenis_barang, $register, $kondisi, $konstruksi, $panjang, $lebar, $luas_tanah, 
-						$alamat, $tanggal_dokumen, $no_dokumen, $status_tanah, $no_tanah, $asal_usul, $harga, $keterangan, $id);
+				$jalan->updateData($kode_barang, $jenis_barang, $register, $kondisi, $konstruksi, $panjang, $lebar, $luas_tanah, 
+					$alamat, $tanggal_dokumen, $no_dokumen, $status_tanah, $no_tanah, $asal_usul, $harga, $keterangan, $id);
 
 				header("location:".ROOT."inventaris?tab=jalan&act=upd");
 			}
 		}
-	}
+
 		if($model == 'jalan' AND $method == 'hapus') {
 			$id = filter_var($_GET['id'],FILTER_VALIDATE_INT);
 			$jalan->deleteData($id);

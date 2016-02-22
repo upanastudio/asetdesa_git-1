@@ -15,7 +15,11 @@
 						<h2 class="content-header-title">Beranda</h2>
 					</div> <!-- /.content-header -->
 					<div class="row">
-						<center><h1>SELAMAT DATANG DI APLIKASI ASET DESA</h1></center>
+						<center>
+							<h1>SELAMAT DATANG DI APLIKASI ASET DESA</h1>
+							<br/>
+							<img src="'.ROOT.'assets/img/'.$desa['logo'].'" class="thumbnail" style="width: 300px;" />
+						</center>
 					</div>
 
 				';

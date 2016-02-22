@@ -16,6 +16,8 @@
 	if (!isset($_SESSION['login'])) {
 		header("location:".ROOT."login");
 	}
+
+	$desa = $pengaturan->getDataById(1);
 ?>
 
 <!DOCTYPE html>
@@ -170,12 +172,41 @@
 ?>
 
 		<script type='text/javascript'> 
-			function hapusData(id) {
+			function hapusData(tab, id) {
 				var conBox = confirm("Anda yakin ingin menghapus data ini?");
-				if(conBox){
-					document.getElementById("hapus_id").value = id;
-					document.getElementById("hapusSubmit").submit();
-				}else{
+				if (conBox){
+					switch (tab) {
+						case "tanah":
+							document.getElementById("hapustanahId").value = id;
+							document.getElementById("hapustanahSubmit").submit();
+							break;
+
+						case "peralatan":
+							document.getElementById("hapusperalatanId").value = id;
+							document.getElementById("hapusperalatanSubmit").submit();
+							break;
+
+						case "gedung":
+							document.getElementById("hapusgedungId").value = id;
+							document.getElementById("hapusgedungSubmit").submit();
+							break;
+
+						case "jalan":
+							document.getElementById("hapusjalanId").value = id;
+							document.getElementById("hapusjalanSubmit").submit();
+							break;
+
+						case "asetlain":
+							document.getElementById("hapusasetlainId").value = id;
+							document.getElementById("hapusasetlainSubmit").submit();
+							break;
+
+						case "konstruksi":
+							document.getElementById("hapuskonstruksiId").value = id;
+							document.getElementById("hapuskonstruksiSubmit").submit();
+							break;
+					}
+				} else {
 					return false;
 				}
 			};

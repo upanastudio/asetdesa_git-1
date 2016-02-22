@@ -1,12 +1,12 @@
 <?php
 	if(isset($method)):
 		date_default_timezone_set('Asia/Makassar');
-		$aksi_tanah = ROOT."controllers/input_tanah_control.php?model=tanah&method=";
-		$aksi_peralatan = ROOT."controllers/input_peralatan_control.php?model=peralatan&method=";
-		$aksi_gedung = ROOT."controllers/input_gedung_control.php?model=gedung&method=";
-		$aksi_jalan = ROOT."controllers/input_jalan_control.php?model=jalan&method=";
-		$aksi_asetlain = ROOT."controllers/input_asetlain_control.php?model=asetlain&method=";
-		$aksi_konstruksi = ROOT."controllers/input_konstruksi_control.php?model=konstruksi&method=";
+		$aksi_tanah = ROOT."controllers/data_tanah_control.php?model=tanah&method=";
+		$aksi_peralatan = ROOT."controllers/data_peralatan_control.php?model=peralatan&method=";
+		$aksi_gedung = ROOT."controllers/data_gedung_control.php?model=gedung&method=";
+		$aksi_jalan = ROOT."controllers/data_jalan_control.php?model=jalan&method=";
+		$aksi_asetlain = ROOT."controllers/data_asetlain_control.php?model=asetlain&method=";
+		$aksi_konstruksi = ROOT."controllers/data_konstruksi_control.php?model=konstruksi&method=";
 
 		$tanah_tab = (isset($_GET['tab']) AND $_GET['tab'] == "tanah")? 'active':'';
 		$peralatan_tab = (isset($_GET['tab']) AND $_GET['tab'] == "peralatan")? 'active':'';
@@ -53,8 +53,8 @@
 									<div class="tabellaporan"> <!--Tabel Laporan (tanah)-->
 										<hr/>
 
-										<form id="hapusSubmit" action="'.$aksi_tanah.'hapus" method="POST">
-											<input type="hidden" id="hapus_id" name="id" value="">
+										<form id="hapustanahSubmit" action="'.$aksi_tanah.'hapus" method="POST">
+											<input type="hidden" id="hapustanahId" name="id" value="">
 										</form>
 
 										<table class="table table-bordered table-highlight">
@@ -113,7 +113,7 @@
 													<td>'.$data_tanah['keterangan'].'</td>
 													<td style="text-align: center;">
 														<a data-toggle="modal" href="#edit-data" onclick="loadDoc(\'tanah\', \''.$data_tanah['id'].'\')"><i class="fa fa-edit"></i></a> | 
-														<a href="#" onclick="hapusData(\''.$data_tanah['id'].'\')"><i class="fa fa-trash-o"></i></a>
+														<a href="#" onclick="hapusData(\'tanah\', \''.$data_tanah['id'].'\')"><i class="fa fa-trash-o"></i></a>
 													</td>
 												</tr>
 					';
@@ -136,8 +136,8 @@
 									<div class="tabellaporan "> <!--Tabel Laporan (Peralatan dan Mesin)-->
 										<hr/>
 
-										<form id="hapusSubmit" action="'.$aksi_peralatan.'hapus" method="POST">
-											<input type="hidden" id="hapus_id" name="id" value="">
+										<form id="hapusperalatanSubmit" action="'.$aksi_peralatan.'hapus" method="POST">
+											<input type="hidden" id="hapusperalatanId" name="id" value="">
 										</form>
 
 										<table class="table table-bordered table-highlight">
@@ -199,7 +199,7 @@
 													<td>&nbsp;</td>
 													<td style="text-align: center;">
 														<a data-toggle="modal" href="#edit-data" onclick="loadDoc(\'peralatan\', \''.$data_peralatan['id'].'\')"><i class="fa fa-edit"></i></a> | 
-														<a href="#" onclick="hapusData(\''.$data_peralatan['id'].'\')"><i class="fa fa-trash-o"></i></a>
+														<a href="#" onclick="hapusData(\'peralatan\', \''.$data_peralatan['id'].'\')"><i class="fa fa-trash-o"></i></a>
 													</td>
 												</tr>
 					';
@@ -223,8 +223,8 @@
 									<div class="tabellaporan "> <!--Tabel Laporan (Gedung dan Bangunan)-->
 										<hr/>
 
-										<form id="hapusSubmit" action="'.$aksi_gedung.'hapus" method="POST">
-											<input type="hidden" id="hapus_id" name="id" value="">
+										<form id="hapusgedungSubmit" action="'.$aksi_gedung.'hapus" method="POST">
+											<input type="hidden" id="hapusgedungId" name="id" value="">
 										</form>
 
 										<table class="table table-bordered table-highlight">
@@ -300,7 +300,7 @@
 													<td>'.$data_gedung['keterangan'].'</td>
 													<td style="text-align: center;">
 														<a data-toggle="modal" href="#edit-data" onclick="loadDoc(\'gedung\', \''.$data_gedung['id'].'\')"><i class="fa fa-edit"></i></a> | 
-														<a href="#" onclick="hapusData(\''.$data_gedung['id'].'\')"><i class="fa fa-trash-o"></i></a>
+														<a href="#" onclick="hapusData(\'gedung\', \''.$data_gedung['id'].'\')"><i class="fa fa-trash-o"></i></a>
 													</td>
 												</tr>
 					';
@@ -323,8 +323,8 @@
 									<div class="tabellaporan "> <!--Tabel Laporan (JALAN, IRIGASI DAN JARINGAN)-->
 										<hr/>
 
-										<form id="hapusSubmit" action="'.$aksi_jalan.'hapus" method="POST">
-											<input type="hidden" id="hapus_id" name="id" value="">
+										<form id="hapusjalanSubmit" action="'.$aksi_jalan.'hapus" method="POST">
+											<input type="hidden" id="hapusjalanId" name="id" value="">
 										</form>
 
 										<table class="table table-bordered table-highlight">
@@ -387,7 +387,7 @@
 													<td>'.$data_jalan['keterangan'].'</td>
 													<td style="text-align: center;">
 														<a data-toggle="modal" href="#edit-data" onclick="loadDoc(\'jalan\', \''.$data_jalan['id'].'\')"><i class="fa fa-edit"></i></a> | 
-														<a href="#" onclick="hapusData(\''.$data_jalan['id'].'\')"><i class="fa fa-trash-o"></i></a>
+														<a href="#" onclick="hapusData(\'jalan\', \''.$data_jalan['id'].'\')"><i class="fa fa-trash-o"></i></a>
 													</td>
 												</tr>
 					';
@@ -412,8 +412,8 @@
 									<div class="tabellaporan "> <!--Tabel Laporan (ASET TETAP LAINNYA)-->
 										<hr/>
 
-										<form id="hapusSubmit" action="'.$aksi_asetlain.'hapus" method="POST">
-											<input type="hidden" id="hapus_id" name="id" value="">
+										<form id="hapusasetlainSubmit" action="'.$aksi_asetlain.'hapus" method="POST">
+											<input type="hidden" id="hapusasetlainId" name="id" value="">
 										</form>
 
 										<table class="table table-bordered table-highlight ">
@@ -476,7 +476,7 @@
 													<td>'.$data_asetlain['keterangan'].'</td>
 													<td style="text-align: center;">
 														<a data-toggle="modal" href="#edit-data" onclick="loadDoc(\'asetlain\', \''.$data_asetlain['id'].'\')"><i class="fa fa-edit"></i></a> | 
-														<a href="#" onclick="hapusData(\''.$data_asetlain['id'].'\')"><i class="fa fa-trash-o"></i></a>
+														<a href="#" onclick="hapusData(\'asetlain\', \''.$data_asetlain['id'].'\')"><i class="fa fa-trash-o"></i></a>
 													</td>
 												</tr>
 					';
@@ -499,8 +499,8 @@
 									<div class="tabellaporan "> <!--Tabel Laporan (KONSTRUKSI DALAM PENGERJAAN)-->
 										<hr/>
 
-										<form id="hapusSubmit" action="'.$aksi_konstruksi.'hapus" method="POST">
-											<input type="hidden" id="hapus_id" name="id" value="">
+										<form id="hapuskonstruksiSubmit" action="'.$aksi_konstruksi.'hapus" method="POST">
+											<input type="hidden" id="hapuskonstruksiId" name="id" value="">
 										</form>
 
 										<table class="table table-bordered table-highlight">
@@ -571,7 +571,7 @@
 													<td>'.$data_konstruksi['keterangan'].'</td>
 													<td style="text-align: center;">
 														<a data-toggle="modal" href="#edit-data" onclick="loadDoc(\'konstruksi\', \''.$data_konstruksi['id'].'\')"><i class="fa fa-edit"></i></a> | 
-														<a href="#" onclick="hapusData(\''.$data_konstruksi['id'].'\')"><i class="fa fa-trash-o"></i></a>
+														<a href="#" onclick="hapusData(\'konstruksi\', \''.$data_konstruksi['id'].'\')"><i class="fa fa-trash-o"></i></a>
 													</td>
 												</tr>
 					';
