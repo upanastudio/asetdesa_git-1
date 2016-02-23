@@ -42,8 +42,20 @@
 			return $query->fetch(PDO::FETCH_ASSOC);
 		}
 
-		public function getKodeBarangByKB($kb) {
-			$query = $this->db->prepare("SELECT * FROM `tb_kode_barang` WHERE `kb_1` = :kb");
+		public function countDataByKB($kb) {
+			$query = $this->db->prepare("SELECT * FROM `data_peralatan` WHERE `kode_bidang` = :kb");
+			$query->bindParam(':kb', $kb, PDO::PARAM_STR);
+
+			try {
+				$query->execute();
+				return $query->rowCount();
+			} catch(PDOException $e){
+				$e->getMessage();
+			}
+		}
+
+		public function getDataByKB($kb) {
+			$query = $this->db->prepare("SELECT * FROM `data_peralatan` WHERE `kode_bidang` = :kb");
 			$query->bindParam(':kb', $kb, PDO::PARAM_STR);
 
 			try {
@@ -55,28 +67,29 @@
 			return $query->fetchAll(PDO::FETCH_ASSOC);
 		}
 
-		public function insertData($kode_barang, $jenis_barang, $register, $merek, $ukuran, $bahan, $tanggal_beli, $no_pabrik, $no_rangka, 
-			$no_mesin, $no_polisi, $no_bpkb, $asal_usul, $harga, $keterangan, $foto) {
-			$query = $this->db->prepare("INSERT INTO `data_peralatan` SET	`kode_barang`						= :kode_barang,
-																							`jenis_barang`		= :jenis_barang,
-																							`register`			= :register,
-																							`merek`				= :merek,
-																							`ukuran`			= :ukuran,
-																							`bahan`				= :bahan,
-																							`tanggal_beli`		= :tanggal_beli,
-																							`no_pabrik`			= :no_pabrik,
-																							`no_rangka`			= :no_rangka,
-																							`no_mesin`			= :no_mesin,
-																							`no_polisi`			= :no_polisi,
-																							`no_bpkb`			= :no_bpkb,
-																							`asal_usul`			= :asal_usul,
-																							`harga`				= :harga,
-																							`keterangan`		= :keterangan,
-																							`foto`				= :foto
-
+		public function insertData($kode_barang, $kode_bidang, $jenis_barang, $register, $merek, $ukuran, $bahan, $tanggal_beli, 
+			$no_pabrik, $no_rangka, $no_mesin, $no_polisi, $no_bpkb, $asal_usul, $harga, $keterangan, $foto) {
+			$query = $this->db->prepare("INSERT INTO `data_peralatan` SET	`kode_barang`	= :kode_barang,
+																								`jenis_barang`	= :jenis_barang,
+																								`kode_bidang`	= :kode_bidang,
+																								`register`		= :register,
+																								`merek`			= :merek,
+																								`ukuran`			= :ukuran,
+																								`bahan`			= :bahan,
+																								`tanggal_beli`	= :tanggal_beli,
+																								`no_pabrik`		= :no_pabrik,
+																								`no_rangka`		= :no_rangka,
+																								`no_mesin`		= :no_mesin,
+																								`no_polisi`		= :no_polisi,
+																								`no_bpkb`		= :no_bpkb,
+																								`asal_usul`		= :asal_usul,
+																								`harga`			= :harga,
+																								`keterangan`	= :keterangan,
+																								`foto`			= :foto
 			");
 
 			$query->bindParam(':kode_barang', $kode_barang, PDO::PARAM_STR);
+			$query->bindParam(':kode_bidang', $kode_bidang, PDO::PARAM_STR);
 			$query->bindParam(':jenis_barang', $jenis_barang, PDO::PARAM_STR);
 			$query->bindParam(':register', $register, PDO::PARAM_STR);
 			$query->bindParam(':merek', $merek, PDO::PARAM_STR);
@@ -101,29 +114,31 @@
 			}
 		}
 
-		public function updateData($kode_barang, $jenis_barang, $register, $merek, $ukuran, $bahan, $tanggal_beli, $no_pabrik, $no_rangka, 
-			$no_mesin, $no_polisi, $no_bpkb, $asal_usul, $harga, $keterangan, $foto, $id) {
-			$query = $this->db->prepare("UPDATE `data_peralatan` SET			`kode_barang`					= :kode_barang,
-																							`jenis_barang`		= :jenis_barang,
-																							`register`			= :register,
-																							`merek`				= :merek,
-																							`ukuran`			= :ukuran,
-																							`bahan`				= :bahan,
-																							`tanggal_beli`		= :tanggal_beli,
-																							`no_pabrik`			= :no_pabrik,
-																							`no_rangka`			= :no_rangka,
-																							`no_mesin`			= :no_mesin,
-																							`no_polisi`			= :no_polisi,
-																							`no_bpkb`			= :no_bpkb,
-																							`asal_usul`			= :asal_usul,
-																							`harga`				= :harga,
-																							`keterangan`		= :keterangan,
-																							`foto`				= :foto
-																				WHERE		`id`				= :id
+		public function updateData($kode_barang, $kode_bidang, $jenis_barang, $register, $merek, $ukuran, $bahan, $tanggal_beli, 
+			$no_pabrik, $no_rangka, $no_mesin, $no_polisi, $no_bpkb, $asal_usul, $harga, $keterangan, $foto, $id) {
+			$query = $this->db->prepare("UPDATE `data_peralatan` SET	`kode_barang`	= :kode_barang,
+																						`jenis_barang`	= :jenis_barang,
+																						`kode_bidang`	= :kode_bidang,
+																						`register`		= :register,
+																						`merek`			= :merek,
+																						`ukuran`			= :ukuran,
+																						`bahan`			= :bahan,
+																						`tanggal_beli`	= :tanggal_beli,
+																						`no_pabrik`		= :no_pabrik,
+																						`no_rangka`		= :no_rangka,
+																						`no_mesin`		= :no_mesin,
+																						`no_polisi`		= :no_polisi,
+																						`no_bpkb`		= :no_bpkb,
+																						`asal_usul`		= :asal_usul,
+																						`harga`			= :harga,
+																						`keterangan`	= :keterangan,
+																						`foto`			= :foto
+																				WHERE	`id`				= :id
 			");
 
 			$query->bindParam(':id', $id, PDO::PARAM_INT);
 			$query->bindParam(':kode_barang', $kode_barang, PDO::PARAM_STR);
+			$query->bindParam(':kode_bidang', $kode_bidang, PDO::PARAM_STR);
 			$query->bindParam(':jenis_barang', $jenis_barang, PDO::PARAM_STR);
 			$query->bindParam(':register', $register, PDO::PARAM_STR);
 			$query->bindParam(':merek', $merek, PDO::PARAM_STR);

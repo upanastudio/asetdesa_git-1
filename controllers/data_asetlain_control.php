@@ -27,6 +27,7 @@
 				if (empty($kode_barang)) {
 					header("location:".ROOT."input?tab=asetlain&act=err");
 				} else {
+					$kode_bidang		= substr($kode_barang, 2, 2);
 					$jb					= $data_barang->getNamaBarangByKB($kode_barang);
 					$jenis_barang		= $jb['nama_barang'];
 					$register			= $_POST['register'];
@@ -62,9 +63,9 @@
 						$foto = $libs->uploadFile('../upload/images/',$_FILES['foto']);
 					}
 
-					$asetlain->insertData($kode_barang, $jenis_barang, $register, $jalur, $judul_buku, $spesifikasi_buku, $asal_daerah, 
-						$pencipta_kesenian, $bahan_kesenian, $jenis, $ukuran, $jumlah, $tanggal_cetak, $asal_usul, $harga, $keterangan, 
-						$foto);
+					$asetlain->insertData($kode_barang, $kode_bidang, $jenis_barang, $register, $jalur, $judul_buku, $spesifikasi_buku, 
+						$asal_daerah, $pencipta_kesenian, $bahan_kesenian, $jenis, $ukuran, $jumlah, $tanggal_cetak, $asal_usul, $harga, 
+						$keterangan, $foto);
 
 					header("location:".ROOT."inventaris?tab=asetlain&act=add");
 				}
@@ -83,6 +84,7 @@
 				$ukuran 					= '';
 
 				$kode_barang		= $_POST['kode_barang'];
+				$kode_bidang		= substr($kode_barang, 2, 2);
 				$jb					= $data_barang->getNamaBarangByKB($kode_barang);
 				$jenis_barang		= $jb['nama_barang'];
 				$register			= $_POST['register'];
@@ -121,9 +123,9 @@
 					$foto = $libs->uploadFile('../upload/images/',$_FILES['foto']);
 				}
 
-				$asetlain->updateData($kode_barang, $jenis_barang, $register, $jalur, $judul_buku, $spesifikasi_buku, $asal_daerah, 
-					$pencipta_kesenian, $bahan_kesenian, $jenis, $ukuran, $jumlah, $tanggal_cetak, $asal_usul, $harga, $keterangan, 
-					$foto, $id);
+				$asetlain->updateData($kode_barang, $kode_bidang, $jenis_barang, $register, $jalur, $judul_buku, $spesifikasi_buku, 
+					$asal_daerah, $pencipta_kesenian, $bahan_kesenian, $jenis, $ukuran, $jumlah, $tanggal_cetak, $asal_usul, $harga, 
+					$keterangan, $foto, $id);
 
 				header("location:".ROOT."inventaris?tab=asetlain&act=upd");
 			}

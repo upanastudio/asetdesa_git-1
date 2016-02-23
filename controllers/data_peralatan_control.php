@@ -20,6 +20,7 @@
 				if (empty($kode_barang)) {
 					header("location:".ROOT."input?tab=peralatan&act=err");
 				} else {
+					$kode_bidang		= substr($kode_barang, 2, 2);
 					$jb					= $data_barang->getNamaBarangByKB($kode_barang);
 					$jenis_barang		= $jb['nama_barang'];
 					$register			= $_POST['register'];
@@ -40,8 +41,8 @@
 						$foto = $libs->uploadFile('../upload/images/',$_FILES['foto']);
 					}
 
-					$peralatan->insertData($kode_barang, $jenis_barang, $register, $merek, $ukuran, $bahan, $tanggal_beli, $no_pabrik, 
-						$no_rangka, $no_mesin, $no_polisi, $no_bpkb, $asal_usul, $harga, $keterangan, $foto);
+					$peralatan->insertData($kode_barang, $kode_bidang, $jenis_barang, $register, $merek, $ukuran, $bahan, $tanggal_beli, 
+						$no_pabrik, $no_rangka, $no_mesin, $no_polisi, $no_bpkb, $asal_usul, $harga, $keterangan, $foto);
 
 					header("location:".ROOT."inventaris?tab=peralatan&act=add");
 				}
@@ -51,6 +52,7 @@
 		if($model == 'peralatan' AND $method == 'edit') {
 			if(isset($_POST['edit'])) {
 				$kode_barang		= $_POST['kode_barang'];
+				$kode_bidang		= substr($kode_barang, 2, 2);
 				$jb					= $data_barang->getNamaBarangByKB($kode_barang);
 				$jenis_barang		= $jb['nama_barang'];
 				$register			= $_POST['register'];
@@ -74,8 +76,8 @@
 					$foto = $libs->uploadFile('../upload/images/',$_FILES['foto']);
 				}
 
-				$peralatan->updateData($kode_barang, $jenis_barang, $register, $merek, $ukuran, $bahan, $tanggal_beli, $no_pabrik, 
-					$no_rangka, $no_mesin, $no_polisi, $no_bpkb, $asal_usul, $harga, $keterangan, $foto, $id);
+				$peralatan->updateData($kode_barang, $kode_bidang, $jenis_barang, $register, $merek, $ukuran, $bahan, $tanggal_beli, 
+					$no_pabrik, $no_rangka, $no_mesin, $no_polisi, $no_bpkb, $asal_usul, $harga, $keterangan, $foto, $id);
 
 				header("location:".ROOT."inventaris?tab=peralatan&act=upd");
 			}

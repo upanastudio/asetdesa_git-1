@@ -14,6 +14,7 @@
 <!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
 	<head>
 		<title>Login - Aset Desa</title>
+		<link rel="shortcut icon" href="<?php echo ROOT; ?>favicon.png" />
 		<meta charset="utf-8">
 		<meta name="description" content="">
 		<meta name="viewport" content="width=device-width">

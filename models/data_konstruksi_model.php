@@ -42,8 +42,20 @@
 			return $query->fetch(PDO::FETCH_ASSOC);
 		}
 
-		public function getKodeBarangByKB($kb) {
-			$query = $this->db->prepare("SELECT * FROM `tb_kode_barang` WHERE `kb_1` = :kb");
+		public function countDataByKB($kb) {
+			$query = $this->db->prepare("SELECT * FROM `data_konstruksi` WHERE `kode_bidang` = :kb");
+			$query->bindParam(':kb', $kb, PDO::PARAM_STR);
+
+			try {
+				$query->execute();
+				return $query->rowCount();
+			} catch(PDOException $e){
+				$e->getMessage();
+			}
+		}
+
+		public function getDataByKB($kb) {
+			$query = $this->db->prepare("SELECT * FROM `data_konstruksi` WHERE `kode_bidang` = :kb");
 			$query->bindParam(':kb', $kb, PDO::PARAM_STR);
 
 			try {
@@ -55,25 +67,27 @@
 			return $query->fetchAll(PDO::FETCH_ASSOC);
 		}
 
-		public function insertData($kode_barang, $jenis_barang, $bangunan, $konstruksi, $luas_konstruksi, $alamat, 
+		public function insertData($kode_barang, $kode_bidang, $jenis_barang, $bangunan, $konstruksi, $luas_konstruksi, $alamat, 
 			$tanggal_dokumen, $no_dokumen, $tanggal_mulai, $status_tanah, $no_tanah, $asal_usul, $harga, $keterangan) {
 			$query = $this->db->prepare("INSERT INTO `data_konstruksi` SET	`kode_barang`		= :kode_barang,
-																							`jenis_barang`			= :jenis_barang,
-																							`bangunan`				= :bangunan,
-																							`konstruksi`			= :konstruksi,
-																							`luas_konstruksi`		= :luas_konstruksi,
-																							`alamat`				= :alamat,
-																							`tanggal_dokumen`		= :tanggal_dokumen,
-																							`status_tanah`			= :status_tanah,
-																							`no_tanah`				= :no_tanah,
-																							`no_dokumen`			= :no_dokumen,
-																							`tanggal_mulai`			= :tanggal_mulai,
-																							`asal_usul`				= :asal_usul,
-																							`harga`					= :harga,
-																							`keterangan`			= :keterangan
+																								`kode_bidang`		= :kode_bidang,
+																								`jenis_barang`		= :jenis_barang,
+																								`bangunan`			= :bangunan,
+																								`konstruksi`		= :konstruksi,
+																								`luas_konstruksi`	= :luas_konstruksi,
+																								`alamat`				= :alamat,
+																								`tanggal_dokumen`	= :tanggal_dokumen,
+																								`status_tanah`		= :status_tanah,
+																								`no_tanah`			= :no_tanah,
+																								`no_dokumen`		= :no_dokumen,
+																								`tanggal_mulai`	= :tanggal_mulai,
+																								`asal_usul`			= :asal_usul,
+																								`harga`				= :harga,
+																								`keterangan`		= :keterangan
 			");
 
 			$query->bindParam(':kode_barang', $kode_barang, PDO::PARAM_STR);
+			$query->bindParam(':kode_bidang', $kode_bidang, PDO::PARAM_STR);
 			$query->bindParam(':jenis_barang', $jenis_barang, PDO::PARAM_STR);
 			$query->bindParam(':bangunan', $bangunan, PDO::PARAM_STR);
 			$query->bindParam(':konstruksi', $konstruksi, PDO::PARAM_STR);
@@ -96,27 +110,29 @@
 			}
 		}
 
-		public function updateData($kode_barang, $jenis_barang, $bangunan, $konstruksi, $luas_konstruksi, $alamat, 
+		public function updateData($kode_barang, $kode_bidang, $jenis_barang, $bangunan, $konstruksi, $luas_konstruksi, $alamat, 
 			$tanggal_dokumen, $no_dokumen, $tanggal_mulai, $status_tanah, $no_tanah, $asal_usul, $harga, $keterangan, $id) {
-			$query = $this->db->prepare("UPDATE `data_konstruksi` SET			`kode_barang`		= :kode_barang,
-																							`jenis_barang`			= :jenis_barang,
-																							`bangunan`				= :bangunan,
-																							`konstruksi`			= :konstruksi,
-																							`luas_konstruksi`		= :luas_konstruksi,
+			$query = $this->db->prepare("UPDATE `data_konstruksi` SET	`kode_barang`		= :kode_barang,
+																							`kode_bidang`		= :kode_bidang,
+																							`jenis_barang`		= :jenis_barang,
+																							`bangunan`			= :bangunan,
+																							`konstruksi`		= :konstruksi,
+																							`luas_konstruksi`	= :luas_konstruksi,
 																							`alamat`				= :alamat,
-																							`tanggal_dokumen`		= :tanggal_dokumen,
-																							`status_tanah`			= :status_tanah,
-																							`no_tanah`				= :no_tanah,
-																							`no_dokumen`			= :no_dokumen,
-																							`tanggal_mulai`			= :tanggal_mulai,
-																							`asal_usul`				= :asal_usul,
-																							`harga`					= :harga,
-																							`keterangan`			= :keterangan
-																				WHERE		`id`						= :id
+																							`tanggal_dokumen`	= :tanggal_dokumen,
+																							`status_tanah`		= :status_tanah,
+																							`no_tanah`			= :no_tanah,
+																							`no_dokumen`		= :no_dokumen,
+																							`tanggal_mulai`	= :tanggal_mulai,
+																							`asal_usul`			= :asal_usul,
+																							`harga`				= :harga,
+																							`keterangan`		= :keterangan
+																					WHERE	`id`					= :id
 			");
 
 			$query->bindParam(':id', $id, PDO::PARAM_INT);
 			$query->bindParam(':kode_barang', $kode_barang, PDO::PARAM_STR);
+			$query->bindParam(':kode_bidang', $kode_bidang, PDO::PARAM_STR);
 			$query->bindParam(':jenis_barang', $jenis_barang, PDO::PARAM_STR);
 			$query->bindParam(':bangunan', $bangunan, PDO::PARAM_STR);
 			$query->bindParam(':konstruksi', $konstruksi, PDO::PARAM_STR);

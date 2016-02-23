@@ -27,6 +27,7 @@
 <!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
 <!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
 	<head>
+		<link rel="shortcut icon" href="<?php echo ROOT; ?>favicon.png" />
 		<meta charset="utf-8">
 		<meta name="description" content="">
 		<meta name="viewport" content="width=device-width">
@@ -143,7 +144,7 @@
 
 		case 'rekap':
 			$model_name = "Rekap";
-			include "views/printpdf_view.php";
+			include "views/rekap_view.php";
 			break;
 
 		case 'kirim':

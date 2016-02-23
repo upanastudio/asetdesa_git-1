@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: Feb 22, 2016 at 08:47 AM
+-- Generation Time: Feb 23, 2016 at 09:01 PM
 -- Server version: 5.6.21
 -- PHP Version: 5.6.3
 
@@ -29,6 +29,7 @@ SET time_zone = "+00:00";
 CREATE TABLE IF NOT EXISTS `data_asetlain` (
 `id` int(11) NOT NULL,
   `kode_barang` varchar(20) NOT NULL,
+  `kode_bidang` varchar(2) NOT NULL,
   `jenis_barang` varchar(50) NOT NULL,
   `register` varchar(5) NOT NULL,
   `jalur` int(11) NOT NULL,
@@ -51,8 +52,8 @@ CREATE TABLE IF NOT EXISTS `data_asetlain` (
 -- Dumping data for table `data_asetlain`
 --
 
-INSERT INTO `data_asetlain` (`id`, `kode_barang`, `jenis_barang`, `register`, `jalur`, `judul_buku`, `spesifikasi_buku`, `asal_daerah`, `pencipta_kesenian`, `bahan_kesenian`, `jenis`, `ukuran`, `jumlah`, `tanggal_cetak`, `asal_usul`, `harga`, `keterangan`, `foto`) VALUES
-(1, '05170101002', 'Bibliografi, Katalog', '001', 1, 'Skripshit', 'Arlit', '', '', '', '', '', 2, '22-02-2016', 'Beli dong', '51000', 'Buku baru', '56ca69cfaf650.png');
+INSERT INTO `data_asetlain` (`id`, `kode_barang`, `kode_bidang`, `jenis_barang`, `register`, `jalur`, `judul_buku`, `spesifikasi_buku`, `asal_daerah`, `pencipta_kesenian`, `bahan_kesenian`, `jenis`, `ukuran`, `jumlah`, `tanggal_cetak`, `asal_usul`, `harga`, `keterangan`, `foto`) VALUES
+(1, '05170101002', '17', 'Bibliografi, Katalog', '001', 1, 'Skripshit', 'Arlit', '', '', '', '', '', 2, '22-02-2016', 'Beli dong', '51000', 'Buku baru', '56ca69cfaf650.png');
 
 -- --------------------------------------------------------
 
@@ -63,6 +64,7 @@ INSERT INTO `data_asetlain` (`id`, `kode_barang`, `jenis_barang`, `register`, `j
 CREATE TABLE IF NOT EXISTS `data_gedung` (
 `id` int(11) NOT NULL,
   `kode_barang` varchar(20) NOT NULL,
+  `kode_bidang` varchar(2) NOT NULL,
   `jenis_barang` varchar(50) NOT NULL,
   `register` varchar(5) NOT NULL,
   `kondisi` varchar(20) NOT NULL,
@@ -77,15 +79,16 @@ CREATE TABLE IF NOT EXISTS `data_gedung` (
   `asal_usul` varchar(100) NOT NULL,
   `harga` varchar(20) NOT NULL,
   `keterangan` text NOT NULL
-) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8;
 
 --
 -- Dumping data for table `data_gedung`
 --
 
-INSERT INTO `data_gedung` (`id`, `kode_barang`, `jenis_barang`, `register`, `kondisi`, `konstruksi`, `luas_lantai`, `alamat`, `tanggal_beli`, `no_dokumen`, `luas_lahan`, `status_tanah`, `no_sertifikat`, `asal_usul`, `harga`, `keterangan`) VALUES
-(1, '03110303002', 'Bangunan Menara Radio', '008', 'KB', 'Bertingkat, ', '1000', 'Telkom kah', '27-02-2016', '85235', '340', 'Sah kah', '4923796000', 'APBN kah', '40000000', 'Laku kah'),
-(4, '03110101002', 'Bangunan Gedung Kantor Semi Permanen', '', 'KB', '', '', '', '22-02-2016', '0001', '', '', '', '', '0', '');
+INSERT INTO `data_gedung` (`id`, `kode_barang`, `kode_bidang`, `jenis_barang`, `register`, `kondisi`, `konstruksi`, `luas_lantai`, `alamat`, `tanggal_beli`, `no_dokumen`, `luas_lahan`, `status_tanah`, `no_sertifikat`, `asal_usul`, `harga`, `keterangan`) VALUES
+(1, '03110303002', '11', 'Bangunan Menara Radio', '008', 'KB', 'Bertingkat, ', '1000', 'Telkom kah', '27-02-2016', '85235', '340', 'Sah kah', '4923796000', 'APBN kah', '40000000', 'Laku kah'),
+(4, '03110101002', '11', 'Bangunan Gedung Kantor Semi Permanen', '', 'KB', '', '', '', '22-02-2016', '0001', '', '', '', '', '0', ''),
+(5, '03120202001', '12', 'Tugu Pembangunan', '001', 'KB', 'Beton', '', '', '24-02-2016', '0001', '300', 'sah', '247257', 'jelas', '57000000', 'laku');
 
 -- --------------------------------------------------------
 
@@ -96,6 +99,7 @@ INSERT INTO `data_gedung` (`id`, `kode_barang`, `jenis_barang`, `register`, `kon
 CREATE TABLE IF NOT EXISTS `data_jalan` (
 `id` int(11) NOT NULL,
   `kode_barang` varchar(20) NOT NULL,
+  `kode_bidang` varchar(2) NOT NULL,
   `jenis_barang` varchar(50) NOT NULL,
   `register` varchar(5) NOT NULL,
   `konstruksi` varchar(20) NOT NULL,
@@ -117,8 +121,8 @@ CREATE TABLE IF NOT EXISTS `data_jalan` (
 -- Dumping data for table `data_jalan`
 --
 
-INSERT INTO `data_jalan` (`id`, `kode_barang`, `jenis_barang`, `register`, `konstruksi`, `panjang`, `lebar`, `luas_tanah`, `alamat`, `tanggal_dokumen`, `no_dokumen`, `status_tanah`, `no_tanah`, `asal_usul`, `kondisi`, `harga`, `keterangan`) VALUES
-(1, '04130203001', 'Jembatan Beton', '001', 'Pake beton kah', '240', '100', '24000000', 'Maralleng kah', '23-02-2016', '529399000', 'Kuat Kokoh kah', '893756000', 'Dulu yah', 'Baru', '400000000', 'Nope kah');
+INSERT INTO `data_jalan` (`id`, `kode_barang`, `kode_bidang`, `jenis_barang`, `register`, `konstruksi`, `panjang`, `lebar`, `luas_tanah`, `alamat`, `tanggal_dokumen`, `no_dokumen`, `status_tanah`, `no_tanah`, `asal_usul`, `kondisi`, `harga`, `keterangan`) VALUES
+(1, '04130203001', '13', 'Jembatan Beton', '001', 'Pake beton kah', '240', '100', '24000000', 'Maralleng kah', '23-02-2016', '529399000', 'Kuat Kokoh kah', '893756000', 'Dulu yah', 'Renovasi Baru', '400000000', 'Nope kah');
 
 -- --------------------------------------------------------
 
@@ -129,6 +133,7 @@ INSERT INTO `data_jalan` (`id`, `kode_barang`, `jenis_barang`, `register`, `kons
 CREATE TABLE IF NOT EXISTS `data_konstruksi` (
 `id` int(11) NOT NULL,
   `kode_barang` varchar(20) NOT NULL,
+  `kode_bidang` varchar(2) NOT NULL,
   `jenis_barang` varchar(50) NOT NULL,
   `bangunan` varchar(20) NOT NULL,
   `konstruksi` varchar(20) NOT NULL,
@@ -148,11 +153,10 @@ CREATE TABLE IF NOT EXISTS `data_konstruksi` (
 -- Dumping data for table `data_konstruksi`
 --
 
-INSERT INTO `data_konstruksi` (`id`, `kode_barang`, `jenis_barang`, `bangunan`, `konstruksi`, `luas_konstruksi`, `alamat`, `tanggal_dokumen`, `no_dokumen`, `tanggal_mulai`, `status_tanah`, `no_tanah`, `asal_usul`, `harga`, `keterangan`) VALUES
-(1, '06000000000', 'GOLONGAN KONSTRUKSI DLM PENGERJAAN', 'SP', 'Bertingkat, Beton', '424', 'gergerg', '22-02-2016', '001', '15-02-2016', 'sah', '3452364', 'agahwr', '13000000', 'argehe'),
-(3, '06000000000', 'GOLONGAN KONSTRUKSI DLM PENGERJAAN', 'P', 'Bertingkat, Beton, ', '', '', '', '0001', '', '', '', '', '23534563', ''),
-(4, '06000000000', 'GOLONGAN KONSTRUKSI DLM PENGERJAAN', 'D', 'Beton, ', '5000', 'kgjhkj', '03-02-2016', '0001', '20-02-2016', 'oke', '4657458', 'fsakdga', '34236', 'fkjbdkf'),
-(5, '06000000000', 'GOLONGAN KONSTRUKSI DLM PENGERJAAN', 'SP', 'Bertingkat, ', '100', 'afaf', '23-02-2016', '002', '23-02-2016', 'aktif', '5327687', 'asal', '7000000', 'laku');
+INSERT INTO `data_konstruksi` (`id`, `kode_barang`, `kode_bidang`, `jenis_barang`, `bangunan`, `konstruksi`, `luas_konstruksi`, `alamat`, `tanggal_dokumen`, `no_dokumen`, `tanggal_mulai`, `status_tanah`, `no_tanah`, `asal_usul`, `harga`, `keterangan`) VALUES
+(1, '06000000000', '00', 'GOLONGAN KONSTRUKSI DLM PENGERJAAN', 'SP', 'Bertingkat, Beton', '424', 'gergerg', '22-02-2016', '001', '15-02-2016', 'sah', '3452364', 'agahwr', '13000000', 'argehe'),
+(4, '06000000000', '00', 'GOLONGAN KONSTRUKSI DLM PENGERJAAN', 'D', 'Beton, ', '5000', 'kgjhkj', '03-02-2016', '0001', '20-02-2016', 'oke', '4657458', 'fsakdga', '34236', 'fkjbdkf'),
+(5, '06000000000', '00', 'GOLONGAN KONSTRUKSI DLM PENGERJAAN', 'SP', 'Bertingkat, ', '100', 'afaf', '23-02-2016', '002', '23-02-2016', 'aktif', '5327687', 'asal', '7000000', 'laku');
 
 -- --------------------------------------------------------
 
@@ -162,8 +166,9 @@ INSERT INTO `data_konstruksi` (`id`, `kode_barang`, `jenis_barang`, `bangunan`, 
 
 CREATE TABLE IF NOT EXISTS `data_peralatan` (
 `id` int(11) NOT NULL,
-  `jenis_barang` varchar(50) NOT NULL,
   `kode_barang` varchar(20) NOT NULL,
+  `kode_bidang` varchar(2) NOT NULL,
+  `jenis_barang` varchar(50) NOT NULL,
   `register` varchar(10) NOT NULL,
   `merek` varchar(100) NOT NULL,
   `ukuran` varchar(20) NOT NULL,
@@ -184,8 +189,8 @@ CREATE TABLE IF NOT EXISTS `data_peralatan` (
 -- Dumping data for table `data_peralatan`
 --
 
-INSERT INTO `data_peralatan` (`id`, `jenis_barang`, `kode_barang`, `register`, `merek`, `ukuran`, `bahan`, `tanggal_beli`, `no_pabrik`, `no_rangka`, `no_mesin`, `no_polisi`, `no_bpkb`, `asal_usul`, `harga`, `keterangan`, `foto`) VALUES
-(1, 'Mesin Bleaching', '02090139014', '0004', 'Sanyo', '50', 'Polimer', '09-02-2016', '775', '87587', '57587', '7575', '8787', 'Ada saja', '560000', 'Masih berfungsi kah', '56ca06e6b647f.jpg');
+INSERT INTO `data_peralatan` (`id`, `kode_barang`, `kode_bidang`, `jenis_barang`, `register`, `merek`, `ukuran`, `bahan`, `tanggal_beli`, `no_pabrik`, `no_rangka`, `no_mesin`, `no_polisi`, `no_bpkb`, `asal_usul`, `harga`, `keterangan`, `foto`) VALUES
+(1, '02090139014', '09', 'Mesin Bleaching', '0004', 'Sanyo', '50', 'Polimer', '09-02-2016', '775', '87587', '57587', '7575', '8787', 'Ada saja', '560000', 'Masih berfungsi kah', '56ca06e6b647f.jpg');
 
 -- --------------------------------------------------------
 
@@ -196,6 +201,7 @@ INSERT INTO `data_peralatan` (`id`, `jenis_barang`, `kode_barang`, `register`, `
 CREATE TABLE IF NOT EXISTS `data_tanah` (
 `id` int(11) NOT NULL,
   `kode_barang` varchar(20) NOT NULL,
+  `kode_bidang` varchar(2) NOT NULL,
   `jenis_barang` varchar(50) NOT NULL,
   `register` varchar(5) NOT NULL,
   `luas_tanah` varchar(10) NOT NULL,
@@ -214,8 +220,8 @@ CREATE TABLE IF NOT EXISTS `data_tanah` (
 -- Dumping data for table `data_tanah`
 --
 
-INSERT INTO `data_tanah` (`id`, `kode_barang`, `jenis_barang`, `register`, `luas_tanah`, `tanggal_beli`, `alamat`, `hak`, `no_sertifikat`, `tanggal_sertifikat`, `penggunaan`, `asal_usul`, `harga`, `keterangan`) VALUES
-(1, '01011309007', 'Tanah Untuk Bangunan Pengolahan Limbah', '005', '600', '24-02-2016', 'STPP Gowa ', 'Abdulmu', '859623867000', '05-03-2010', 'Gardu listrikmu', 'Pasmu', '20000000', 'Hmmmmmahhhh');
+INSERT INTO `data_tanah` (`id`, `kode_barang`, `kode_bidang`, `jenis_barang`, `register`, `luas_tanah`, `tanggal_beli`, `alamat`, `hak`, `no_sertifikat`, `tanggal_sertifikat`, `penggunaan`, `asal_usul`, `harga`, `keterangan`) VALUES
+(1, '01011309007', '01', 'Tanah Untuk Bangunan Pengolahan Limbah', '005', '600', '24-02-2016', 'STPP Gowa ', 'Abdulmu', '859623867000', '05-03-2010', 'Gardu listrikmu', 'Pasmu', '20000000', 'Hmmmmmahhhh');
 
 -- --------------------------------------------------------
 
@@ -238,7 +244,7 @@ CREATE TABLE IF NOT EXISTS `pengaturan` (
 --
 
 INSERT INTO `pengaturan` (`id`, `kode_lokasi`, `nama_kepala`, `nama_pengguna`, `nama_pengurus`, `email`, `logo`) VALUES
-(1, '123', 'Itokun', 'Sidik', 'Aren', 'upanastudio@gmail.com', '56ca62b1b9833.jpg');
+(1, 'Upana Studio', 'M. Taufiqurrahman', 'Sidik Permana', 'Rahmat H Slamet', 'upanastudio@gmail.com', '56cb210c1c9cf.jpg');
 
 -- --------------------------------------------------------
 
@@ -8937,7 +8943,7 @@ CREATE TABLE IF NOT EXISTS `user` (
 --
 
 INSERT INTO `user` (`id`, `username`, `password`, `fullname`, `email`, `id_session`, `verif_kode`) VALUES
-(1, 'admin', '2550bf061db91980f55361e65290751c', 'Administrator', 'asetdesa@gmail.com', '7k2h668q5cfrulqrhlts2q19t0', ''),
+(1, 'admin', '2550bf061db91980f55361e65290751c', 'Administrator', 'asetdesa@gmail.com', '4rrud7028q4svpi592v2q2j1s2', ''),
 (2, 'ito', '8ee49481c625d0d128cec6c408cdb84b', 'Ito Rijal', 'ophyeq@gmail.com', '1mig0msvs9ita4ode9kvniq0e2', '');
 
 --
@@ -9011,7 +9017,7 @@ MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=2;
 -- AUTO_INCREMENT for table `data_gedung`
 --
 ALTER TABLE `data_gedung`
-MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=5;
+MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=6;
 --
 -- AUTO_INCREMENT for table `data_jalan`
 --

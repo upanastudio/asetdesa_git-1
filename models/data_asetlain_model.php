@@ -42,8 +42,20 @@
 			return $query->fetch(PDO::FETCH_ASSOC);
 		}
 
-		public function getKodeBarangByKB($kb) {
-			$query = $this->db->prepare("SELECT * FROM `tb_kode_barang` WHERE `kb_1` = :kb");
+		public function countDataByKB($kb) {
+			$query = $this->db->prepare("SELECT * FROM `data_asetlain` WHERE `kode_bidang` = :kb");
+			$query->bindParam(':kb', $kb, PDO::PARAM_STR);
+
+			try {
+				$query->execute();
+				return $query->rowCount();
+			} catch(PDOException $e){
+				$e->getMessage();
+			}
+		}
+
+		public function getDataByKB($kb) {
+			$query = $this->db->prepare("SELECT * FROM `data_asetlain` WHERE `kode_bidang` = :kb");
 			$query->bindParam(':kb', $kb, PDO::PARAM_STR);
 
 			try {
@@ -55,27 +67,31 @@
 			return $query->fetchAll(PDO::FETCH_ASSOC);
 		}
 
-		public function insertData($kode_barang, $jenis_barang, $register, $jalur, $judul_buku, $spesifikasi_buku, $asal_daerah, $pencipta_kesenian, $bahan_kesenian, $jenis, $ukuran, $jumlah, $tanggal_cetak, $asal_usul, $harga, $keterangan, $foto) {
+		public function insertData($kode_barang, $kode_bidang, $jenis_barang, $register, $jalur, $judul_buku, $spesifikasi_buku, 
+			$asal_daerah, $pencipta_kesenian, $bahan_kesenian, $jenis, $ukuran, $jumlah, $tanggal_cetak, $asal_usul, $harga, 
+			$keterangan, $foto) {
 			$query = $this->db->prepare("INSERT INTO `data_asetlain` SET	`kode_barang`			= :kode_barang,
-																							`jenis_barang`			= :jenis_barang,
-																							`register`				= :register,
-																							`jalur`					= :jalur,
-																							`judul_buku`			= :judul_buku,
-																							`spesifikasi_buku`		= :spesifikasi_buku,
-																							`asal_daerah`			= :asal_daerah,
-																							`pencipta_kesenian`			= :pencipta_kesenian,
-																							`bahan_kesenian`	= :bahan_kesenian,
-																							`jenis`			= :jenis,
-																							`ukuran`			= :ukuran,
-																							`jumlah`			= :jumlah,
-																							`tanggal_cetak`			= :tanggal_cetak,
-																							`asal_usul`				= :asal_usul,
-																							`harga`					= :harga,
-																							`keterangan`			= :keterangan,
-																							`foto`			= :foto
+																								`kode_bidang`			= :kode_bidang,
+																								`jenis_barang`			= :jenis_barang,
+																								`register`				= :register,
+																								`jalur`					= :jalur,
+																								`judul_buku`			= :judul_buku,
+																								`spesifikasi_buku`	= :spesifikasi_buku,
+																								`asal_daerah`			= :asal_daerah,
+																								`pencipta_kesenian`	= :pencipta_kesenian,
+																								`bahan_kesenian`		= :bahan_kesenian,
+																								`jenis`					= :jenis,
+																								`ukuran`					= :ukuran,
+																								`jumlah`					= :jumlah,
+																								`tanggal_cetak`		= :tanggal_cetak,
+																								`asal_usul`				= :asal_usul,
+																								`harga`					= :harga,
+																								`keterangan`			= :keterangan,
+																								`foto`					= :foto
 			");
 
 			$query->bindParam(':kode_barang', $kode_barang, PDO::PARAM_STR);
+			$query->bindParam(':kode_bidang', $kode_bidang, PDO::PARAM_STR);
 			$query->bindParam(':jenis_barang', $jenis_barang, PDO::PARAM_STR);
 			$query->bindParam(':register', $register, PDO::PARAM_STR);
 			$query->bindParam(':jalur', $jalur, PDO::PARAM_STR);
@@ -101,30 +117,33 @@
 			}
 		}
 
-		public function updateData($kode_barang, $jenis_barang, $register, $jalur, $judul_buku, $spesifikasi_buku, $asal_daerah, $pencipta_kesenian, $bahan_kesenian, $jenis, $ukuran, $jumlah, $tanggal_cetak, $asal_usul, $harga, $keterangan, $foto, $id) {
-			$query = $this->db->prepare("UPDATE `data_asetlain` SET			`kode_barang`			= :kode_barang,
-																			`jenis_barang`			= :jenis_barang,
-																			`register`				= :register,
-																			`jalur`					= :jalur,
-																			`judul_buku`			= :judul_buku,
-																			`spesifikasi_buku`		= :spesifikasi_buku,
-																			`asal_daerah`			= :asal_daerah,
-																			`pencipta_kesenian`		= :pencipta_kesenian,
-																			`bahan_kesenian`		= :bahan_kesenian,
-																			`jenis`					= :jenis,
-																			`ukuran`				= :ukuran,
-																			`jumlah`				= :jumlah,
-																			`tanggal_cetak`			= :tanggal_cetak,
-																			`asal_usul`				= :asal_usul,
-																			`harga`					= :harga,
-																			`keterangan`			= :keterangan,
-																			`foto`					= :foto
-																
-																WHERE 		`id`					= :id
+		public function updateData($kode_barang, $kode_bidang, $jenis_barang, $register, $jalur, $judul_buku, $spesifikasi_buku, 
+			$asal_daerah, $pencipta_kesenian, $bahan_kesenian, $jenis, $ukuran, $jumlah, $tanggal_cetak, $asal_usul, $harga, 
+			$keterangan, $foto, $id) {
+			$query = $this->db->prepare("UPDATE `data_asetlain` SET	`kode_barang`			= :kode_barang,
+																						`kode_bidang`			= :kode_bidang,
+																						`jenis_barang`			= :jenis_barang,
+																						`register`				= :register,
+																						`jalur`					= :jalur,
+																						`judul_buku`			= :judul_buku,
+																						`spesifikasi_buku`	= :spesifikasi_buku,
+																						`asal_daerah`			= :asal_daerah,
+																						`pencipta_kesenian`	= :pencipta_kesenian,
+																						`bahan_kesenian`		= :bahan_kesenian,
+																						`jenis`					= :jenis,
+																						`ukuran`					= :ukuran,
+																						`jumlah`					= :jumlah,
+																						`tanggal_cetak`		= :tanggal_cetak,
+																						`asal_usul`				= :asal_usul,
+																						`harga`					= :harga,
+																						`keterangan`			= :keterangan,
+																						`foto`					= :foto
+																				WHERE `id`						= :id
 			");
 
 			$query->bindParam(':id', $id, PDO::PARAM_INT);
 			$query->bindParam(':kode_barang', $kode_barang, PDO::PARAM_STR);
+			$query->bindParam(':kode_bidang', $kode_bidang, PDO::PARAM_STR);
 			$query->bindParam(':jenis_barang', $jenis_barang, PDO::PARAM_STR);
 			$query->bindParam(':register', $register, PDO::PARAM_STR);
 			$query->bindParam(':jalur', $jalur, PDO::PARAM_STR);

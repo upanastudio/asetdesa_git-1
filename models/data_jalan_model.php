@@ -42,8 +42,20 @@
 			return $query->fetch(PDO::FETCH_ASSOC);
 		}
 
-		public function getKodeBarangByKB($kb) {
-			$query = $this->db->prepare("SELECT * FROM `tb_kode_barang` WHERE `kb_1` = :kb");
+		public function countDataByKB($kb) {
+			$query = $this->db->prepare("SELECT * FROM `data_jalan` WHERE `kode_bidang` = :kb");
+			$query->bindParam(':kb', $kb, PDO::PARAM_STR);
+
+			try {
+				$query->execute();
+				return $query->rowCount();
+			} catch(PDOException $e){
+				$e->getMessage();
+			}
+		}
+
+		public function getDataByKB($kb) {
+			$query = $this->db->prepare("SELECT * FROM `data_jalan` WHERE `kode_bidang` = :kb");
 			$query->bindParam(':kb', $kb, PDO::PARAM_STR);
 
 			try {
@@ -55,9 +67,10 @@
 			return $query->fetchAll(PDO::FETCH_ASSOC);
 		}
 
-		public function insertData($kode_barang, $jenis_barang, $register, $kondisi, $konstruksi, $panjang, $lebar, $luas_tanah, $alamat, $tanggal_dokumen,
-		$no_dokumen, $status_tanah, $no_tanah, $asal_usul, $harga, $keterangan) {
+		public function insertData($kode_barang, $kode_bidang, $jenis_barang, $register, $kondisi, $konstruksi, $panjang, $lebar, 
+			$luas_tanah, $alamat, $tanggal_dokumen, $no_dokumen, $status_tanah, $no_tanah, $asal_usul, $harga, $keterangan) {
 			$query = $this->db->prepare("INSERT INTO `data_jalan` SET	`kode_barang`			= :kode_barang,
+																							`kode_bidang`			= :kode_bidang,
 																							`jenis_barang`			= :jenis_barang,
 																							`register`				= :register,
 																							`kondisi`				= :kondisi,
@@ -76,6 +89,7 @@
 			");
 
 			$query->bindParam(':kode_barang', $kode_barang, PDO::PARAM_STR);
+			$query->bindParam(':kode_bidang', $kode_bidang, PDO::PARAM_STR);
 			$query->bindParam(':jenis_barang', $jenis_barang, PDO::PARAM_STR);
 			$query->bindParam(':register', $register, PDO::PARAM_STR);
 			$query->bindParam(':kondisi', $kondisi, PDO::PARAM_STR);
@@ -100,9 +114,10 @@
 			}
 		}
 
-		public function updateData($kode_barang, $jenis_barang, $register, $kondisi, $konstruksi, $panjang, $lebar, $luas_tanah, $alamat, $tanggal_dokumen,
-		$no_dokumen, $status_tanah, $no_tanah, $asal_usul, $harga, $keterangan, $id) {
+		public function updateData($kode_barang, $kode_bidang, $jenis_barang, $register, $kondisi, $konstruksi, $panjang, $lebar, 
+			$luas_tanah, $alamat, $tanggal_dokumen, $no_dokumen, $status_tanah, $no_tanah, $asal_usul, $harga, $keterangan, $id) {
 			$query = $this->db->prepare("UPDATE `data_jalan` SET			`kode_barang`			= :kode_barang,
+																							`kode_bidang`			= :kode_bidang,
 																							`jenis_barang`			= :jenis_barang,
 																							`register`				= :register,
 																							`kondisi`				= :kondisi,
@@ -123,6 +138,7 @@
 
 			$query->bindParam(':id', $id, PDO::PARAM_INT);
 			$query->bindParam(':kode_barang', $kode_barang, PDO::PARAM_STR);
+			$query->bindParam(':kode_bidang', $kode_bidang, PDO::PARAM_STR);
 			$query->bindParam(':jenis_barang', $jenis_barang, PDO::PARAM_STR);
 			$query->bindParam(':register', $register, PDO::PARAM_STR);
 			$query->bindParam(':kondisi', $kondisi, PDO::PARAM_STR);

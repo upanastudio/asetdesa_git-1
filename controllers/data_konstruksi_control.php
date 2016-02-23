@@ -17,6 +17,7 @@
 				if (empty($kode_barang)) {
 					header("location:".ROOT."input?tab=konstruksi&act=err");
 				} else {
+					$kode_bidang		= substr($kode_barang, 2, 2);
 					$jb					= $data_barang->getNamaBarangByKB($kode_barang);
 					$jenis_barang		= $jb['nama_barang'];
 					$kon 					= $_POST['konstruksi'];
@@ -33,7 +34,7 @@
 					$harga 				= empty($_POST['harga'])? '0' : $_POST['harga'];
 					$keterangan 		= $_POST['keterangan'];
 
-					$konstruksi->insertData($kode_barang, $jenis_barang, $bangunan, $konstruk, $luas_konstruksi, $alamat, 
+					$konstruksi->insertData($kode_barang, $kode_bidang, $jenis_barang, $bangunan, $konstruk, $luas_konstruksi, $alamat, 
 						$tanggal_dokumen, $no_dokumen, $tanggal_mulai, $status_tanah, $no_tanah, $asal_usul, $harga, $keterangan);
 
 					header("location:".ROOT."inventaris?tab=konstruksi&act=add");
@@ -44,6 +45,7 @@
 		if($model == 'konstruksi' AND $method == 'edit') {
 			if(isset($_POST['edit'])) {
 				$kode_barang		= $_POST['jenis_barang'];
+				$kode_bidang		= substr($kode_barang, 2, 2);
 				$jb					= $data_barang->getNamaBarangByKB($kode_barang);
 				$jenis_barang		= $jb['nama_barang'];
 				$kon 					= $_POST['konstruksi'];
@@ -61,7 +63,7 @@
 				$keterangan 		= $_POST['keterangan'];
 				$id					= $_POST['id'];
 
-				$konstruksi->updateData($kode_barang, $jenis_barang, $bangunan, $konstruk, $luas_konstruksi, $alamat, 
+				$konstruksi->updateData($kode_barang, $kode_bidang, $jenis_barang, $bangunan, $konstruk, $luas_konstruksi, $alamat, 
 					$tanggal_dokumen, $no_dokumen, $tanggal_mulai, $status_tanah, $no_tanah, $asal_usul, $harga, $keterangan, $id);
 
 				header("location:".ROOT."inventaris?tab=konstruksi&act=upd");

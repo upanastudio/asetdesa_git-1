@@ -4,7 +4,7 @@
 		ob_start();
 		date_default_timezone_set('Asia/Makassar');
 		require "../libs/path.php";
-		require '../assets/plugin/phpmailer/PHPMailerAutoload.php';
+		require '../assets/tools/phpmailer/PHPMailerAutoload.php';
 
 		$model = $_GET['model'];
 		$method = $_GET['method'];
@@ -72,9 +72,11 @@
 						echo "<script> alert('Data Berhasil Dikirim'); </script>";
 						// header("location:".ROOT."kirim");
 					
-				}else{
+				} else {
 					header("location:".ROOT."kirim?&act=err");
 				}
 			}
-	}endif;
+		}
+
+	endif;
 ?>
