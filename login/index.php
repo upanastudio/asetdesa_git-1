@@ -1,6 +1,7 @@
 <?php
 	require "../models/class.php";
 	include "../libs/path.php";
+	include "../libs/init.php";
 	// session_start();
 	// session_unset();
 	// session_destroy();
@@ -12,13 +13,13 @@
 <!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
 <!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
 	<head>
-		<title> Login - Aplikasi Manajemen Aset Desa</title>
+		<title>Login - Aset Desa</title>
 		<meta charset="utf-8">
 		<meta name="description" content="">
 		<meta name="viewport" content="width=device-width">
 
-		<link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Open+Sans:400italic,600italic,700italic,400,600,700">
-		<link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Oswald:400,300,700">
+		<link rel="stylesheet" href="<?php echo ROOT; ?>assets/fonts/OpenSans-Regular.ttf">
+		<link rel="stylesheet" href="<?php echo ROOT; ?>assets/fonts/Oswald-Regular.ttf">
 		<link rel="stylesheet" href="<?php echo ROOT; ?>assets/css/font-awesome.min.css">
 		<link rel="stylesheet" href="<?php echo ROOT; ?>assets/js/libs/css/ui-lightness/jquery-ui-1.9.2.custom.min.css">
 		<link rel="stylesheet" href="<?php echo ROOT; ?>assets/css/bootstrap.min.css">
@@ -62,8 +63,8 @@
 				<img src="<?php echo ROOT; ?>assets/img/logo-login.png" alt="Target Admin">
 			</div>
 			<div class="account-body">
-				<h3 class="account-body-title">Selamat Datang di Aplikasi Manajemen Aset Desa.</h3>
-				<h5 class="account-body-subtitle">Silakan Login</h5>
+				<h3 class="account-body-title">Aplikasi Manajemen Aset Desa</h3>
+				<h4 class="account-body-subtitle"><?php echo NAMA_DESA; ?></h4>
 				<form class="form account-form" method="POST" action="">
 					<div class="form-group">
 						<label for="login-username" class="placeholder-hidden">Username</label>

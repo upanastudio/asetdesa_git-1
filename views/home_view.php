@@ -10,6 +10,20 @@
 
 			case '':
 				$jumlah_unit_aset = $tanah->countData() + $peralatan->countData() + $gedung->countData() + $jalan->countData() + $asetlain->countData() + $konstruksi->countData();
+				$jumlah_nilai_aset = "0";
+				$data_tanah = $tanah->getDataLengkap();
+				foreach ($data_tanah as $data_tanah) { $jumlah_nilai_aset += $data_tanah['harga']; }
+				$data_peralatan = $peralatan->getDataLengkap();
+				foreach ($data_peralatan as $data_peralatan) { $jumlah_nilai_aset += $data_peralatan['harga']; }
+				$data_gedung = $gedung->getDataLengkap();
+				foreach ($data_gedung as $data_gedung) { $jumlah_nilai_aset += $data_gedung['harga']; }
+				$data_jalan = $jalan->getDataLengkap();
+				foreach ($data_jalan as $data_jalan) { $jumlah_nilai_aset += $data_jalan['harga']; }
+				$data_asetlain = $asetlain->getDataLengkap();
+				foreach ($data_asetlain as $data_asetlain) { $jumlah_nilai_aset += $data_asetlain['harga']; }
+				$data_konstruksi = $konstruksi->getDataLengkap();
+				foreach ($data_konstruksi as $data_konstruksi) { $jumlah_nilai_aset += $data_konstruksi['harga']; }
+
 				echo '
 
 					<div class="content-header">
@@ -28,7 +42,7 @@
 						<div class="col-sm-6 col-md-3 text-center">
 							<div class="row-stat">
 								<p class="row-stat-label">Jumlah Nilai Aset Desa</p>
-								<h3 class="row-stat-value"><span>Rp</span> 100.000</h3>
+								<h3 class="row-stat-value"><span>Rp</span>'.number_format($jumlah_nilai_aset, 0, ',', '.').',-</h3>
 							</div> <!-- /.row-stat -->
 						</div> <!-- /.col -->
 
@@ -48,31 +62,6 @@
 					</div> <!-- /.row -->
 
 					<div class="row">
-						<div class="col-md-8">
-							<div class="portlet">
-								<div class="portlet-header">
-									<h3>
-										<i class="fa fa-bar-chart-o"></i>
-										Statistik Aset Desa '.$desa['kode_lokasi'].'
-									</h3>
-								</div> <!-- /.portlet-header -->
-								<div class="portlet-content">
-									<div class="pull-left">
-										<div class="btn-group" data-toggle="buttons">
-											<label class="btn btn-sm btn-default">
-												<input type="radio" name="pilihan" id="option1" autocomplete="off" /> Bulan
-											</label>
-											<label class="btn btn-sm btn-default active">
-												<input type="radio" name="pilihan" id="option2" autocomplete="off" checked /> Tahun
-											</label>
-										</div>
-									</div> <!-- /.pull-left -->
-									<div class="clear"></div>
-									<div id="statistiktahun" class="chart-holder"></div>
-								</div> <!-- /.portlet-content -->
-							</div> <!-- /.portlet -->
-						</div> <!-- /.col -->
-
 						<div class="col-md-4">
 							<div class="portlet">
 								<div class="portlet-header">
@@ -83,17 +72,32 @@
 								</div> <!-- /.portlet-header -->
 								<div class="portlet-content">
 									<h3 class="text-center heading">
-										Selamat Datang Desa '.$desa['kode_lokasi'].'
+										Selamat Datang Desa '.NAMA_DESA.'
 									</h3>
 									<div class="img text-center .media-body ">
 										<img src="'.ROOT.'assets/img/'.$desa['logo'].'" style="width: 150px;" />
 									</div>
 									</br>
 									<div class="text-left">
-										<p>Kepala Desa <strong style="margin-left:94px"> : '.$desa['nama_kepala'].'</strong></p>
-										<p class="strong">Penanggung Jawab Barang <strong > : '.$desa['nama_pengurus'].' </strong></p>
-										<p class="strong">Pengguna Barang  <strong style="margin-left:58px"> : '.$desa['nama_pengguna'].'</strong></p>
+										<p>Kepala Desa <strong style="margin-left: 84px;"> : '.$desa['nama_kepala'].'</strong></p>
+										<p>Penanggung Jawab Aset <strong > : '.$desa['nama_pengurus'].' </strong></p>
+										<p>Pengguna Barang <strong style="margin-left: 45.9px;"> : '.$desa['nama_pengguna'].'</strong></p>
 									</div>
+								</div> <!-- /.portlet-content -->
+							</div> <!-- /.portlet -->
+						</div> <!-- /.col -->
+
+						<div class="col-md-8">
+							<div class="portlet">
+								<div class="portlet-header">
+									<h3>
+										<i class="fa fa-bar-chart-o"></i>
+										Statistik Aset Desa '.NAMA_DESA.'
+									</h3>
+								</div> <!-- /.portlet-header -->
+								<div class="portlet-content">
+									<div class="clear"></div>
+									<div id="statistiktahun" class="chart-holder"></div>
 								</div> <!-- /.portlet-content -->
 							</div> <!-- /.portlet -->
 						</div> <!-- /.col -->

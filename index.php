@@ -2,6 +2,7 @@
 	session_start();
 	require "models/class.php";
 	include "libs/path.php";
+	include "libs/init.php";
 
 	$url = isset($_GET['p']) ? $_GET['p'] : null;
 	$url = rtrim($url, '/');
@@ -26,7 +27,6 @@
 <!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
 <!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
 	<head>
-		<title>Beranda - Aset Desa </title>
 		<meta charset="utf-8">
 		<meta name="description" content="">
 		<meta name="viewport" content="width=device-width">
@@ -107,46 +107,57 @@
 <?php
 	switch ($model) {
 		default:
+			$model_name = "Halaman Error";
 			include "views/404.php";
 			break;
 
 		case '':
+			$model_name = "Beranda";
 			include "views/home_view.php";
 			break;
 
 		case 'input':
+			$model_name = "Input";
 			include "views/input_view.php";
 			break;
 
 		case 'inventaris':
+			$model_name = "Inventaris";
 			include "views/inventaris_view.php";
 			break;
 
 		case 'penyusutan':
+			$model_name = "Penyusutan";
 			include "views/penyusutan_view.php";
 			break;
 
-		case 'mutasi':
-			include "views/mutasi_view.php";
+		case 'ekstra':
+			$model_name = "Aset Ekstra";
+			include "views/ekstra_view.php";
 			break;
 
 		case 'neraca':
+			$model_name = "Neraca";
 			include "views/neraca_view.php";
 			break;
 
 		case 'rekap':
+			$model_name = "Rekap";
 			include "views/printpdf_view.php";
 			break;
 
 		case 'kirim':
+			$model_name = "Kirim";
 			include "views/kirim_view.php";
 			break;
 
 		case 'profile':
+			$model_name = "Profil Admin";
 			include "views/profile_view.php";
 			break;
 
 		case 'pengaturan':
+			$model_name = "Pengaturan Desa";
 			include "views/pengaturan_view.php";
 			break;
 
@@ -159,6 +170,7 @@
 				</div> <!-- /.content-container -->
 			</div> <!-- /.content -->
 		</div> <!-- /.container -->
+		<title><?php echo $model_name; ?> - Aset Desa</title>
 
 <?php
 	if ($model == 'inventaris') {

@@ -64,7 +64,7 @@
 													<th rowspan="3">Jenis/Nama Barang</th>
 													<th colspan="2">Nomor</th>
 													<th rowspan="3">Luas (m<sup>2</sup>)</th>
-													<th rowspan="3" style="width: 90px;">Tahun Pengadaan</th>
+													<th rowspan="3" style="width: 100px;">Tahun Pengadaan</th>
 													<th rowspan="3">Letak/Alamat</th>
 													<th colspan="3">Status Tanah</th>
 													<th rowspan="3">Penggunaan</th>
@@ -80,7 +80,7 @@
 													<th colspan="2">Sertifikat</th>
 												</tr>
 												<tr class="headingtable2">
-													<th style="width: 90px;">Tanggal</th>
+													<th style="width: 100px;">Tanggal</th>
 													<th>Nomor</th>
 												</tr>
 												<tr class="headingtable3">
@@ -251,7 +251,7 @@
 													<th>Register</th>
 													<th>Bertingkat/Tidak</th>
 													<th>Beton/Tidak</th>
-													<th style="width: 90px;">Tanggal</th>
+													<th style="width: 100px;">Tanggal</th>
 													<th>Nomor</th>
 												</tr>
 												<tr class="headingtable3">
@@ -350,7 +350,7 @@
 												<tr class="headingtable2">
 													<th>Kode Barang</th>
 													<th>Register</th>
-													<th style="width: 90px;">Tanggal</th>
+													<th style="width: 100px;">Tanggal</th>
 													<th>Nomor</th>
 												</tr>
 												<tr class="headingtable3">
@@ -513,7 +513,7 @@
 													<th rowspan="2">Luas</th>
 													<th rowspan="2">Lokasi</th>
 													<th colspan="2">Dokumen</th>
-													<th rowspan="2" style="width: 90px;">Tanggal Mulai</th>
+													<th rowspan="2" style="width: 100px;">Tanggal Mulai</th>
 													<th rowspan="2">Status Tanah</th>
 													<th rowspan="2">No. Kode Tanah</th>
 													<th rowspan="2">Asal-Usul</th>
@@ -525,7 +525,7 @@
 												<tr class="headingtable2">
 													<th>Bertingkat/Tidak</th>
 													<th>Beton/Tidak</th>
-													<th style="width: 90px;">Tanggal</th>
+													<th style="width: 100px;">Tanggal</th>
 													<th>Nomor</th>
 												</tr>
 												<tr class="headingtable3">

@@ -79,9 +79,9 @@
 									</a>
 								</li>
 								<li>
-									<a href="<?php echo ROOT; ?>mutasi">
+									<a href="<?php echo ROOT; ?>ekstra">
 										<i class="fa fa-location-arrow nav-icon"></i> 
-										Mutasi Aset Desa
+										Aset Ekstra
 									</a>
 								</li>
 								<li class="divider"></li>
